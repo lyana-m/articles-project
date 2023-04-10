@@ -1,1 +1,1 @@
-export {default as LangButton} from './ui/LangButton';
+export { default as LangButton } from './ui/LangButton'
