@@ -2,5 +2,8 @@
   "О нас": "About us",
   "Главная": "Main",
   "Язык": "Ру",
-  "Страница не найдена": "Page not found"
+  "Страница не найдена": "Page not found",
+  "Что-то пошло не так": "Something went wrong. Try to reload the page",
+  "Обновить": "Reload",
+  "Бросить ошибку": "Throw error"
 }

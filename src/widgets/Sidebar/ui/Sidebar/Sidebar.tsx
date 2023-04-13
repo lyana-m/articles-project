@@ -2,6 +2,7 @@ import React, { type FC, useState } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { ThemeButton } from 'widgets/ThemeButton'
 import { LangButton } from 'widgets/LangButton'
+import { BugButton } from 'widgets/PageError'
 import cls from './Sidebar.module.scss'
 
 interface SidebarProps {
@@ -22,6 +23,7 @@ const Sidebar: FC<SidebarProps> = ({ className }) => {
       ])}
     >
       <button onClick={toggle}>TOGGLE</button>
+      <BugButton />
       <div className={cls.switchers}>
         <ThemeButton />
         <LangButton className={cls.lang} />
