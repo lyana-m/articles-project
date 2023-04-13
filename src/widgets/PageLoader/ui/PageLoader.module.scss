@@ -1,0 +1,11 @@
+.PageLoader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - var(--navbar-height));
+  flex-grow: 1;
+}
+
+.loader {
+  color: var(--inverted-bg-color);
+}

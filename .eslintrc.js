@@ -37,7 +37,9 @@ module.exports = {
     '@typescript-eslint/semi': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
     '@typescript-eslint/no-floating-promises': 'off',
+    '@typescript-eslint/member-delimiter-style': 'off',
     '@typescript-eslint/naming-convention': 'off',
+    '@typescript-eslint/comma-dangle': 'off',
     'react/react-in-jsx-scope': 'off'
   }
 }
