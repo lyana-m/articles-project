@@ -21,11 +21,11 @@
       "module": "CommonJS"
     }
   },
-  "include": [
-    "./src/**/*.tsx",
-    "./src/**/*.ts",
-    "./config/jest/setupTests.js",
-    "./jest.config.js",
-    "./webpack.config.ts"
-  ],
+  // "include": [
+  //   "./src/**/*.tsx",
+  //   "./src/**/*.ts",
+  //   "./config/jest/setupTests.js",
+  //   "./jest.config.js",
+  //   "./webpack.config.ts"
+  // ],
 }

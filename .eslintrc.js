@@ -3,34 +3,24 @@ module.exports = {
     browser: true,
     es2021: true
   },
-  extends: [
-    'plugin:react/recommended',
-    'standard-with-typescript',
-    'plugin:i18next/recommended'
-  ],
+  extends: ['plugin:react/recommended', 'standard-with-typescript', 'plugin:i18next/recommended', 'plugin:storybook/recommended'],
   parser: '@typescript-eslint/parser',
-  overrides: [
-    {
-      files: ['*.ts', '*.tsx'],
-      parserOptions: {
-        project: './tsconfig.json'
-      }
-    },
-    {
-      files: ['**/src/**/*.test.tsx'],
-      rules: {
-        'i18next/no-literal-string': 'off'
-      }
+  overrides: [{
+    files: ['*.ts', '*.tsx'],
+    parserOptions: {
+      project: './tsconfig.json'
     }
-  ],
+  }, {
+    files: ['**/src/**/*.test.tsx'],
+    rules: {
+      'i18next/no-literal-string': 'off'
+    }
+  }],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
-  plugins: [
-    'react',
-    'i18next'
-  ],
+  plugins: ['react', 'i18next'],
   settings: {
     react: {
       version: 'detect'
