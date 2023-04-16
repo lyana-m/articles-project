@@ -11,5 +11,5 @@ export const classNames = (
     ...Object.entries(mods)
       .filter(([key, val]) => val)
       .map(([key, val]) => key)
-  ].join(' ')
-}
+  ].join(' ');
+};

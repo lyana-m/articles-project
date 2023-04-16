@@ -8,13 +8,13 @@ const BugButton = () => {
 
   const onThrow = () => {
     setError(true);
-  }
+  };
 
   useEffect(() => {
     if (error) {
       throw new Error('Internal Error');
     }
-  }, [error])
+  }, [error]);
 
   return <button onClick={onThrow}>{t('Бросить ошибку')}</button>;
 };

@@ -15,6 +15,12 @@ module.exports = {
       parserOptions: {
         project: './tsconfig.json'
       }
+    },
+    {
+      files: ['**/src/**/*.test.tsx'],
+      rules: {
+        'i18next/no-literal-string': 'off'
+      }
     }
   ],
   parserOptions: {
@@ -40,6 +46,8 @@ module.exports = {
     '@typescript-eslint/member-delimiter-style': 'off',
     '@typescript-eslint/naming-convention': 'off',
     '@typescript-eslint/comma-dangle': 'off',
-    'react/react-in-jsx-scope': 'off'
+    'react/react-in-jsx-scope': 'off',
+    'react/display-name': 'off',
+    semi: [2, 'always']
   }
-}
+};

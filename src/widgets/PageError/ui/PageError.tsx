@@ -14,7 +14,7 @@ const PageError = (props: PropsWithChildren<PageErrorProps>) => {
 
   const reload = () => {
     window.location.reload();
-  }
+  };
 
   return (
     <div className={classNames(cls.PageError, {}, [className])}>

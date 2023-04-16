@@ -11,12 +11,21 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
-      "*": ["./src/*"]
-    }
+      "*": [
+        "./src/*"
+      ]
+    },
   },
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"
     }
-  }
+  },
+  "include": [
+    "./src/**/*.tsx",
+    "./src/**/*.ts",
+    "./config/jest/setupTests.js",
+    "./jest.config.js",
+    "./webpack.config.ts"
+  ],
 }
