@@ -11,6 +11,7 @@
     "lint:ts:fix": "npx eslint \"**/*.{ts,tsx}\" --fix",
     "style:scss": "npx stylelint \"**/*.scss\"",
     "style:scss:fix": "npx stylelint \"**/*.scss\" --fix",
+    "test:unit:ci": "jest",
     "test:unit": "jest --watch",
     "test:ui": "loki test",
     "test:ui:ok": "loki test approve",
