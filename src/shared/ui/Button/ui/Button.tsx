@@ -15,8 +15,6 @@ interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
 const Button: FC<ButtonProps> = (props) => {
   const { className, children, theme = 'clear', square = false, size = 'm', ...otherProps } = props;
 
-  console.log(square);
-
   const mods: Record<string, boolean> = {
     [cls.square]: square,
   };

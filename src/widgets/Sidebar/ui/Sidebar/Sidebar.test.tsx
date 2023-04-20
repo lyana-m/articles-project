@@ -1,20 +1,20 @@
 import { screen, fireEvent } from '@testing-library/react';
 import Sidebar from './Sidebar';
-import { renderWithTransition } from 'shared/lib/tests/renderWithTranslation';
+import { renderComponent } from 'shared/lib/tests/renderComponent';
 
 describe('Sidebar', () => {
   it('should render', () => {
-    renderWithTransition(<Sidebar />);
+    renderComponent(<Sidebar />);
 
     expect(screen.getByTestId('sidebar')).toBeInTheDocument();
   });
 
   it('should collapse', () => {
-    renderWithTransition(<Sidebar />);
+    renderComponent(<Sidebar />);
 
     expect(screen.getByTestId('sidebar')).not.toHaveClass('collapsed');
 
-    fireEvent.click(screen.getByRole('button', { name: 'TOGGLE' }));
+    fireEvent.click(screen.getByRole('button', { name: '<' }));
 
     expect(screen.getByTestId('sidebar')).toHaveClass('collapsed');
   });
