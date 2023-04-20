@@ -18,7 +18,7 @@ const config: StorybookConfig = {
   docs: {
     autodocs: 'tag',
   },
-  features: { storyStoreV7: false },
+  features: { storyStoreV7: true },
   webpackFinal: async (config, { configType }) => {
     // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
     // You can change the configuration based on that.
