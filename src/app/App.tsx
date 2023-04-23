@@ -6,7 +6,6 @@ import { Sidebar } from 'widgets/Sidebar';
 import { PageError } from 'widgets/PageError';
 import { useTheme } from './providers/ThemeProvider/lib/useTheme';
 import { AppRouter } from './providers/router';
-import './styles/index.scss';
 
 export const App = () => {
   const { theme } = useTheme();

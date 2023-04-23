@@ -2,7 +2,7 @@ import React, { type FC, type HTMLAttributes } from 'react';
 import { classNames } from '../../../lib/classNames/classNames';
 import cls from './Button.module.scss';
 
-export type ButtonTheme = 'clear' | 'outline' | 'background' | 'backgroundInverted';
+export type ButtonTheme = 'clear' | 'clearInverted' | 'outline' | 'background' | 'backgroundInverted';
 export type ButtonSize = 'm' | 'l' | 'xl';
 
 interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {

@@ -20,7 +20,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
-  plugins: ['react', 'i18next'],
+  plugins: ['react', 'i18next', 'react-hooks'],
   settings: {
     react: {
       version: 'detect'
@@ -36,8 +36,11 @@ module.exports = {
     '@typescript-eslint/member-delimiter-style': 'off',
     '@typescript-eslint/naming-convention': 'off',
     '@typescript-eslint/comma-dangle': 'off',
+    '@typescript-eslint/no-confusing-void-expression': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/display-name': 'off',
-    semi: [2, 'always']
+    semi: [2, 'always'],
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'error'
   }
 };
