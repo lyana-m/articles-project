@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button } from 'shared/ui/Button';
-import { Modal } from 'shared/ui/Modal';
+import { LoginModal } from 'features/AuthByUsername';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -29,9 +29,7 @@ const Navbar = ({ className }: NavbarProps) => {
         {t('Войти')}
         </Button>
       </div>
-      <Modal isOpen={isLoginModalOpen} onClose={handleLoginModalClose}>
-        MODAL
-      </Modal>
+      <LoginModal isOpen={isLoginModalOpen} onClose={handleLoginModalClose} />
     </>
   );
 };
