@@ -15,7 +15,8 @@
     "test:unit:ci": "jest",
     "test:unit": "jest --watch",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
-    "build-storybook": "storybook build ./config/storybook"
+    "build-storybook": "storybook build ./config/storybook",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
@@ -75,7 +76,8 @@
     "webpack": "^5.69.1",
     "webpack-bundle-analyzer": "^4.8.0",
     "webpack-cli": "^4.9.5",
-    "webpack-dev-server": "^4.7.4"
+    "webpack-dev-server": "^4.7.4",
+    "husky": "^8.0.0"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
