@@ -7,6 +7,9 @@
   "Обновить": "Reload",
   "Бросить ошибку": "Throw error",
   "Войти": "Login",
+  "Выйти": "Logout",
   "Логин": "Login",
-  "Пароль": "Password"
+  "Пароль": "Password",
+  "Форма авторизации": "Authotization",
+  "Неправильный логин или пароль": "Incorrect login or password"
 }

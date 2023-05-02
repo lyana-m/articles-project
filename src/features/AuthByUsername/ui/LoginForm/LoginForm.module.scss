@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   width: 460px;
-  padding: 20px 0;
 }
 
 .loginInput {
@@ -11,4 +10,12 @@
 
 .loginBtn {
   margin-left: auto;
+}
+
+.title {
+  margin-bottom: 40px;
+}
+
+.error {
+  margin-bottom: 20px;
 }

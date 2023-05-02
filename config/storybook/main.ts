@@ -1,5 +1,6 @@
 import type { StorybookConfig } from '@storybook/react-webpack5';
 import path from 'path';
+import { DefinePlugin } from 'webpack';
 import { buildCssLoader } from '../../config/build/loaders/buildCssLoader';
 
 const config: StorybookConfig = {
@@ -32,7 +33,7 @@ const config: StorybookConfig = {
     // });
 
     config.resolve.extensions.push('.tsx', '.ts');
-    config.resolve.modules.push(path.resolve(__dirname, '..', '..', 'src'));
+    config.resolve.modules = [path.resolve(__dirname, '..', '..', 'src'), 'node_modules', 'public'];
     config.module.rules.push(buildCssLoader(true));
 
     const rule = config.module.rules.find((rule) => {
@@ -50,6 +51,12 @@ const config: StorybookConfig = {
       test: /\.svg$/,
       use: ['@svgr/webpack'],
     });
+
+    config.plugins.push(
+      new DefinePlugin({
+        __IS_DEV__: true,
+      })
+    );
 
     // Return the altered config
     return config;

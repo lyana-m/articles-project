@@ -75,3 +75,11 @@ export const SizeXl: Story = {
     size: 'xl',
   },
 };
+
+export const Disabled: Story = {
+  args: {
+    children: 'Text',
+    theme: 'backgroundInverted',
+    disabled: true,
+  },
+};

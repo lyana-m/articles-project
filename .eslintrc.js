@@ -37,6 +37,7 @@ module.exports = {
     '@typescript-eslint/naming-convention': 'off',
     '@typescript-eslint/comma-dangle': 'off',
     '@typescript-eslint/no-confusing-void-expression': 'off',
+    '@typescript-eslint/consistent-type-assertions': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/display-name': 'off',
     semi: [2, 'always'],
