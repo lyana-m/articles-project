@@ -1,3 +1,3 @@
 import { type StoreSchema } from 'app/providers/StoreProvider/config/StoreSchema';
 
-export const getLoginAuth = (store: StoreSchema) => store.login;
+export const getLoginData = (store: StoreSchema) => store.login;

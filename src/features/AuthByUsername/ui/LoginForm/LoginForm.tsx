@@ -4,18 +4,29 @@ import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui/Button';
 import { Input } from 'shared/ui/Input';
 import { Text } from 'shared/ui/Text';
+import { useAsyncReducers, AsyncReduser } from 'shared/lib/useAsyncReducers/useAsyncReducers';
 import { useAppDispatch, useAppSelector } from 'app/providers/StoreProvider/hooks/useDispatch';
-import { loginActions } from '../../model/slice/loginSlice';
-import { getLoginAuth } from '../../model/selectors/getLoginAuth';
+import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import { loginByUsername } from '../../model/services/loginByUsername';
 import cls from './LoginForm.module.scss';
+import { getLoginUsername } from 'features/AuthByUsername/model/selectors/getLoginUsername/getLoginUsername';
+import { getLoginPassword } from 'features/AuthByUsername/model/selectors/getLoginPassword/getLoginPassword';
+import { getLoginLoading } from 'features/AuthByUsername/model/selectors/getLoginLoading/getLoginLoading';
+import { getLoginError } from 'features/AuthByUsername/model/selectors/getLoginError/getLoginError';
+
+const reducers: AsyncReduser[] = [{ reducerKey: 'login', reducer: loginReducer }];
 
 const LoginForm = () => {
   const { t } = useTranslation();
 
   const dispatch = useAppDispatch();
 
-  const { username, password, isLoading, error } = useAppSelector(getLoginAuth);
+  useAsyncReducers(reducers);
+
+  const username = useAppSelector(getLoginUsername);
+  const password = useAppSelector(getLoginPassword);
+  const isLoading = useAppSelector(getLoginLoading);
+  const error = useAppSelector(getLoginError);
 
   const handleLoginChange = useCallback(
     (value: string) => {

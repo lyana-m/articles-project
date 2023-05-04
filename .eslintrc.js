@@ -40,6 +40,10 @@ module.exports = {
     '@typescript-eslint/consistent-type-assertions': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/display-name': 'off',
+    'space-before-function-paren': 'off',
+    '@typescript-eslint/space-before-function-paren': 'off',
+    '@typescript-eslint/consistent-type-imports': 'off',
+    '@typescript-eslint/consistent-type-exports': 'off',
     semi: [2, 'always'],
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error'
