@@ -5,7 +5,8 @@ import { Button } from 'shared/ui/Button';
 import { Input } from 'shared/ui/Input';
 import { Text } from 'shared/ui/Text';
 import { useAsyncReducers, AsyncReduser } from 'shared/lib/useAsyncReducers/useAsyncReducers';
-import { useAppDispatch, useAppSelector } from 'app/providers/StoreProvider/hooks/useDispatch';
+import { useAppDispatch } from 'shared/hooks/useAppDispatch/useAppDispatch';
+import { useAppSelector } from 'shared/hooks/useAppSelector/useAppSelector';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import { loginByUsername } from '../../model/services/loginByUsername';
 import cls from './LoginForm.module.scss';
@@ -16,7 +17,7 @@ import { getLoginError } from 'features/AuthByUsername/model/selectors/getLoginE
 
 const reducers: AsyncReduser[] = [{ reducerKey: 'login', reducer: loginReducer }];
 
-const LoginForm = () => {
+const LoginForm = ({ onSuccess }: { onSuccess: () => void }) => {
   const { t } = useTranslation();
 
   const dispatch = useAppDispatch();
@@ -42,9 +43,13 @@ const LoginForm = () => {
     [dispatch]
   );
 
-  const handleLogin = useCallback(() => {
-    dispatch(loginByUsername({ username, password }));
-  }, [dispatch, username, password]);
+  const handleLogin = useCallback(async () => {
+    const result = await dispatch(loginByUsername({ username, password }));
+
+    if (result.meta.requestStatus === 'fulfilled') {
+      onSuccess();
+    }
+  }, [onSuccess, dispatch, username, password]);
 
   return (
     <div className={classNames(cls.LoginForm)}>

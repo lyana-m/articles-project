@@ -38,6 +38,7 @@ module.exports = {
     '@typescript-eslint/comma-dangle': 'off',
     '@typescript-eslint/no-confusing-void-expression': 'off',
     '@typescript-eslint/consistent-type-assertions': 'off',
+    '@typescript-eslint/no-misused-promises': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/display-name': 'off',
     'space-before-function-paren': 'off',

@@ -6,7 +6,7 @@ import { Sidebar } from 'widgets/Sidebar';
 import { PageError } from 'widgets/PageError';
 import { useTheme } from './providers/ThemeProvider/lib/useTheme';
 import { AppRouter } from './providers/router';
-import { useAppDispatch } from './providers/StoreProvider/hooks/useDispatch';
+import { useAppDispatch } from '../shared/hooks/useDispatch';
 import { userActions } from 'entities/User';
 import { USER_LOCALSTORAGE_AUTHDATA } from 'shared/constants/localStorage';
 

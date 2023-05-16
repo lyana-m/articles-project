@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button } from 'shared/ui/Button';
 import { LoginModal } from 'features/AuthByUsername';
-import { useAppSelector, useAppDispatch } from 'app/providers/StoreProvider/hooks/useDispatch';
+import { useAppSelector, useAppDispatch } from 'shared/hooks/useDispatch';
 import cls from './Navbar.module.scss';
 import { getUserAuthData, userActions } from 'entities/User';
 
@@ -30,7 +30,6 @@ const Navbar = ({ className }: NavbarProps) => {
 
   const handleLogout = useCallback(() => {
     dispatch(userActions.logout());
-    setIsLoginModalOpen(false);
   }, [dispatch]);
 
   if (authData) {

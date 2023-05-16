@@ -17,8 +17,7 @@ const StoreProvider = ({ children, initialState, asyncReducers }: PropsWithChild
 
 export default StoreProvider;
 
-const store = createReduxStore({} as StoreSchema);
 // Infer the `RootState` and `AppDispatch` types from the store itself
-export type RootState = ReturnType<typeof store.getState>;
+export type RootState = ReturnType<ReturnType<typeof createReduxStore>['getState']>;
 // Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
-export type AppDispatch = typeof store.dispatch;
+export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];
