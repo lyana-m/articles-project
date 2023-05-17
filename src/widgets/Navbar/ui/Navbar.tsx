@@ -1,17 +1,14 @@
-import React, { useCallback, useState } from 'react';
+import React, { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button } from 'shared/ui/Button';
 import { LoginModal } from 'features/AuthByUsername';
-import { useAppSelector, useAppDispatch } from 'shared/hooks/useDispatch';
+import { useAppDispatch } from 'shared/hooks/useAppDispatch/useAppDispatch';
+import { useAppSelector } from 'shared/hooks/useAppSelector/useAppSelector';
 import cls from './Navbar.module.scss';
 import { getUserAuthData, userActions } from 'entities/User';
 
-interface NavbarProps {
-  className?: string;
-}
-
-const Navbar = ({ className }: NavbarProps) => {
+const Navbar = memo(() => {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
 
   const { t } = useTranslation();
@@ -33,7 +30,7 @@ const Navbar = ({ className }: NavbarProps) => {
   }, [dispatch]);
 
   if (authData) {
-    return <div className={classNames(cls.Navbar, {}, [className])}>
+    return <div className={classNames(cls.Navbar, {})}>
       <Button onClick={handleLogout} className={cls.login} theme="clearInverted">
         {t('Выйти')}
       </Button>
@@ -42,7 +39,7 @@ const Navbar = ({ className }: NavbarProps) => {
 
   return (
     <>
-      <div className={classNames(cls.Navbar, {}, [className])}>
+      <div className={classNames(cls.Navbar, {})}>
         <Button onClick={handleLoginModalOpen} className={cls.login} theme="clearInverted">
           {t('Войти')}
         </Button>
@@ -50,6 +47,6 @@ const Navbar = ({ className }: NavbarProps) => {
       <LoginModal isOpen={isLoginModalOpen} onClose={handleLoginModalClose} />
     </>
   );
-};
+});
 
 export default Navbar;

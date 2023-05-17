@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui/Button';
 import { Input } from 'shared/ui/Input';
 import { Text } from 'shared/ui/Text';
-import { useAsyncReducers, AsyncReduser } from 'shared/lib/useAsyncReducers/useAsyncReducers';
+import { useAsyncReducers, AsyncReduser } from 'shared/hooks/useAsyncReducers/useAsyncReducers';
 import { useAppDispatch } from 'shared/hooks/useAppDispatch/useAppDispatch';
 import { useAppSelector } from 'shared/hooks/useAppSelector/useAppSelector';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
