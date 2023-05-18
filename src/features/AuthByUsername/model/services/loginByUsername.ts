@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { ExtraArg } from 'app/providers/StoreProvider/config/StoreSchema';
 import { type User, userActions } from 'entities/User';
-import axios from 'axios';
 import { USER_LOCALSTORAGE_AUTHDATA } from 'shared/constants/localStorage';
 
 interface LoginData {
@@ -8,11 +8,11 @@ interface LoginData {
   username: string;
 }
 
-export const loginByUsername = createAsyncThunk<User, LoginData, { rejectValue: string }>(
+export const loginByUsername = createAsyncThunk<User, LoginData, { rejectValue: string; extra: ExtraArg }>(
   'login/loginByUsername',
   async (authData, thunkAPI) => {
     try {
-      const response = await axios.post<User>('http://localhost:8000/login', authData);
+      const response = await thunkAPI.extra.api.post<User>('/login', authData);
 
       if (!response.data) {
         throw Error('No data received');

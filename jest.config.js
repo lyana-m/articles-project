@@ -33,7 +33,8 @@ module.exports = {
   testMatch: ['<rootDir>/src/**/__tests__/**/*.{spec,test}.{ts,tsx}', '<rootDir>/src/**/*.{spec,test}.{ts,tsx}'],
   // A set of global variables that need to be available in all test environments
   globals: {
-    __IS_DEV__: true
+    __IS_DEV__: true,
+    __API__: 'http://localhost:8000/'
   },
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   transformIgnorePatterns: ['node_modules/(?!axios)']
