@@ -1,9 +1,10 @@
 import axios from 'axios';
+import { USER_LOCALSTORAGE_AUTHDATA } from 'shared/constants/localStorage';
 
 export const api = axios.create({
   baseURL: 'http://localhost:8000/',
   headers: {
-    Authorization: localStorage.getItem('USER_LOCALSTORAGE_AUTHDATA'),
+    authorization: localStorage.getItem(USER_LOCALSTORAGE_AUTHDATA),
     'Content-Type': 'application/json',
   },
 });

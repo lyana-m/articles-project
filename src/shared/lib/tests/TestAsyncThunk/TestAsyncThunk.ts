@@ -1,6 +1,7 @@
 import { AsyncThunkAction, Dispatch } from '@reduxjs/toolkit';
 import axios, { AxiosStatic } from 'axios';
 import { StoreSchema } from 'app/providers/StoreProvider';
+import { ExtraArg } from 'app/providers/StoreProvider/config/StoreSchema';
 
 jest.mock('axios');
 const mockedAxios = axios as jest.Mocked<typeof axios>;
@@ -8,11 +9,11 @@ const mockedAxios = axios as jest.Mocked<typeof axios>;
 export class TestAsyncThunk<Return, Args, RejectedValue> {
   dispatch: Dispatch;
   getState: () => StoreSchema;
-  actionCreator: (args: Args) => AsyncThunkAction<Return, Args, { rejectValue: RejectedValue }>;
+  actionCreator: (args: Args) => AsyncThunkAction<Return, Args, { rejectValue: RejectedValue; extra: ExtraArg }>;
   api: jest.Mocked<AxiosStatic>;
 
   constructor(
-    actionCreator: (args: Args) => AsyncThunkAction<Return, Args, { rejectValue: RejectedValue }>
+    actionCreator: (args: Args) => AsyncThunkAction<Return, Args, { rejectValue: RejectedValue; extra: ExtraArg }>
   ) {
     this.actionCreator = actionCreator;
     this.dispatch = jest.fn();
