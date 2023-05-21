@@ -32,30 +32,33 @@ const config: StorybookConfig = {
     //   include: path.resolve(__dirname, '../'),
     // });
 
-    config.resolve.extensions.push('.tsx', '.ts');
-    config.resolve.modules = [path.resolve(__dirname, '..', '..', 'src'), 'node_modules', 'public'];
-    config.module.rules.push(buildCssLoader(true));
+    if (config.resolve) {
+      config.resolve.extensions?.push('.tsx', '.ts');
+      config.resolve.modules = [path.resolve(__dirname, '..', '..', 'src'), 'node_modules', 'public'];
+    }
 
-    const rule = config.module.rules.find((rule) => {
+    config.module?.rules?.push(buildCssLoader(true));
+
+    const rule = config.module?.rules?.find((rule) => {
       if (typeof rule !== 'string' && rule.test instanceof RegExp) {
         return rule.test.test('.svg');
       }
       return false;
     });
 
-    if (typeof rule !== 'string') {
+    if (rule && typeof rule !== 'string') {
       rule.exclude = /\.svg$/;
     }
 
-    config.module.rules.push({
+    config.module?.rules?.push({
       test: /\.svg$/,
       use: ['@svgr/webpack'],
     });
 
-    config.plugins.push(
+    config.plugins?.push(
       new DefinePlugin({
         __IS_DEV__: true,
-        __API__: 'http://localhost:8000/'
+        __API__: 'http://localhost:8000/',
       })
     );
 

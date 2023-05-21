@@ -1,6 +1,6 @@
 import { StoreSchema } from 'app/providers/StoreProvider';
 import { getLoginPassword } from './getLoginPassword';
-import { DeepPartial } from '@reduxjs/toolkit';
+import { DeepPartial } from 'app/types/common';
 
 describe('getLoginError', () => {
   it('should return data', () => {

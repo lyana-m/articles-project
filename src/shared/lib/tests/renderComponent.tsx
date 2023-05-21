@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { type DeepPartial } from '@reduxjs/toolkit';
+import { DeepPartial } from 'app/types/common';
 import type { ReactNode } from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { I18nextProvider } from 'react-i18next';

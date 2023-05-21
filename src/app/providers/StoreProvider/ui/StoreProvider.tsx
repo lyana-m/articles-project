@@ -1,6 +1,7 @@
 import React, { type PropsWithChildren } from 'react';
 import { Provider } from 'react-redux';
-import { ReducersMapObject, type DeepPartial } from '@reduxjs/toolkit';
+import { ReducersMapObject } from '@reduxjs/toolkit';
+import { DeepPartial } from 'app/types/common';
 import { createReduxStore } from '../config/store';
 import { type StoreSchema } from '../config/StoreSchema';
 
