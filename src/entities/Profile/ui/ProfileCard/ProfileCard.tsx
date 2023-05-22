@@ -1,34 +1,45 @@
 import React from 'react';
-import { getProfileData } from 'entities/Profile/model/selectors/getProfileData/getProfileData';
-// import { getProfileError } from 'entities/Profile/model/selectors/getProfileError/getProfileError';
-import { getProfileLoading } from 'entities/Profile/model/selectors/getProfileLoading/getProfileLoading';
-import { useAppSelector } from 'shared/hooks/useAppSelector/useAppSelector';
 import { Input } from 'shared/ui/Input';
-import { Button } from 'shared/ui/Button';
 import { Text } from 'shared/ui/Text';
 import { Loader } from 'shared/ui/Loader';
+import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './ProfileCard.module.scss';
 import { useTranslation } from 'react-i18next';
+import { Profile } from '../../model/types/profile';
 
-const ProfileCard = () => {
-  const profileData = useAppSelector(getProfileData);
-  // const profileError = useAppSelector(getProfileError);
-  const profileLoading = useAppSelector(getProfileLoading);
+interface ProdileCardProps {
+  data?: Profile | null;
+  isLoading?: boolean;
+  error?: string;
+}
+
+const ProfileCard = (props: ProdileCardProps) => {
+  const { data, isLoading, error } = props;
 
   const { t } = useTranslation('profile');
 
-  if (profileLoading) {
-    return <Loader />;
+  console.log(isLoading);
+
+  if (isLoading) {
+    return (
+      <div className={classNames(cls['profile-card'], {}, [cls.loading])}>
+        <Loader />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className={classNames(cls['profile-card'], {}, [cls.error])}>
+        <Text theme="error" align='center' title="Произошла ошибка при загрузке данных" text="Попробуйте перезагрузить страницу" />
+      </div>
+    );
   }
 
   return (
     <div className={cls['profile-card']}>
-      <div className={cls.header}>
-        <Text title={t('Профиль')} />
-        <Button theme="outline">{t('Редактировать')}</Button>
-      </div>
-      <Input label={t('Имя')} value={profileData?.firstname} className={cls.input} />
-      <Input label={t('Фамилия')} value={profileData?.lastname} className={cls.input} />
+      <Input label={t('Имя')} value={data?.firstname} className={cls.input} />
+      <Input label={t('Фамилия')} value={data?.lastname} className={cls.input} />
     </div>
   );
 };

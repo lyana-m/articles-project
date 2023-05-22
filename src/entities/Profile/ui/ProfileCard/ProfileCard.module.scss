@@ -1,15 +1,16 @@
 .profile-card {
-  width: 500px;
   border: 1px solid var(--primary-color);
   padding: 40px 20px;
 }
 
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .input:not(:first-child) {
   margin-top: 40px;
+}
+
+.loading,
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
 }
