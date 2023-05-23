@@ -51,6 +51,20 @@ const ProfilePage = () => {
     [dispatch]
   );
 
+  const handleUsernameChange = useCallback(
+    (value: string) => {
+      dispatch(profileActions.updateFormData({ username: value }));
+    },
+    [dispatch]
+  );
+
+  const handleAvatarChange = useCallback(
+    (value: string) => {
+      dispatch(profileActions.updateFormData({ avatar: value }));
+    },
+    [dispatch]
+  );
+
   useEffect(() => {
     dispatch(fetchProfileData());
   }, [dispatch]);
@@ -67,6 +81,8 @@ const ProfilePage = () => {
         onLastnameChange={handleLastnameChange}
         onAgeChange={handleAgeChange}
         onCityChange={handleCityChange}
+        onUsernameChange={handleUsernameChange}
+        onAvatarChange={handleAvatarChange}
       />
     </div>
   );

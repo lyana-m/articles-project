@@ -6,6 +6,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './ProfileCard.module.scss';
 import { useTranslation } from 'react-i18next';
 import { Profile } from '../../model/types/profile';
+import Avatar from 'shared/ui/Avatar/Avatar';
 
 interface ProdileCardProps {
   data?: Profile | null;
@@ -16,10 +17,23 @@ interface ProdileCardProps {
   onLastnameChange?: (value: string) => void;
   onAgeChange?: (value: string) => void;
   onCityChange?: (value: string) => void;
+  onUsernameChange?: (value: string) => void;
+  onAvatarChange?: (value: string) => void;
 }
 
 const ProfileCard = (props: ProdileCardProps) => {
-  const { data, isLoading, error, readonly, onFirstnameChange, onLastnameChange, onAgeChange, onCityChange } = props;
+  const {
+    data,
+    isLoading,
+    error,
+    readonly,
+    onFirstnameChange,
+    onLastnameChange,
+    onAgeChange,
+    onCityChange,
+    onUsernameChange,
+    onAvatarChange,
+  } = props;
 
   const { t } = useTranslation('profile');
 
@@ -45,7 +59,12 @@ const ProfileCard = (props: ProdileCardProps) => {
   }
 
   return (
-    <div className={cls['profile-card']}>
+    <div className={classNames(cls['profile-card'])}>
+      {data?.avatar ? (
+        <div className={cls['avatar-wrapper']}>
+          <Avatar src={data.avatar} />
+        </div>
+      ) : null}
       <Input
         label={t('Имя')}
         value={data?.firstname}
@@ -62,6 +81,20 @@ const ProfileCard = (props: ProdileCardProps) => {
       />
       <Input label={t('Возраст')} value={data?.age} className={cls.input} readOnly={readonly} onChange={onAgeChange} />
       <Input label={t('Город')} value={data?.city} className={cls.input} readOnly={readonly} onChange={onCityChange} />
+      <Input
+        label={t('Логин')}
+        value={data?.username}
+        className={cls.input}
+        readOnly={readonly}
+        onChange={onUsernameChange}
+      />
+      <Input
+        label={t('Аватар')}
+        value={data?.avatar}
+        className={cls.input}
+        readOnly={readonly}
+        onChange={onAvatarChange}
+      />
     </div>
   );
 };

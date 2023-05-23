@@ -32,7 +32,8 @@
 .readonly {
   opacity: 0.5;
 
-  input {
-    opacity: inherit;
+  + .htmlInput {
+    cursor: default;
+    opacity: 0.5;
   }
 }
