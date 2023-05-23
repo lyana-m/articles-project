@@ -47,6 +47,7 @@ module.exports = {
     '@typescript-eslint/consistent-type-exports': 'off',
     semi: [2, 'always'],
     'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'error'
+    'react-hooks/exhaustive-deps': 'error',
+    'multiline-ternary': 'off'
   }
 };

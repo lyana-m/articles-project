@@ -26,13 +26,14 @@
     }
   ],
   "profile": {
-    "firstname": "Тимур",
-    "lastname": "Ульби",
-    "age": 22,
+    "firstname": "Lyanna",
+    "lastname": "Butolina",
+    "age": 33,
     "currency": "RUB",
     "country": "Russia",
-    "city": "Moscow",
+    "city": "Permrt",
     "username": "admin",
-    "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
+    "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg",
+    "readonly": true
   }
 }

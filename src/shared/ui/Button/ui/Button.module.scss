@@ -16,12 +16,18 @@
   color: var(--inverted-primary-color);
 }
 
-.outline {
+.outline,
+.outline_red {
   color: var(--primary-color);
   border: 1px solid var(--primary-color);
   border-radius: 8px;
   background: none;
   font-size: var(--font-size-l);
+}
+
+.outline_red {
+  color: var(--error-primary-color);
+  border: 1px solid var(--error-primary-color);
 }
 
 .background {

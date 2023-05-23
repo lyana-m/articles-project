@@ -11,14 +11,17 @@ interface ProdileCardProps {
   data?: Profile | null;
   isLoading?: boolean;
   error?: string;
+  readonly?: boolean;
+  onFirstnameChange?: (value: string) => void;
+  onLastnameChange?: (value: string) => void;
+  onAgeChange?: (value: string) => void;
+  onCityChange?: (value: string) => void;
 }
 
 const ProfileCard = (props: ProdileCardProps) => {
-  const { data, isLoading, error } = props;
+  const { data, isLoading, error, readonly, onFirstnameChange, onLastnameChange, onAgeChange, onCityChange } = props;
 
   const { t } = useTranslation('profile');
-
-  console.log(isLoading);
 
   if (isLoading) {
     return (
@@ -31,15 +34,34 @@ const ProfileCard = (props: ProdileCardProps) => {
   if (error) {
     return (
       <div className={classNames(cls['profile-card'], {}, [cls.error])}>
-        <Text theme="error" align='center' title="Произошла ошибка при загрузке данных" text="Попробуйте перезагрузить страницу" />
+        <Text
+          theme="error"
+          align="center"
+          title="Произошла ошибка при загрузке данных"
+          text="Попробуйте перезагрузить страницу"
+        />
       </div>
     );
   }
 
   return (
     <div className={cls['profile-card']}>
-      <Input label={t('Имя')} value={data?.firstname} className={cls.input} />
-      <Input label={t('Фамилия')} value={data?.lastname} className={cls.input} />
+      <Input
+        label={t('Имя')}
+        value={data?.firstname}
+        className={cls.input}
+        readOnly={readonly}
+        onChange={onFirstnameChange}
+      />
+      <Input
+        label={t('Фамилия')}
+        value={data?.lastname}
+        className={cls.input}
+        readOnly={readonly}
+        onChange={onLastnameChange}
+      />
+      <Input label={t('Возраст')} value={data?.age} className={cls.input} readOnly={readonly} onChange={onAgeChange} />
+      <Input label={t('Город')} value={data?.city} className={cls.input} readOnly={readonly} onChange={onCityChange} />
     </div>
   );
 };

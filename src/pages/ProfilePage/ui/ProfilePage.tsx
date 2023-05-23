@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
-import { profileReducer, ProfileCard } from 'entities/Profile';
-import { getProfileData } from 'entities/Profile/model/selectors/getProfileData/getProfileData';
+import React, { useCallback, useEffect } from 'react';
+import { profileReducer, ProfileCard, getProfileReadonly, profileActions } from 'entities/Profile';
+import { getProfileFormData } from 'entities/Profile/model/selectors/getProfileFormData/getProfileFormData';
 import { getProfileError } from 'entities/Profile/model/selectors/getProfileError/getProfileError';
 import { getProfileLoading } from 'entities/Profile/model/selectors/getProfileLoading/getProfileLoading';
 import { fetchProfileData } from 'entities/Profile/model/services/fetchProfileData/fetchProfileData';
@@ -16,9 +16,40 @@ const ProfilePage = () => {
 
   const dispatch = useAppDispatch();
 
-  const profileData = useAppSelector(getProfileData);
+  const profileData = useAppSelector(getProfileFormData);
   const profileError = useAppSelector(getProfileError);
   const profileLoading = useAppSelector(getProfileLoading);
+  const readonly = useAppSelector(getProfileReadonly);
+
+  const handleFirstnameChange = useCallback(
+    (value: string) => {
+      dispatch(profileActions.updateFormData({ firstname: value }));
+    },
+    [dispatch]
+  );
+
+  const handleLastnameChange = useCallback(
+    (value: string) => {
+      dispatch(profileActions.updateFormData({ lastname: value }));
+    },
+    [dispatch]
+  );
+
+  const handleAgeChange = useCallback(
+    (value: string) => {
+      if (/^\d+$/.test(value)) {
+        dispatch(profileActions.updateFormData({ age: Number(value) }));
+      }
+    },
+    [dispatch]
+  );
+
+  const handleCityChange = useCallback(
+    (value: string) => {
+      dispatch(profileActions.updateFormData({ city: value }));
+    },
+    [dispatch]
+  );
 
   useEffect(() => {
     dispatch(fetchProfileData());
@@ -27,7 +58,16 @@ const ProfilePage = () => {
   return (
     <div>
       <ProfilePageHeader />
-      <ProfileCard data={profileData} isLoading={profileLoading} error={profileError} />
+      <ProfileCard
+        data={profileData}
+        isLoading={profileLoading}
+        error={profileError}
+        readonly={readonly}
+        onFirstnameChange={handleFirstnameChange}
+        onLastnameChange={handleLastnameChange}
+        onAgeChange={handleAgeChange}
+        onCityChange={handleCityChange}
+      />
     </div>
   );
 };

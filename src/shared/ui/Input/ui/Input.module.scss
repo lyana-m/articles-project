@@ -28,3 +28,11 @@
     font-size: 12px;
   }
 }
+
+.readonly {
+  opacity: 0.5;
+
+  input {
+    opacity: inherit;
+  }
+}

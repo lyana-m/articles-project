@@ -2,7 +2,7 @@ import React, { ButtonHTMLAttributes, memo, PropsWithChildren } from 'react';
 import { classNames } from '../../../lib/classNames/classNames';
 import cls from './Button.module.scss';
 
-export type ButtonTheme = 'clear' | 'clearInverted' | 'outline' | 'background' | 'backgroundInverted';
+export type ButtonTheme = 'clear' | 'clearInverted' | 'outline' | 'outline_red' | 'background' | 'backgroundInverted';
 export type ButtonSize = 'm' | 'l' | 'xl';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -15,7 +15,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 const Button = memo((props: PropsWithChildren<ButtonProps>) => {
   const { className, children, theme = 'clear', square = false, size = 'm', ...otherProps } = props;
 
-  const mods: Record<string, boolean> = {
+  const mods = {
     [cls.square]: square,
   };
 

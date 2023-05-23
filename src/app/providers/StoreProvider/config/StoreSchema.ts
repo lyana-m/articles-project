@@ -28,3 +28,9 @@ export interface ReduxStoreWithManager extends EnhancedStore {
 export interface ExtraArg {
   api: AxiosInstance;
 }
+
+export interface ThunkConfig<T> {
+  extra: ExtraArg;
+  rejectValue: T;
+  getState: () => StoreSchema;
+}
