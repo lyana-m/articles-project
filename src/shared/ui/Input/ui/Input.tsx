@@ -8,12 +8,12 @@ interface InputProps extends HTMLInputProps {
   className?: string;
   value?: string | number;
   label?: string;
-  readOnly?: boolean;
+  readonly?: boolean;
   onChange?: (value: string) => void;
 }
 
 const Input = memo((props: InputProps) => {
-  const { className, value, label, readOnly, onChange, type = 'text', ...otherProps } = props;
+  const { className, value, label, readonly, onChange, type = 'text', ...otherProps } = props;
 
   const [focused, setFocused] = useState(false);
 
@@ -25,7 +25,7 @@ const Input = memo((props: InputProps) => {
 
   const mods = {
     [cls.active]: focused || !!value,
-    [cls.readonly]: readOnly,
+    [cls.readonly]: readonly,
   };
 
   return (
@@ -35,7 +35,7 @@ const Input = memo((props: InputProps) => {
         className={cls.htmlInput}
         value={value}
         type={type}
-        readOnly={readOnly}
+        readOnly={readonly}
         onChange={handleChange}
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}

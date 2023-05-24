@@ -1,4 +1,5 @@
-import { Country, Currency } from 'shared/constants/common';
+import { Country } from '../../../Country';
+import { Currency } from '../../../Currency';
 
 export interface Profile {
   firstname?: string;

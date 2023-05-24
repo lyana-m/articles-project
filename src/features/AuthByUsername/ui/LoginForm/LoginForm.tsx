@@ -25,7 +25,7 @@ const LoginForm = ({ onSuccess }: { onSuccess: () => void }) => {
   useAsyncReducers(reducers);
 
   const username = useAppSelector(getLoginUsername) || '';
-  const password = useAppSelector(getLoginPassword) || 's';
+  const password = useAppSelector(getLoginPassword) || '';
   const isLoading = useAppSelector(getLoginLoading);
   const error = useAppSelector(getLoginError);
 

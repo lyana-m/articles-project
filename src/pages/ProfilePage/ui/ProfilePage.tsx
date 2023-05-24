@@ -4,6 +4,8 @@ import { getProfileFormData } from 'entities/Profile/model/selectors/getProfileF
 import { getProfileError } from 'entities/Profile/model/selectors/getProfileError/getProfileError';
 import { getProfileLoading } from 'entities/Profile/model/selectors/getProfileLoading/getProfileLoading';
 import { fetchProfileData } from 'entities/Profile/model/services/fetchProfileData/fetchProfileData';
+import { Currency } from 'entities/Currency';
+import { Country } from 'entities/Country';
 import { AsyncReduser, useAsyncReducers } from 'shared/hooks/useAsyncReducers/useAsyncReducers';
 import { useAppDispatch } from 'shared/hooks/useAppDispatch/useAppDispatch';
 import { useAppSelector } from 'shared/hooks/useAppSelector/useAppSelector';
@@ -65,6 +67,20 @@ const ProfilePage = () => {
     [dispatch]
   );
 
+  const handleCurrencyChange = useCallback(
+    (value: Currency) => {
+      dispatch(profileActions.updateFormData({ currency: value }));
+    },
+    [dispatch]
+  );
+
+  const handleCountryChange = useCallback(
+    (value: Country) => {
+      dispatch(profileActions.updateFormData({ country: value }));
+    },
+    [dispatch]
+  );
+
   useEffect(() => {
     dispatch(fetchProfileData());
   }, [dispatch]);
@@ -83,6 +99,8 @@ const ProfilePage = () => {
         onCityChange={handleCityChange}
         onUsernameChange={handleUsernameChange}
         onAvatarChange={handleAvatarChange}
+        onCurrencyChange={handleCurrencyChange}
+        onCountryChange={handleCountryChange}
       />
     </div>
   );
