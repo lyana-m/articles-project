@@ -13,6 +13,7 @@ export interface BuildOptions {
   isDev: boolean;
   port: number;
   api: string;
+  project: 'frontent' | 'storybook' | 'jest';
 }
 
 export interface BuildEnv {

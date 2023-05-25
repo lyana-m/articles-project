@@ -49,5 +49,10 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',
     'multiline-ternary': 'off'
+  },
+  globals: {
+    __IS_DEV__: true,
+    __API__: true,
+    __PROJECT__: true
   }
 };
