@@ -1,20 +1,31 @@
 import React, { useCallback, useEffect } from 'react';
-import { profileReducer, ProfileCard, getProfileReadonly, profileActions } from 'entities/Profile';
-import { getProfileFormData } from 'entities/Profile/model/selectors/getProfileFormData/getProfileFormData';
-import { getProfileError } from 'entities/Profile/model/selectors/getProfileError/getProfileError';
-import { getProfileLoading } from 'entities/Profile/model/selectors/getProfileLoading/getProfileLoading';
-import { fetchProfileData } from 'entities/Profile/model/services/fetchProfileData/fetchProfileData';
+import {
+  profileReducer,
+  ProfileCard,
+  getProfileReadonly,
+  profileActions,
+  getProfileValidationErrors,
+  getProfileFormData,
+  getProfileError,
+  getProfileLoading,
+  fetchProfileData,
+  ValidationErrors,
+} from 'entities/Profile';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import { AsyncReduser, useAsyncReducers } from 'shared/hooks/useAsyncReducers/useAsyncReducers';
 import { useAppDispatch } from 'shared/hooks/useAppDispatch/useAppDispatch';
 import { useAppSelector } from 'shared/hooks/useAppSelector/useAppSelector';
+import { Text } from 'shared/ui/Text';
 import ProfilePageHeader from './ProfilePageHeader/ProfilePageHeader';
+import { useTranslation } from 'react-i18next';
 
 const reducers: AsyncReduser[] = [{ reducerKey: 'profile', reducer: profileReducer }];
 
 const ProfilePage = () => {
   useAsyncReducers(reducers);
+
+  const { t } = useTranslation('profile');
 
   const dispatch = useAppDispatch();
 
@@ -22,6 +33,15 @@ const ProfilePage = () => {
   const profileError = useAppSelector(getProfileError);
   const profileLoading = useAppSelector(getProfileLoading);
   const readonly = useAppSelector(getProfileReadonly);
+  const validationErrors = useAppSelector(getProfileValidationErrors);
+
+  const humanReadableErrors = {
+    [ValidationErrors.NO_DATA]: t('Нет данных'),
+    [ValidationErrors.ICRORRECT_FIRSTNAME]: t('Некорректное имя'),
+    [ValidationErrors.ICRORRECT_LASTTNAME]: t('Некорректная фамилия'),
+    [ValidationErrors.ICRORRECT_AGE]: t('Некорректный возраст'),
+    [ValidationErrors.SERVER_ERROR]: t('Ошибка при сохранении данных'),
+  };
 
   const handleFirstnameChange = useCallback(
     (value: string) => {
@@ -39,9 +59,7 @@ const ProfilePage = () => {
 
   const handleAgeChange = useCallback(
     (value: string) => {
-      if (/^\d+$/.test(value)) {
-        dispatch(profileActions.updateFormData({ age: Number(value) }));
-      }
+      dispatch(profileActions.updateFormData({ age: Number(value) || undefined }));
     },
     [dispatch]
   );
@@ -88,6 +106,9 @@ const ProfilePage = () => {
   return (
     <div>
       <ProfilePageHeader />
+      {validationErrors?.map((error) => (
+        <Text key={error} text={humanReadableErrors[error]} theme="error" />
+      ))}
       <ProfileCard
         data={profileData}
         isLoading={profileLoading}

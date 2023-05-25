@@ -8,6 +8,7 @@ const initialState: ProfileSchema = {
   isLoading: false,
   error: '',
   readonly: true,
+  validationErrors: undefined
 };
 
 export const profileSlice = createSlice({
@@ -26,6 +27,7 @@ export const profileSlice = createSlice({
     cancelEdit: (state) => {
       state.readonly = true;
       state.formData = state.data;
+      state.validationErrors = undefined;
     },
   },
   extraReducers: (builder) => {
@@ -43,6 +45,7 @@ export const profileSlice = createSlice({
     });
     builder.addCase(updateProfileData.pending, (state) => {
       state.isLoading = true;
+      state.validationErrors = undefined;
     });
     builder.addCase(updateProfileData.fulfilled, (state, action) => {
       state.isLoading = false;
@@ -52,7 +55,7 @@ export const profileSlice = createSlice({
     });
     builder.addCase(updateProfileData.rejected, (state, action) => {
       state.isLoading = false;
-      state.error = action.payload || '';
+      state.validationErrors = action.payload;
     });
   },
 });

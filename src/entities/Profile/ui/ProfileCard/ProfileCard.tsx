@@ -5,6 +5,7 @@ import { Text } from 'shared/ui/Text';
 import { Loader } from 'shared/ui/Loader';
 import { Avatar } from 'shared/ui/Avatar';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { validateNumber } from 'shared/lib/validation/validateNumber/validateNumber';
 import { Currency, CurrencySelect } from 'entities/Currency';
 import { Country, CountrySelect } from 'entities/Country';
 import cls from './ProfileCard.module.scss';
@@ -85,7 +86,14 @@ const ProfileCard = (props: ProdileCardProps) => {
         readonly={readonly}
         onChange={onLastnameChange}
       />
-      <Input label={t('Возраст')} value={data?.age} className={cls.input} readonly={readonly} onChange={onAgeChange} />
+      <Input
+        label={t('Возраст')}
+        value={data?.age}
+        className={cls.input}
+        readonly={readonly}
+        onChange={onAgeChange}
+        onKeyDown={validateNumber}
+      />
       <Input label={t('Город')} value={data?.city} className={cls.input} readonly={readonly} onChange={onCityChange} />
       <Input
         label={t('Логин')}
