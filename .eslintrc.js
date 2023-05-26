@@ -24,6 +24,11 @@ module.exports = {
   settings: {
     react: {
       version: 'detect'
+    },
+    'import/resolver': {
+      node: {
+        moduleDirectory: ['src', 'node_modules']
+      }
     }
   },
   rules: {
