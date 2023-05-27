@@ -98,7 +98,7 @@
     "react-router-dom": "^6.2.1"
   },
   "loki": {
-    "chromeSelector": "body",
+    "chromeSelector": "#storybook-root",
     "configurations": {
       "chrome.laptop": {
         "target": "chrome.app",
