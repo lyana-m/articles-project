@@ -20,16 +20,22 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
-        run: npm install
-
-      - name: Build
-        run: npm run build:prod
+        run: yarn
 
       - name: Linting ts
-        run: npm run lint:ts
+        run: yarn lint:ts
 
       - name: Linting scss
-        run: npm run style:scss
+        run: yarn style:scss
 
       - name: Testing
-        run: npm run test:unit:ci
+        run: yarn test:unit:ci
+
+      - name: Build storybook
+        run: yarn build-storybook
+
+      - name: Testing ui
+        run: yarn test:ui:ci
+
+      - name: Build
+        run: yarn build:prod
