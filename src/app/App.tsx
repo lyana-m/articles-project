@@ -27,6 +27,7 @@ export const App = () => {
     <div className={classNames('app', {}, [theme])}>
       <Suspense fallback="">
         <Navbar />
+        {/* @ts-expect-error */}
         <ErrorBoundary fallback={<PageError />}>
           <div className="main-content">
             <Sidebar />
