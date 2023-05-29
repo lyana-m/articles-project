@@ -1,14 +1,19 @@
 import React from 'react';
 import { useTheme } from 'app/providers/ThemeProvider/lib/useTheme';
-import IconLight from 'shared/assets/icons/theme-light.svg';
-import IconDark from 'shared/assets/icons/theme-dark.svg';
-import { Themes } from 'app/providers/ThemeProvider';
+import Icon from 'shared/assets/icons/theme.svg';
 import { Button } from 'shared/ui/Button';
+import cls from './ThemeButton.module.scss';
 
 const ThemeButton = () => {
-  const { theme, toggleTheme } = useTheme();
+  const { toggleTheme } = useTheme();
 
-  return <Button onClick={toggleTheme}>{theme === Themes.LIGHT ? <IconLight /> : <IconDark />}</Button>;
+  return (
+    <Button onClick={toggleTheme}>
+      <div className={cls.icon}>
+        <Icon />
+      </div>
+    </Button>
+  );
 };
 
 export default ThemeButton;
