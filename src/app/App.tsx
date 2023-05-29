@@ -7,20 +7,18 @@ import { PageError } from 'widgets/PageError';
 import { useTheme } from './providers/ThemeProvider/lib/useTheme';
 import { AppRouter } from './providers/router';
 import { useAppDispatch } from '../shared/hooks/useAppDispatch/useAppDispatch';
-import { userActions } from 'entities/User';
-import { USER_LOCALSTORAGE_AUTHDATA } from 'shared/constants/localStorage';
+import { useAppSelector } from 'shared/hooks/useAppSelector/useAppSelector';
+import { getUserInited, userActions } from 'entities/User';
 
 export const App = () => {
   const { theme } = useTheme();
 
   const dispatch = useAppDispatch();
 
-  useEffect(() => {
-    const user = localStorage.getItem(USER_LOCALSTORAGE_AUTHDATA);
+  const isUserInited = useAppSelector(getUserInited);
 
-    if (user) {
-      dispatch(userActions.setUserAuthData(JSON.parse(user)));
-    }
+  useEffect(() => {
+    dispatch(userActions.initUserAuthData());
   }, [dispatch]);
 
   return (
@@ -31,7 +29,7 @@ export const App = () => {
         <ErrorBoundary fallback={<PageError />}>
           <div className="main-content">
             <Sidebar />
-            <AppRouter />
+            {isUserInited && <AppRouter />}
           </div>
         </ErrorBoundary>
       </Suspense>

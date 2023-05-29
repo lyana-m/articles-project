@@ -24,7 +24,7 @@ export const buildPlagins = ({ paths, isDev, api, project }: BuildOptions): Webp
 
   if (isDev) {
     plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }));
-    plugins.push(new ReactRefreshWebpackPlugin());
+    plugins.push(new ReactRefreshWebpackPlugin({ overlay: false }));
   }
 
   return plugins;
