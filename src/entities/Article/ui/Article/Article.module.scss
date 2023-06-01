@@ -1,0 +1,32 @@
+.avatar {
+  margin: 0 auto;
+  display: block;
+}
+
+.title {
+  margin-top: 40px;
+}
+
+.skeleton {
+  margin-top: 20px;
+}
+
+.info {
+  margin-top: 16px;
+  margin-bottom: 32px;
+}
+
+.info__item {
+  display: flex;
+  align-items: center;
+
+  div:last-child {
+    margin-left: 12px;
+  }
+}
+
+.block {
+  &:not(:first-child) {
+    margin-top: 32px;
+  }
+}

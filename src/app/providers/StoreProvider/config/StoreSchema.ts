@@ -1,15 +1,18 @@
-import type { AnyAction, CombinedState, Reducer, ReducersMapObject, EnhancedStore } from '@reduxjs/toolkit';
+import { AnyAction, CombinedState, Reducer, ReducersMapObject, EnhancedStore } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
-import { type CounterSchema } from 'entities/Counter';
+import { CounterSchema } from 'entities/Counter';
 import { ProfileSchema } from 'entities/Profile';
-import { type UserSchema } from 'entities/User';
-import { type LoginSchema } from 'features/AuthByUsername';
+import { UserSchema } from 'entities/User';
+import { ArticleSchema } from 'entities/Article';
+import { LoginSchema } from 'features/AuthByUsername';
 
 export interface StoreSchema {
   counter: CounterSchema;
   user: UserSchema;
+  // async reducers
   login?: LoginSchema;
   profile?: ProfileSchema;
+  article?: ArticleSchema;
 }
 
 export type StoreSchemaKeys = keyof StoreSchema;

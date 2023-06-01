@@ -1,0 +1,14 @@
+.code {
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid var(--inverted-bg-color);
+  position: relative;
+  overflow: auto;
+}
+
+.copyBtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: var(--primary-color);
+}
