@@ -31,7 +31,7 @@ const CommentItem = (props: CommentItemProps) => {
     <div className={classNames(cls.commentItem, {}, [className])}>
       <div className={cls.header}>
         <Avatar size={40} src={comment.user.avatar} />
-        <Text className={cls.username} title={comment.user.login} />
+        <Text className={cls.username} title={comment.user.username} />
       </div>
       <Text className={cls.comment} text={comment.text} />
     </div>
