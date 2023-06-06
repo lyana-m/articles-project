@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import { classNames } from '../../../lib/classNames/classNames';
 import cls from './Avatar.module.scss';
+import NoAvatar from '../../../assets/img/no-avatar.png';
 
 interface AvatarProps {
   src?: string;
@@ -10,7 +11,7 @@ interface AvatarProps {
 }
 
 const Avatar = (props: AvatarProps) => {
-  const { src, alt, size = 100, className } = props;
+  const { src = NoAvatar, alt, size = 100, className } = props;
   const classes = classNames(cls.avatar, {}, [className]);
 
   const styles = useMemo(

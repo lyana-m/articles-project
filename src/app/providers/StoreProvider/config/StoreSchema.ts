@@ -5,6 +5,7 @@ import { ProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
 import { ArticleSchema } from 'entities/Article';
 import { LoginSchema } from 'features/AuthByUsername';
+import { ArticleCommentsSchema } from 'pages/ArticlePage';
 
 export interface StoreSchema {
   counter: CounterSchema;
@@ -13,6 +14,7 @@ export interface StoreSchema {
   login?: LoginSchema;
   profile?: ProfileSchema;
   article?: ArticleSchema;
+  articleComments?: ArticleCommentsSchema;
 }
 
 export type StoreSchemaKeys = keyof StoreSchema;

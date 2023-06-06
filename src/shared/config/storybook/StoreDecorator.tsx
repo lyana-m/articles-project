@@ -6,11 +6,13 @@ import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
 import { DeepPartial } from 'app/types/common';
 import { profileReducer } from 'entities/Profile';
 import { articleReducer } from 'entities/Article';
+import { articleCommentsReducer } from 'pages/ArticlePage/model/slice/articleCommentSlice';
 
 const asyncReducers: DeepPartial<ReducersMapObject<StoreSchema>> = {
   login: loginReducer,
   profile: profileReducer,
   article: articleReducer,
+  articleComments: articleCommentsReducer,
 };
 
 export const StoreDecorator = (initialState: DeepPartial<StoreSchema>) => (Story: StoryFn) => {

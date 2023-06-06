@@ -1,0 +1,21 @@
+.commentItem {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--primary-color);
+
+  &:not(:first-child) {
+    margin-top: 20px;
+  }
+}
+
+.header {
+  display: flex;
+}
+
+.username {
+  margin-left: 16px;
+}
+
+.comment {
+  margin-top: 12px;
+}
