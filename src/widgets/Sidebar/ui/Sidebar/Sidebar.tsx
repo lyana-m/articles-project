@@ -5,11 +5,14 @@ import { LangButton } from 'widgets/LangButton';
 // import { BugButton } from 'widgets/PageError';
 import { Button } from 'shared/ui/Button';
 import cls from './Sidebar.module.scss';
-import { sidebarItems } from '../../model/items';
 import SidebarItem from './SidebarItem/SidebarItem';
+import { useAppSelector } from 'shared/hooks/useAppSelector/useAppSelector';
+import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 
 const Sidebar = memo(() => {
   const [collapsed, setCollapsed] = useState(false);
+
+  const sidebarItems = useAppSelector(getSidebarItems);
 
   const toggle = () => {
     setCollapsed((prev) => !prev);
