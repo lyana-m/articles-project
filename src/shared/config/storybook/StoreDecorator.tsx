@@ -7,12 +7,14 @@ import { DeepPartial } from 'app/types/common';
 import { profileReducer } from 'entities/Profile';
 import { articleReducer } from 'entities/Article';
 import { articleCommentsReducer } from 'pages/ArticlePage/model/slice/articleCommentSlice';
+import { newCommentFormReducer } from 'features/NewCommentForm/model/slice/newCommentFormSlice';
 
 const asyncReducers: DeepPartial<ReducersMapObject<StoreSchema>> = {
   login: loginReducer,
   profile: profileReducer,
   article: articleReducer,
   articleComments: articleCommentsReducer,
+  newCommentForm: newCommentFormReducer,
 };
 
 export const StoreDecorator = (initialState: DeepPartial<StoreSchema>) => (Story: StoryFn) => {

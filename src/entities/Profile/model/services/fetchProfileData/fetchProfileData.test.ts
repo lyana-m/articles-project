@@ -18,7 +18,7 @@ describe('fetchProfileData', () => {
 
     const thunk = new TestAsyncThunk(fetchProfileData);
     thunk.api.get.mockReturnValue(Promise.resolve({ data: profileData }));
-    const result = await thunk.callThunk(undefined);
+    const result = await thunk.callThunk('1');
 
     expect(thunk.dispatch).toHaveBeenCalledTimes(2);
     expect(result.payload).toEqual(profileData);
@@ -28,7 +28,7 @@ describe('fetchProfileData', () => {
   it('should work with error', async () => {
     const thunk = new TestAsyncThunk(fetchProfileData);
     thunk.api.get.mockReturnValue(Promise.resolve({ data: undefined }));
-    const result = await thunk.callThunk(undefined);
+    const result = await thunk.callThunk('1');
 
     expect(thunk.dispatch).toHaveBeenCalledTimes(2);
     expect(result.payload).toEqual('ProfileDataFetchigError');

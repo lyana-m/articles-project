@@ -3,6 +3,7 @@ import { Currency } from '../../../Currency';
 import { ValidationErrors } from './validationErrors';
 
 export interface Profile {
+  id?: string;
   firstname?: string;
   lastname?: string;
   age?: number;

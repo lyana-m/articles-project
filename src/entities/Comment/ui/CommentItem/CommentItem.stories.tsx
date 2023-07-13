@@ -1,14 +1,32 @@
 import type { Meta, StoryObj } from '@storybook/react';
-// import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
+import { RouterDecorator } from 'shared/config/storybook/RouterDecorator';
 
 import CommentItem from './CommentItem';
 
 const meta: Meta<typeof CommentItem> = {
   title: 'entities/CommentItem',
   component: CommentItem,
+  decorators: [RouterDecorator],
 };
 
 export default meta;
 type Story = StoryObj<typeof CommentItem>;
 
-export const Default: Story = {};
+export const Default: Story = {
+  args: {
+    comment: {
+      id: '1',
+      text: 'Hi there',
+      user: {
+        id: '2',
+        username: 'admin',
+      },
+    },
+  },
+};
+
+export const Loading: Story = {
+  args: {
+    isLoading: true,
+  }
+};

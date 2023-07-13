@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Text } from 'shared/ui/Text';
@@ -11,6 +11,8 @@ import { useAppDispatch } from 'shared/hooks/useAppDispatch/useAppDispatch';
 import { useAppSelector } from 'shared/hooks/useAppSelector/useAppSelector';
 import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { getArticleCommentsLoading } from '../model/selectors/comments';
+import { NewCommentForm } from 'features/NewCommentForm';
+import { sendArticleNewComment } from '../services/sendNewArticleComment';
 
 const reducers: AsyncReduser[] = [{ reducerKey: 'articleComments', reducer: articleCommentsReducer }];
 
@@ -22,6 +24,10 @@ const ArticlePage = () => {
   const isLoading = useAppSelector(getArticleCommentsLoading);
 
   useAsyncReducers(reducers);
+
+  const handleNewArticleCommentSend = useCallback((text: string) => {
+    dispatch(sendArticleNewComment(text));
+  }, [dispatch]);
 
   useEffect(() => {
     if (__PROJECT__ !== 'storybook' && id) {
@@ -37,26 +43,8 @@ const ArticlePage = () => {
     <div className={classNames(cls.articlePage)}>
       <Article id={id} />
       <Text className={cls.commentTitle} title="Комментарии" size="size-l" />
-      <CommentList
-        // comments={[
-        //   {
-        //     id: '1',
-        //     user: {
-        //       id: '1',
-        //       login: 'Vanya',
-        //       avatar: 'https://datarundown.com/wp-content/uploads/2022/03/Datarundown-Admin-Avatar-Circle-1.png',
-        //     },
-        //     text: 'comment 1',
-        //   },
-        //   {
-        //     id: '2',
-        //     user: { id: '2', login: 'Masha' },
-        //     text: 'comment 2',
-        //   },
-        // ]}
-        comments={comments}
-        isLoading={isLoading}
-      />
+      <NewCommentForm className={cls.newComment}onSendNewComment={handleNewArticleCommentSend} />
+      <CommentList comments={comments} isLoading={isLoading} />
     </div>
   );
 };

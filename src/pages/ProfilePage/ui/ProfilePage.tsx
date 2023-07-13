@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import {
   profileReducer,
   ProfileCard,
@@ -28,6 +29,8 @@ const ProfilePage = () => {
   const { t } = useTranslation('profile');
 
   const dispatch = useAppDispatch();
+
+  const { id } = useParams();
 
   const profileData = useAppSelector(getProfileFormData);
   const profileError = useAppSelector(getProfileError);
@@ -100,10 +103,10 @@ const ProfilePage = () => {
   );
 
   useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchProfileData());
+    if (__PROJECT__ !== 'storybook' && id) {
+      dispatch(fetchProfileData(id));
     }
-  }, [dispatch]);
+  }, [dispatch, id]);
 
   return (
     <div>

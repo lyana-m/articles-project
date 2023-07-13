@@ -5,12 +5,18 @@ import { useAppDispatch } from 'shared/hooks/useAppDispatch/useAppDispatch';
 import { Button } from 'shared/ui/Button';
 import { Text } from 'shared/ui/Text';
 import cls from './ProfilePageHeader.module.scss';
-import { getProfileReadonly, profileActions, updateProfileData } from 'entities/Profile';
+import { getProfileData, getProfileReadonly, profileActions, updateProfileData } from 'entities/Profile';
+import { getUserAuthData } from 'entities/User';
 
 const ProfilePageHeader = () => {
   const { t } = useTranslation('profile');
 
   const readonly = useAppSelector(getProfileReadonly);
+  const userData = useAppSelector(getUserAuthData);
+  const profileData = useAppSelector(getProfileData);
+
+  const canEdit = userData?.id === profileData?.id;
+
   const dispatch = useAppDispatch();
 
   const handleEdit = useCallback(() => {
@@ -28,7 +34,7 @@ const ProfilePageHeader = () => {
   return (
     <div className={cls.header}>
       <Text title={t('Профиль')} />
-      <div>
+      {canEdit && <div>
         {readonly ? (
           <Button theme="outline" onClick={handleEdit}>
             {t('Редактировать')}
@@ -43,7 +49,7 @@ const ProfilePageHeader = () => {
             </Button>
           </>
         )}
-      </div>
+      </div>}
     </div>
   );
 };

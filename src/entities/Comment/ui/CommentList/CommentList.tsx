@@ -12,6 +12,14 @@ interface CommentListProps {
 const CommentList = (props: CommentListProps) => {
   const { comments, isLoading, className } = props;
 
+  if (isLoading) {
+    return <div className={className}>
+      <CommentItem isLoading />
+      <CommentItem isLoading />
+      <CommentItem isLoading />
+    </div>;
+  }
+
   return (
     <div className={className}>
       {comments.length ? (

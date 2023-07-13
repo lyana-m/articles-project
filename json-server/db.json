@@ -101,7 +101,43 @@
       "id": "3",
       "text": "some comment 3",
       "articleId": "1",
-      "userId": "1"
+      "userId": "2"
+    },
+    {
+      "userId": "1",
+      "articleId": "1",
+      "text": "hello",
+      "id": "4yy9EE_"
+    },
+    {
+      "userId": "1",
+      "articleId": "1",
+      "text": "hi there",
+      "id": "VsdF_HD"
+    },
+    {
+      "userId": "1",
+      "articleId": "1",
+      "text": "i'm from the moon",
+      "id": "8XK1JmI"
+    },
+    {
+      "userId": "2",
+      "articleId": "1",
+      "text": "I'm from venus",
+      "id": "kPbq-XU"
+    },
+    {
+      "userId": "1",
+      "articleId": "1",
+      "text": "cool",
+      "id": "Q3J5WWm"
+    },
+    {
+      "userId": "1",
+      "articleId": "1",
+      "text": "hi hi hi",
+      "id": "gMOANxa"
     }
   ],
   "users": [
@@ -114,19 +150,34 @@
     },
     {
       "id": "2",
-      "username": "user",
+      "username": "kukusik",
       "password": "123",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRj6HJ7KTESPE1nPWHKkEM0GBWH3yx1izKzyA&usqp=CAU"
     }
   ],
-  "profile": {
-    "first": "jgh",
-    "lastname": "asf",
-    "age": 465,
-    "currency": "RUB",
-    "country": "Belarus",
-    "city": "Moscow",
-    "username": "admin213",
-    "avatar": "https://yt3.ggpht.com/ytc/AAUvwngFzM_Rf6MNwOnFcuphoj93k7VFjlIrj-kSMxbh=s900-c-k-c0x00ffffff-no-rj"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "firstname": "john dow",
+      "lastname": "asf",
+      "age": 465,
+      "currency": "RUB",
+      "country": "Belarus",
+      "city": "Moscow",
+      "username": "admin",
+      "avatar": "https://datarundown.com/wp-content/uploads/2022/03/Datarundown-Admin-Avatar-Circle-1.png"
+    },
+    {
+      "id": "2",
+      "firstname": "Vanya",
+      "lastname": "Sidorov",
+      "age": 34,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Murmansk",
+      "username": "kukusik",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRj6HJ7KTESPE1nPWHKkEM0GBWH3yx1izKzyA&usqp=CAU"
+    }
+  ]
 }
