@@ -1,3 +1,5 @@
+import { User } from 'entities/User';
+
 export type ArticleItemType = 'IT' | 'SCIENCE' | 'ECONOMICS';
 export type ArticleItemBlockType = 'TEXT' | 'CODE' | 'IMAGE';
 
@@ -28,6 +30,7 @@ export type ArticleItemBlock = ArticleItemImageBlock | ArticleItemTextBlock | Ar
 export interface ArticleItem {
   id: string;
   title: string;
+  user: User;
   subtitle: string;
   img: string;
   views: number;
@@ -35,3 +38,5 @@ export interface ArticleItem {
   type: ArticleItemType[];
   blocks: ArticleItemBlock[];
 }
+
+export type ArticleListView = 'tile' | 'list';

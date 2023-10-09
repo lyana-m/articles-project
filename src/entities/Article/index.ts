@@ -1,4 +1,5 @@
 export { default as Article } from './ui/Article/Article';
+export { default as ArticleList } from './ui/ArticleList/ArticleList';
 export { ArticleSchema } from './model/types/articleSchema';
 export { fetchArticleById } from './model/services/fetchArticleById/fetchArticleById';
 export { articleReducer, articleActions } from './model/slice/articleSlice';

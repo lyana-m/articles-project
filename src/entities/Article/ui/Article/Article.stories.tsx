@@ -2,10 +2,12 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import Article from './Article';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
+import { RouterDecorator } from 'shared/config/storybook/RouterDecorator';
 
 const meta: Meta<typeof Article> = {
   title: 'entities/Article',
   component: Article,
+  decorators: [RouterDecorator],
 };
 
 export default meta;
@@ -90,17 +92,21 @@ export const Default: Story = {
 };
 
 export const Loading: Story = {
-  decorators: [StoreDecorator({
-    article: {
-      isLoading: true,
-    }
-  })]
+  decorators: [
+    StoreDecorator({
+      article: {
+        isLoading: true,
+      },
+    }),
+  ],
 };
 
 export const Error: Story = {
-  decorators: [StoreDecorator({
-    article: {
-      error: 'error',
-    }
-  })]
+  decorators: [
+    StoreDecorator({
+      article: {
+        error: 'error',
+      },
+    }),
+  ],
 };

@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/hooks/useAppDispatch/useAppDispatch';
 import { useAppSelector } from 'shared/hooks/useAppSelector/useAppSelector';
@@ -16,7 +17,8 @@ import { ArticleItemBlock } from '../../model/types/article';
 import ArticleTextBlock from '../ArticleTextBlock/ArticleTextBlock';
 import ArticleCodeBlock from '../ArticleCodeBlock/ArticleCodeBlock';
 import ArticleImageBlock from '../ArticleImageBlock/ArticleImageBlock';
-
+import { Button } from 'shared/ui/Button';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 interface ArticleProps {
   className?: string;
   id: string;
@@ -32,6 +34,11 @@ const Article = (props: ArticleProps) => {
   const article = useAppSelector(getArticleData);
   const articleLoading = useAppSelector(getArticleLoading);
   const articleError = useAppSelector(getArticleError);
+
+  const navigate = useNavigate();
+  const onBackClick = useCallback(() => {
+    navigate(RoutePath.asticles);
+  }, [navigate]);
 
   const renderArticleBlock = useCallback((block: ArticleItemBlock) => {
     switch (block.type) {
@@ -62,9 +69,10 @@ const Article = (props: ArticleProps) => {
   } else {
     content = (
       <div>
-        <div>
-          <Avatar src={article?.img} size={200} className={cls.avatar} />
-        </div>
+        <Button theme="outline" onClick={onBackClick}>
+          К списку статей...
+        </Button>
+        <Avatar src={article?.img} size={200} className={cls.avatar} />
         <Text title={article?.title} text={article?.subtitle} size="size-l" className={cls.title} />
         <div className={cls.info}>
           <div className={cls.info__item}>
