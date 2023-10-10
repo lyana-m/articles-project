@@ -7,6 +7,7 @@ import { ArticleSchema } from 'entities/Article';
 import { LoginSchema } from 'features/AuthByUsername';
 import { ArticleCommentsSchema } from 'pages/ArticlePage';
 import { NewCommentFormSchema } from 'features/NewCommentForm';
+import { ArticlesSchema } from 'pages/ArticlesPage';
 
 export interface StoreSchema {
   counter: CounterSchema;
@@ -17,6 +18,7 @@ export interface StoreSchema {
   article?: ArticleSchema;
   articleComments?: ArticleCommentsSchema;
   newCommentForm?: NewCommentFormSchema;
+  articles?: ArticlesSchema;
 }
 
 export type StoreSchemaKeys = keyof StoreSchema;
