@@ -4,6 +4,7 @@ import { ArticleItem } from 'entities/Article';
 import { ArticlesSchema } from '../types/acticlesSchema';
 import { fetchArticles } from '../services/fetchArticles';
 import { ArticleListView } from 'entities/Article/model/types/article';
+import { LOCALSTORAGE_ARTICLE_LIST_VIEW } from 'shared/constants/localStorage';
 
 export const articlesAdapter = createEntityAdapter<ArticleItem>({
   selectId: (article) => article.id,
@@ -25,6 +26,10 @@ const articlesSlice = createSlice({
   reducers: {
     setView: (state, action: PayloadAction<ArticleListView>) => {
       state.view = action.payload;
+      localStorage.setItem(LOCALSTORAGE_ARTICLE_LIST_VIEW, action.payload);
+    },
+    init: (state) => {
+      state.view = localStorage.getItem(LOCALSTORAGE_ARTICLE_LIST_VIEW) as ArticleListView;
     },
   },
   extraReducers: (builder) => {
@@ -43,4 +48,4 @@ const articlesSlice = createSlice({
   },
 });
 
-export const { reducer: articlesReducer } = articlesSlice;
+export const { reducer: articlesReducer, actions: articlesActions } = articlesSlice;

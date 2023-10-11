@@ -1,5 +1,6 @@
 export { default as Article } from './ui/Article/Article';
 export { default as ArticleList } from './ui/ArticleList/ArticleList';
+export { default as ArcticleViewSwitcher } from './ui/ArcticleViewSwitcher/ArcticleViewSwitcher';
 export { ArticleSchema } from './model/types/articleSchema';
 export { ArticleItem } from './model/types/article';
 export { fetchArticleById } from './model/services/fetchArticleById/fetchArticleById';
