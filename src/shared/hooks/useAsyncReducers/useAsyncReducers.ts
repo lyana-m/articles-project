@@ -8,23 +8,32 @@ import { useStore } from 'react-redux';
 export interface AsyncReduser {
   reducerKey: StoreSchemaKeys;
   reducer: Reducer;
+  removeAfterUnmount?: boolean;
 }
 
-export const useAsyncReducers = (reducers: AsyncReduser[]) => {
+export const useAsyncReducers = (reducers: AsyncReduser[], removeAfterUnmount = true) => {
   const store = useStore() as ReduxStoreWithManager;
   const dispatch = useAppDispatch();
 
   useEffect(() => {
+    const mountedReduces = store.reducerManager.getReducerMap();
+    console.log(mountedReduces);
     reducers.forEach((reducer) => {
-      store.reducerManager.add(reducer.reducerKey, reducer.reducer);
-      dispatch({ type: `@@INIT ${reducer.reducerKey}` });
+      const mounted = mountedReduces[reducer.reducerKey];
+
+      if (!mounted) {
+        store.reducerManager.add(reducer.reducerKey, reducer.reducer);
+        dispatch({ type: `@@INIT ${reducer.reducerKey}` });
+      }
     });
 
     return () => {
-      reducers.forEach((reducer) => {
-        store.reducerManager.remove(reducer.reducerKey);
-        dispatch({ type: `@@DESTROY ${reducer.reducerKey}` });
-      });
+      if (removeAfterUnmount) {
+        reducers.forEach((reducer) => {
+          store.reducerManager.remove(reducer.reducerKey);
+          dispatch({ type: `@@DESTROY ${reducer.reducerKey}` });
+        });
+      }
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

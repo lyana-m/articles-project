@@ -12,6 +12,7 @@ describe('fetchMoreArticles', () => {
     entities: {},
     hasMore: true,
     page: 2,
+    _inited: true,
   };
 
   it('should load data and update page', async () => {

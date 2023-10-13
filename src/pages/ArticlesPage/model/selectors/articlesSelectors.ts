@@ -6,3 +6,4 @@ export const getArticlesError = (state: StoreSchema) => state.articles?.error;
 export const getArticlesPage = (state: StoreSchema) => state.articles?.page || 1;
 export const getArticlesLimit = (state: StoreSchema) => state.articles?.limit;
 export const getArticlesHasMore = (state: StoreSchema) => state.articles?.hasMore;
+export const getArticlesIsInited = (state: StoreSchema) => state.articles?._inited;

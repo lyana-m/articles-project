@@ -6,10 +6,10 @@ import { articlesActions, articlesReducer, getArticles } from '../model/slice/ar
 import { useAppDispatch } from 'shared/hooks/useAppDispatch/useAppDispatch';
 import { useAppSelector } from 'shared/hooks/useAppSelector/useAppSelector';
 import { getArticlesLoading, getArticlesView } from '../model/selectors/articlesSelectors';
-import { fetchArticles } from '../model/services/fetchArticles/fetchArticles';
 import { ArticleListView } from 'entities/Article/model/types/article';
 import { Page } from 'shared/ui/Page';
 import { fetchMoreArticles } from '../model/services/fetchMoreArticles/fetchMoreArticles';
+import { initArticles } from '../model/services/initArticles/initArticles';
 
 const reducers: AsyncReduser[] = [{ reducerKey: 'articles', reducer: articlesReducer }];
 
@@ -19,7 +19,7 @@ const ArticlesPage = () => {
   const isLoading = useAppSelector(getArticlesLoading);
   const view = useAppSelector(getArticlesView);
 
-  useAsyncReducers(reducers);
+  useAsyncReducers(reducers, false);
 
   const handleViewChange = useCallback(
     (view: ArticleListView) => {
@@ -35,10 +35,7 @@ const ArticlesPage = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(articlesActions.init());
-      dispatch(fetchArticles({ page: 1 }));
-    }
+    dispatch(initArticles());
   }, [dispatch]);
 
   return (
