@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { Text } from 'shared/ui/Text';
 import { Article } from 'entities/Article';
 import cls from './ArticlePage.module.scss';
@@ -13,6 +12,7 @@ import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArtic
 import { getArticleCommentsLoading } from '../model/selectors/comments';
 import { NewCommentForm } from 'features/NewCommentForm';
 import { sendArticleNewComment } from '../services/sendNewArticleComment';
+import { Page } from 'shared/ui/Page';
 
 const reducers: AsyncReduser[] = [{ reducerKey: 'articleComments', reducer: articleCommentsReducer }];
 
@@ -25,9 +25,12 @@ const ArticlePage = () => {
 
   useAsyncReducers(reducers);
 
-  const handleNewArticleCommentSend = useCallback((text: string) => {
-    dispatch(sendArticleNewComment(text));
-  }, [dispatch]);
+  const handleNewArticleCommentSend = useCallback(
+    (text: string) => {
+      dispatch(sendArticleNewComment(text));
+    },
+    [dispatch]
+  );
 
   useEffect(() => {
     if (__PROJECT__ !== 'storybook' && id) {
@@ -40,12 +43,12 @@ const ArticlePage = () => {
   }
 
   return (
-    <div className={classNames(cls.articlePage)}>
+    <Page className={cls.articlePage}>
       <Article id={id} />
       <Text className={cls.commentTitle} title="Комментарии" size="size-l" />
-      <NewCommentForm className={cls.newComment}onSendNewComment={handleNewArticleCommentSend} />
+      <NewCommentForm className={cls.newComment} onSendNewComment={handleNewArticleCommentSend} />
       <CommentList comments={comments} isLoading={isLoading} />
-    </div>
+    </Page>
   );
 };
 

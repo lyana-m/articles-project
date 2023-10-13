@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { ArcticleViewSwitcher, ArticleList } from 'entities/Article';
 import cls from './ArticlesPage.module.scss';
 import { AsyncReduser, useAsyncReducers } from 'shared/hooks/useAsyncReducers/useAsyncReducers';
@@ -7,18 +6,14 @@ import { articlesActions, articlesReducer, getArticles } from '../model/slice/ar
 import { useAppDispatch } from 'shared/hooks/useAppDispatch/useAppDispatch';
 import { useAppSelector } from 'shared/hooks/useAppSelector/useAppSelector';
 import { getArticlesLoading, getArticlesView } from '../model/selectors/articlesSelectors';
-import { fetchArticles } from '../model/services/fetchArticles';
+import { fetchArticles } from '../model/services/fetchArticles/fetchArticles';
 import { ArticleListView } from 'entities/Article/model/types/article';
-
-interface ArticlesPageProps {
-  className?: string;
-}
+import { Page } from 'shared/ui/Page';
+import { fetchMoreArticles } from '../model/services/fetchMoreArticles/fetchMoreArticles';
 
 const reducers: AsyncReduser[] = [{ reducerKey: 'articles', reducer: articlesReducer }];
 
-const ArticlesPage = (props: ArticlesPageProps) => {
-  const { className } = props;
-
+const ArticlesPage = () => {
   const dispatch = useAppDispatch();
   const articles = useAppSelector(getArticles.selectAll);
   const isLoading = useAppSelector(getArticlesLoading);
@@ -26,22 +21,31 @@ const ArticlesPage = (props: ArticlesPageProps) => {
 
   useAsyncReducers(reducers);
 
-  const handleViewChange = useCallback((view: ArticleListView) => {
-    dispatch(articlesActions.setView(view));
+  const handleViewChange = useCallback(
+    (view: ArticleListView) => {
+      dispatch(articlesActions.setView(view));
+    },
+    [dispatch]
+  );
+
+  const loadMoreData = useCallback(() => {
+    if (__PROJECT__ !== 'storybook') {
+      dispatch(fetchMoreArticles());
+    }
   }, [dispatch]);
 
   useEffect(() => {
     if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchArticles());
       dispatch(articlesActions.init());
+      dispatch(fetchArticles({ page: 1 }));
     }
   }, [dispatch]);
 
   return (
-    <div className={classNames(cls.articlesPage, {}, [className])}>
+    <Page className={cls.articlesPage} onScrollEnd={loadMoreData}>
       <ArcticleViewSwitcher currentView={view} onViewChange={handleViewChange} />
       <ArticleList view={view} articles={articles} isLoading={isLoading} />
-    </div>
+    </Page>
   );
 };
 

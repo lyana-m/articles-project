@@ -50,6 +50,7 @@ module.exports = {
     '@typescript-eslint/space-before-function-paren': 'off',
     '@typescript-eslint/consistent-type-imports': 'off',
     '@typescript-eslint/consistent-type-exports': 'off',
+    '@typescript-eslint/no-invalid-void-type': 'off',
     semi: [2, 'always'],
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',

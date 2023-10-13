@@ -19,15 +19,12 @@ const getSkeletonArray = (view: ArticleListView) => {
 const ArticleList = (props: ArticleListProps) => {
   const { articles, view = 'tile', isLoading, className } = props;
 
-  if (isLoading) {
-    return <div className={classNames(cls.articleList, {}, [cls[view], className])}>{getSkeletonArray(view)}</div>;
-  }
-
   return (
     <div className={classNames(cls.articleList, {}, [cls[view], className])}>
       {articles?.length
         ? articles.map((article) => <ArticleListItem key={article.id} view={view} article={article} />)
         : null}
+      {isLoading ? getSkeletonArray(view) : null}
     </div>
   );
 };

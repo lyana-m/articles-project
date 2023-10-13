@@ -11,11 +11,7 @@ function AppRouter() {
       <Route
         key={path}
         path={path}
-        element={
-          <div className="page-wrapper">
-            {authOnly ? <ProtectedRoute>{element as JSX.Element}</ProtectedRoute> : element}
-          </div>
-        }
+        element={authOnly ? <ProtectedRoute>{element as JSX.Element}</ProtectedRoute> : element}
       />
     );
 

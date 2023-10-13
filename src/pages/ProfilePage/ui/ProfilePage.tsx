@@ -20,6 +20,7 @@ import { useAppSelector } from 'shared/hooks/useAppSelector/useAppSelector';
 import { Text } from 'shared/ui/Text';
 import ProfilePageHeader from './ProfilePageHeader/ProfilePageHeader';
 import { useTranslation } from 'react-i18next';
+import { Page } from 'shared/ui/Page';
 
 const reducers: AsyncReduser[] = [{ reducerKey: 'profile', reducer: profileReducer }];
 
@@ -109,7 +110,7 @@ const ProfilePage = () => {
   }, [dispatch, id]);
 
   return (
-    <div>
+    <Page>
       <ProfilePageHeader />
       {validationErrors?.map((error) => (
         <Text key={error} text={humanReadableErrors[error]} theme="error" />
@@ -128,7 +129,7 @@ const ProfilePage = () => {
         onCurrencyChange={handleCurrencyChange}
         onCountryChange={handleCountryChange}
       />
-    </div>
+    </Page>
   );
 };
 
