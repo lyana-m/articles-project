@@ -12,7 +12,7 @@ import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArtic
 import { getArticleCommentsLoading } from '../model/selectors/comments';
 import { NewCommentForm } from 'features/NewCommentForm';
 import { sendArticleNewComment } from '../services/sendNewArticleComment';
-import { Page } from 'shared/ui/Page';
+import { Page } from 'widgets/Page';
 
 const reducers: AsyncReduser[] = [{ reducerKey: 'articleComments', reducer: articleCommentsReducer }];
 

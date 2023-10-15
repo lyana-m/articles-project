@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import ArcticleViewSwitcher from './ArcticleViewSwitcher';
 
 const meta: Meta<typeof ArcticleViewSwitcher> = {
-  title: 'pages/ArcticleViewSwitcher',
+  title: 'entities/ArcticleViewSwitcher',
   component: ArcticleViewSwitcher,
 };
 

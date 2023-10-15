@@ -7,7 +7,7 @@ import { useAppDispatch } from 'shared/hooks/useAppDispatch/useAppDispatch';
 import { useAppSelector } from 'shared/hooks/useAppSelector/useAppSelector';
 import { getArticlesLoading, getArticlesView } from '../model/selectors/articlesSelectors';
 import { ArticleListView } from 'entities/Article/model/types/article';
-import { Page } from 'shared/ui/Page';
+import { Page } from 'widgets/Page';
 import { fetchMoreArticles } from '../model/services/fetchMoreArticles/fetchMoreArticles';
 import { initArticles } from '../model/services/initArticles/initArticles';
 

@@ -8,10 +8,13 @@ import { LoginSchema } from 'features/AuthByUsername';
 import { ArticleCommentsSchema } from 'pages/ArticlePage';
 import { NewCommentFormSchema } from 'features/NewCommentForm';
 import { ArticlesSchema } from 'pages/ArticlesPage';
+import { UISchema } from 'features/UI';
 
 export interface StoreSchema {
   counter: CounterSchema;
   user: UserSchema;
+  ui: UISchema;
+
   // async reducers
   login?: LoginSchema;
   profile?: ProfileSchema;

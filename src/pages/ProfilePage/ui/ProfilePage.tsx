@@ -20,7 +20,7 @@ import { useAppSelector } from 'shared/hooks/useAppSelector/useAppSelector';
 import { Text } from 'shared/ui/Text';
 import ProfilePageHeader from './ProfilePageHeader/ProfilePageHeader';
 import { useTranslation } from 'react-i18next';
-import { Page } from 'shared/ui/Page';
+import { Page } from 'widgets/Page';
 
 const reducers: AsyncReduser[] = [{ reducerKey: 'profile', reducer: profileReducer }];
 

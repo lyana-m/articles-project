@@ -1,10 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import Page from './Page';
+import { RouterDecorator } from 'shared/config/storybook/RouterDecorator';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
 
 const meta: Meta<typeof Page> = {
-  title: 'shared/Page',
+  title: 'widget/Page',
   component: Page,
+  decorators: [RouterDecorator, StoreDecorator({ ui: { scroll: {} } })],
 };
 
 export default meta;

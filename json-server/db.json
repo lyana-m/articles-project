@@ -719,6 +719,12 @@
       "articleId": "1",
       "text": "hi hi hi",
       "id": "gMOANxa"
+    },
+    {
+      "userId": "2",
+      "articleId": "2",
+      "text": "Good article",
+      "id": "QPLaApC"
     }
   ],
   "users": [

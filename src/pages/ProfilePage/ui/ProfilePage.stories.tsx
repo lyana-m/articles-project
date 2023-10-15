@@ -5,11 +5,13 @@ import ProfilePage from './ProfilePage';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import avatar from 'shared/assets/tests/people.png';
+import { RouterDecorator } from 'shared/config/storybook/RouterDecorator';
 
 const meta: Meta<typeof ProfilePage> = {
   title: 'pages/ProfilePage',
   component: ProfilePage,
   decorators: [
+    RouterDecorator,
     StoreDecorator({
       profile: {
         formData: {

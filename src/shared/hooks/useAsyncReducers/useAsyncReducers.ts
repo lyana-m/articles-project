@@ -17,7 +17,6 @@ export const useAsyncReducers = (reducers: AsyncReduser[], removeAfterUnmount = 
 
   useEffect(() => {
     const mountedReduces = store.reducerManager.getReducerMap();
-    console.log(mountedReduces);
     reducers.forEach((reducer) => {
       const mounted = mountedReduces[reducer.reducerKey];
 

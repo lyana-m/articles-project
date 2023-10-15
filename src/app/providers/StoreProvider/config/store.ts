@@ -4,9 +4,10 @@ import { counterReducer } from 'entities/Counter';
 import { userReducer } from 'entities/User';
 import { createReducerManager } from './reducerManager';
 import { api } from 'shared/api/api';
+import { uiSliceReducer } from 'features/UI';
 
 export const createReduxStore = (initialState: StoreSchema, asyncReducers?: ReducersMapObject<StoreSchema>) => {
-  const staticReducers = { ...asyncReducers, counter: counterReducer, user: userReducer };
+  const staticReducers = { ...asyncReducers, counter: counterReducer, user: userReducer, ui: uiSliceReducer };
 
   const reducerManager = createReducerManager(staticReducers);
 

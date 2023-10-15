@@ -54,7 +54,8 @@ module.exports = {
     semi: [2, 'always'],
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',
-    'multiline-ternary': 'off'
+    'multiline-ternary': 'off',
+    'n/no-callback-literal': 'off'
   },
   globals: {
     __IS_DEV__: true,
