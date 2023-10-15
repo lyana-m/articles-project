@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,WAAW,CAAC;EACV,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;EACnB,eAAe,EAAE,MAAM;EACvB,MAAM,EAAE,kCAAkC;EAC1C,SAAS,EAAE,CAAC;CACb;;AAED,AAAA,OAAO,CAAC;EACN,KAAK,EAAE,wBAAwB;CAChC",
-    "sources": [
-        "PageLoader.module.scss"
-    ],
-    "names": [],
-    "file": "PageLoader.module.css"
-}

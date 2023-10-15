@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,aAAa,CAAC;EACZ,UAAU,EAAE,IAAI;EAChB,aAAa,EAAE,IAAI;CACpB;;AAED,AAAA,WAAW,CAAC;EACV,aAAa,EAAE,IAAI;CACpB",
-    "sources": [
-        "ArticlePage.module.scss"
-    ],
-    "names": [],
-    "file": "ArticlePage.module.css"
-}

@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,UAAU,CAAC;EACT,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,KAAK,EAAE,KAAK;CACb;;AAED,AAAA,WAAW,CAAC;EACV,aAAa,EAAE,IAAI;CACpB;;AAED,AAAA,SAAS,CAAC;EACR,WAAW,EAAE,IAAI;CAClB;;AAED,AAAA,MAAM,CAAC;EACL,aAAa,EAAE,IAAI;CACpB;;AAED,AAAA,MAAM,CAAC;EACL,aAAa,EAAE,IAAI;CACpB",
-    "sources": [
-        "LoginForm.module.scss"
-    ],
-    "names": [],
-    "file": "LoginForm.module.css"
-}

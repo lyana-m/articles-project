@@ -12,6 +12,7 @@ export const buildCssLoader = (isDev: boolean) => {
             auto: (path: string) => path.includes('.module.'),
             localIdentName: isDev ? '[name]__[local]--[hash:base64:8]' : '[hash:base64:8]',
           },
+          sourceMap: false,
         },
       },
       'sass-loader',

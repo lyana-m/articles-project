@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,OAAO,CAAC;EACN,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;EACnB,eAAe,EAAE,aAAa;EAC9B,aAAa,EAAE,IAAI;CAKpB;;AATD,AAME,OANK,CAML,MAAM,AAAA,IAAK,CAAA,YAAY,EAAE;EACvB,WAAW,EAAE,IAAI;CAClB",
-    "sources": [
-        "ProfilePageHeader.module.scss"
-    ],
-    "names": [],
-    "file": "ProfilePageHeader.module.css"
-}

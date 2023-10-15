@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AACC,kBADiB,CACjB,GAAG,CAAC;EACH,OAAO,EAAE,KAAK;EACd,MAAM,EAAE,MAAM;EACd,SAAS,EAAE,IAAI;CACf",
-    "sources": [
-        "ArticleImageBlock.module.scss"
-    ],
-    "names": [],
-    "file": "ArticleImageBlock.module.css"
-}

@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,KAAK,CAAC;EACJ,OAAO,EAAE,IAAI;EACb,SAAS,EAAE,IAAI;EACf,eAAe,EAAE,MAAM;EACvB,GAAG,EAAE,IAAI;CACV;;AAED,AACE,KADG,GACD,GAAG,AAAA,IAAK,CAAA,YAAY,EAAE;EACtB,UAAU,EAAE,IAAI;CACjB",
-    "sources": [
-        "ArticleList.module.scss"
-    ],
-    "names": [],
-    "file": "ArticleList.module.css"
-}

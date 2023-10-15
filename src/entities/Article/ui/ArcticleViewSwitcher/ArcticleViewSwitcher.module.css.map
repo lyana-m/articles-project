@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AACE,OADK,AACJ,IAAK,CAAA,YAAY,EAAE;EAClB,WAAW,EAAE,IAAI;CAClB;;AAGH,AAAA,OAAO,CAAC;EACN,MAAM,EAAE,OAAO;EACf,KAAK,EAAE,6BAA6B;EACpC,cAAc,EAAE,IAAI;CACrB",
-    "sources": [
-        "ArcticleViewSwitcher.module.scss"
-    ],
-    "names": [],
-    "file": "ArcticleViewSwitcher.module.css"
-}
