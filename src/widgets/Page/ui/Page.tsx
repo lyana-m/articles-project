@@ -43,12 +43,12 @@ const Page = (props: PageProps) => {
         page: pathname,
       })
     );
-  }, 5000);
+  }, 500);
 
   return (
     <div className={cn(cls.page, className)} ref={containerRef} onScroll={onScroll}>
       {children}
-      <div ref={targetRef} />
+      {onScrollEnd ? <div className={cls.trigger} ref={targetRef} /> : null}
     </div>
   );
 };
