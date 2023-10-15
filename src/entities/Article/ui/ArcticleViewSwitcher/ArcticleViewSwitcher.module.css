@@ -1,0 +1,10 @@
+.button:not(:first-child) {
+  margin-left: 12px;
+}
+
+.active {
+  cursor: default;
+  color: var(--inverted-primary-color);
+  pointer-events: none;
+}
+/*# sourceMappingURL=ArcticleViewSwitcher.module.css.map */

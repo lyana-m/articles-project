@@ -1,0 +1,112 @@
+.views {
+  margin-left: auto;
+  margin-right: 8px;
+}
+
+.tile {
+  width: 230px;
+  opacity: 1;
+  cursor: pointer;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.tile .imageWrapper {
+  width: 200px;
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.tile .img {
+  height: 200px;
+  width: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.tile .date {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.tile .type p {
+  max-width: 115px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tile .infoWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.tile .title {
+  margin-top: 8px;
+}
+
+.tile .title p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tile:hover {
+  opacity: 0.9;
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+}
+
+.tile:hover .date {
+  display: block;
+}
+
+.list .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.list .username {
+  margin-left: 12px;
+  margin-right: auto;
+}
+
+.list .title {
+  margin-top: 12px;
+}
+
+.list .img {
+  width: 100%;
+  margin: 20px 0;
+  max-height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.list .footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.list .text {
+  max-height: 160px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+/*# sourceMappingURL=ArticleListItem.module.css.map */

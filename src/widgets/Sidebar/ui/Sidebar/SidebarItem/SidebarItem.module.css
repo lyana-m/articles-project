@@ -1,0 +1,25 @@
+.link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.link:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.link > span {
+  margin-left: 10px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.collapsed span {
+  opacity: 0;
+  width: 0;
+  margin: 0;
+}
+/*# sourceMappingURL=SidebarItem.module.css.map */

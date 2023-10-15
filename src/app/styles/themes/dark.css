@@ -1,0 +1,13 @@
+.dark {
+  --bg-color: #494a66;
+  --inverted-bg-color: #303b47;
+  --primary-color: #309975;
+  --secondary-color: #58b368;
+  --inverted-primary-color: #dad873;
+  --inverted-secondary-color: #efeeb4;
+  --theme-button-color: #95adbe;
+  --skeleton-shadow: #309975;
+  --skeleton-color: #58b368;
+  --card-bg: #626382;
+}
+/*# sourceMappingURL=dark.css.map */

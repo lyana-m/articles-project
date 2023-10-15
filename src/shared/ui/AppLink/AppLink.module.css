@@ -1,0 +1,13 @@
+.AppLink {
+  display: block;
+  text-decoration: none;
+}
+
+.primary {
+  color: var(--primary-color);
+}
+
+.secondary {
+  color: var(--inverted-primary-color);
+}
+/*# sourceMappingURL=AppLink.module.css.map */

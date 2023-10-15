@@ -87,13 +87,13 @@
     {
       "id": "2",
       "userId": "1",
-      "title": "Kotlin news",
-      "subtitle": "Что нового в Kotlin за 2022 год?",
-      "img": "https://ya.zerocoder.ru/wp-content/uploads/2023/09/kotlin-logo-social-21c8518b19eb96d96f35e0057bb92b7e1281a24820e0fa09e39c42f184bd7faa.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "title": "Chemical news",
+      "subtitle": " Новости из мира химии",
+      "img": "https://thumbs.dreamstime.com/b/science-lab-chemicals-14262437.jpg",
+      "views": 490,
+      "createdAt": "11.02.2021",
       "type": [
-        "IT"
+        "SCIENCE"
       ],
       "blocks": [
         {
@@ -163,7 +163,7 @@
       "subtitle": "Что нового в Java за 2022 год?",
       "img": "https://softmg.ru/local/templates/smg.v.2/img/java.png",
       "views": 62,
-      "createdAt": "26.02.2022",
+      "createdAt": "01.12.2022",
       "type": [
         "IT"
       ],
@@ -235,7 +235,7 @@
       "subtitle": "Что нового в GO за 2022 год?",
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJkkrkMf4XPVsYKrejnfrE1XFiDP4bxU4aiA&usqp=CAU",
       "views": 322,
-      "createdAt": "26.02.2022",
+      "createdAt": "23.03.2018",
       "type": [
         "IT"
       ],
@@ -303,13 +303,13 @@
     {
       "id": "5",
       "userId": "1",
-      "title": "Javascript news",
-      "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "title": "Что происходит с экономикой",
+      "subtitle": "Все пропало?",
+      "img": "https://images.ctfassets.net/hrltx12pl8hq/2ZsN8c6PzxXM3k8uvIElQy/75a387f84954d46f340623ab57391b0a/shutterstock_1190706394.jpg?fit=fill&w=600&h=400",
+      "views": 3293,
+      "createdAt": "10.10.2023",
       "type": [
-        "IT"
+        "ECONOMICS"
       ],
       "blocks": [
         {
@@ -346,13 +346,13 @@
     {
       "id": "7",
       "userId": "2",
-      "title": "Java news",
-      "subtitle": "Что нового в Java за 2022 год?",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbWBWH8FkMQ_Ev_jokaDuitEvip0phipAfy3NUnij2q8NkCAfW_6-dKyUka91ZfySayg&usqp=CAU",
+      "title": "Вирус захватывает землю",
+      "subtitle": "Что ожидать в 2024?",
+      "img": "https://cdn.who.int/media/images/default-source/mca/mca-covid-19/coronavirus-2.tmb-479v.jpg?sfvrsn=4dba955c_18%20479w",
       "views": 62,
-      "createdAt": "26.02.2022",
+      "createdAt": "13.12.2023",
       "type": [
-        "IT"
+        "SCIENCE"
       ],
       "blocks": [
         {
@@ -369,13 +369,13 @@
     {
       "id": "8",
       "userId": "1",
-      "title": "Go news",
-      "subtitle": "Что нового в GO за 2022 год?",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJkkrkMf4XPVsYKrejnfrE1XFiDP4bxU4aiA&usqp=CAU",
+      "title": "Куда исчезли зяблики",
+      "subtitle": "Расследование по хлебным крошкам",
+      "img": "https://riamo.ru/files/image/24/78/18/-gallery!ev4.jpeg",
       "views": 322,
-      "createdAt": "26.02.2022",
+      "createdAt": "01.01.2020",
       "type": [
-        "IT"
+        "SCIENCE"
       ],
       "blocks": [
         {
@@ -394,13 +394,13 @@
     {
       "id": "9",
       "userId": "1",
-      "title": "Javascript news",
-      "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbWBWH8FkMQ_Ev_jokaDuitEvip0phipAfy3NUnij2q8NkCAfW_6-dKyUka91ZfySayg&usqp=CAU",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "title": " Как накопить та студию за МКАДом",
+      "subtitle": "Отказаться от всех благ на три года и купить квартиру",
+      "img": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i2XI71EVikE8/v0/-1x-1.jpg",
+      "views": 55868,
+      "createdAt": "26.09.2022",
       "type": [
-        "IT"
+        "ECONOMICS"
       ],
       "blocks": [
         {
@@ -418,11 +418,11 @@
     {
       "id": "10",
       "userId": "1",
-      "title": "Kotlin news",
-      "subtitle": "Что нового в Kotlin за 2022 год?",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJlzjMwuHfZolNQ5A7hgFuXxgBklwgswNLTNgO3EEIifL0v_5qITVC6aWpTXQcTBaLLbk&usqp=CAU",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "title": "Scala news",
+      "subtitle": "Что нового в Scala за 2022 год?",
+      "img": "https://ih1.redbubble.net/image.810605619.5447/st,small,845x845-pad,1000x1000,f8f8f8.u3.jpg",
+      "views": 50,
+      "createdAt": "11.02.2021",
       "type": [
         "IT"
       ],
@@ -438,10 +438,10 @@
       "id": "11",
       "userId": "2",
       "title": "Java news",
-      "subtitle": "Что нового в Java за 2022 год?",
+      "subtitle": "Что нового в Java за 2010 год?",
       "img": "https://softmg.ru/local/templates/smg.v.2/img/java.png",
       "views": 62,
-      "createdAt": "26.02.2022",
+      "createdAt": "16.03.2017",
       "type": [
         "IT"
       ],
@@ -463,8 +463,8 @@
       "title": "Go news",
       "subtitle": "Что нового в GO за 2022 год?",
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJkkrkMf4XPVsYKrejnfrE1XFiDP4bxU4aiA&usqp=CAU",
-      "views": 322,
-      "createdAt": "26.02.2022",
+      "views": 6857,
+      "createdAt": "18.10.2023",
       "type": [
         "IT"
       ],
@@ -488,8 +488,8 @@
       "title": "Javascript news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 567,
+      "createdAt": "24.12.2015",
       "type": [
         "IT"
       ],
@@ -512,8 +512,8 @@
       "title": "Kotlin news",
       "subtitle": "Что нового в Kotlin за 2022 год?",
       "img": "https://ya.zerocoder.ru/wp-content/uploads/2023/09/kotlin-logo-social-21c8518b19eb96d96f35e0057bb92b7e1281a24820e0fa09e39c42f184bd7faa.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 4967,
+      "createdAt": "07.11.2020",
       "type": [
         "IT"
       ],
@@ -531,8 +531,8 @@
       "title": "Java news",
       "subtitle": "Что нового в Java за 2022 год?",
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJlzjMwuHfZolNQ5A7hgFuXxgBklwgswNLTNgO3EEIifL0v_5qITVC6aWpTXQcTBaLLbk&usqp=CAU",
-      "views": 62,
-      "createdAt": "26.02.2022",
+      "views": 113,
+      "createdAt": "15.11.2023",
       "type": [
         "IT"
       ],
@@ -554,8 +554,8 @@
       "title": "Go news",
       "subtitle": "Что нового в GO за 2022 год?",
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJkkrkMf4XPVsYKrejnfrE1XFiDP4bxU4aiA&usqp=CAU",
-      "views": 322,
-      "createdAt": "26.02.2022",
+      "views": 689,
+      "createdAt": "19.01.2029",
       "type": [
         "IT"
       ],

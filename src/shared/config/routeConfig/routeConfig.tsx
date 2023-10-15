@@ -3,7 +3,7 @@ import { MainPage } from 'pages/MainPage';
 import { AboutPage } from 'pages/AboutPage';
 import { NotFoundPage } from 'pages/NotFound';
 import { ProfilePage } from 'pages/ProfilePage';
-import { ArticlesPage } from 'pages/ArticlesPage';
+import { ArticleListPage } from 'pages/ArticleListPage';
 import { ArticlePage } from 'pages/ArticlePage';
 
 export type AppRouteProps = RouteProps & {
@@ -44,7 +44,7 @@ export const routeConfig: Record<AppRoutes, AppRouteProps> = {
   },
   [AppRoutes.ARTICLES]: {
     path: RoutePath[AppRoutes.ARTICLES],
-    element: <ArticlesPage />,
+    element: <ArticleListPage />,
     authOnly: true,
   },
   [AppRoutes.ARTICLE]: {

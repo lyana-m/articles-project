@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,gBAAgB,CAAC;EACf,KAAK,EAAE,GAAG;CACX",
+    "sources": [
+        "ArticleListPage.module.scss"
+    ],
+    "names": [],
+    "file": "ArticleListPage.module.css"
+}

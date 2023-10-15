@@ -1,0 +1,8 @@
+.title {
+  margin-bottom: 20px;
+}
+
+.paragraph:not(:first-child) {
+  margin-top: 14px;
+}
+/*# sourceMappingURL=ArticleTextBlock.module.css.map */

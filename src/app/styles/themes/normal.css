@@ -1,0 +1,13 @@
+.light {
+  --bg-color: #e0f0ea;
+  --inverted-bg-color: #95adbe;
+  --primary-color: #3c2a4d;
+  --secondary-color: #574f7d;
+  --inverted-primary-color: #303b47;
+  --inverted-secondary-color: #494a66;
+  --theme-button-color: #7b392a;
+  --skeleton-shadow: #574f7d;
+  --skeleton-color: #95adbe;
+  --card-bg: #bdecda;
+}
+/*# sourceMappingURL=normal.css.map */

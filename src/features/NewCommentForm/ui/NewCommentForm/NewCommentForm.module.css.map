@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,eAAe,CAAC;EACd,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;CACpB;;AAED,AAAA,MAAM,CAAC;EACL,SAAS,EAAE,CAAC;CACb;;AAED,AAAA,WAAW,CAAC;EACV,WAAW,EAAE,IAAI;CAClB",
+    "sources": [
+        "NewCommentForm.module.scss"
+    ],
+    "names": [],
+    "file": "NewCommentForm.module.css"
+}

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,MAAM,CAAC;EACL,aAAa,EAAE,IAAI;CACpB;;AAED,AACE,UADQ,AACP,IAAK,CAAA,YAAY,EAAE;EAClB,UAAU,EAAE,IAAI;CACjB",
+    "sources": [
+        "ArticleTextBlock.module.scss"
+    ],
+    "names": [],
+    "file": "ArticleTextBlock.module.css"
+}

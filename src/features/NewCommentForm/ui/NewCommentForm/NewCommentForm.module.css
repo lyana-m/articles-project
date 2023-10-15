@@ -1,0 +1,19 @@
+.newCommentForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.input {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.sendButton {
+  margin-left: 16px;
+}
+/*# sourceMappingURL=NewCommentForm.module.css.map */

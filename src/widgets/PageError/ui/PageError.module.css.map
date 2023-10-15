@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,UAAU,CAAC;EACT,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,WAAW,EAAE,MAAM;EACnB,eAAe,EAAE,MAAM;EACvB,MAAM,EAAE,kCAAkC;CAC3C;;AAED,AAAA,QAAQ,CAAC;EACP,aAAa,EAAE,IAAI;CACpB",
+    "sources": [
+        "PageError.module.scss"
+    ],
+    "names": [],
+    "file": "PageError.module.css"
+}
