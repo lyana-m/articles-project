@@ -1,10 +1,10 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import cn from 'classnames';
 import { Input } from 'shared/ui/Input';
 import { Text } from 'shared/ui/Text';
 import { Loader } from 'shared/ui/Loader';
 import { Avatar } from 'shared/ui/Avatar';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { validateNumber } from 'shared/lib/validation/validateNumber/validateNumber';
 import { Currency, CurrencySelect } from 'entities/Currency';
 import { Country, CountrySelect } from 'entities/Country';
@@ -46,7 +46,7 @@ const ProfileCard = (props: ProdileCardProps) => {
 
   if (isLoading) {
     return (
-      <div className={classNames(cls['profile-card'], {}, [cls.loading])}>
+      <div className={cn(cls['profile-card'], cls.loading)}>
         <Loader />
       </div>
     );
@@ -54,7 +54,7 @@ const ProfileCard = (props: ProdileCardProps) => {
 
   if (error) {
     return (
-      <div className={classNames(cls['profile-card'], {}, [cls.error])}>
+      <div className={cn(cls['profile-card'], cls.error)}>
         <Text
           theme="error"
           align="center"
@@ -66,7 +66,7 @@ const ProfileCard = (props: ProdileCardProps) => {
   }
 
   return (
-    <div className={classNames(cls['profile-card'])}>
+    <div className={cls['profile-card']}>
       {data?.avatar ? (
         <div className={cls['avatar-wrapper']}>
           <Avatar src={data.avatar} />

@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import cn from 'classnames';
 import cls from './Text.module.scss';
 
 type TextTheme = 'primary' | 'error';
@@ -19,7 +19,7 @@ const Text = (props: PropsWithChildren<TextProps>) => {
   const { title, text, theme = 'primary', align = 'left', size = 'size-m', className } = props;
 
   return (
-    <div className={classNames(cls.Text, { [cls[theme]]: !!theme }, [className, cls[align], cls[size]])}>
+    <div className={cn(cls.Text, { [cls[theme]]: !!theme }, className, cls[align], cls[size])}>
       {title ? <p className={cls.title}>{title}</p> : null}
       {text ? <p className={cls.text}>{text}</p> : null}
     </div>

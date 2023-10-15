@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import AppLink from 'shared/ui/AppLink/AppLink';
-import { classNames } from 'shared/lib/classNames/classNames';
+import cn from 'classnames';
 import { useAppSelector } from 'shared/hooks/useAppSelector/useAppSelector';
 import { getUserAuthData } from 'entities/User';
 import cls from './SidebarItem.module.scss';
@@ -22,7 +22,7 @@ const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
   }
 
   return (
-    <AppLink theme="secondary" className={classNames(cls.link, { [cls.collapsed]: collapsed })} to={item.link}>
+    <AppLink theme="secondary" className={cn(cls.link, { [cls.collapsed]: collapsed })} to={item.link}>
       <item.Icon />
       <span>{t(item.text)}</span>
     </AppLink>

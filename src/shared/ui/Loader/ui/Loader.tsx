@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import cn from 'classnames';
 import cls from './Loader.module.scss';
 
 interface LoaderProps {
@@ -10,7 +10,7 @@ const Loader = (props: PropsWithChildren<LoaderProps>) => {
   const { className } = props;
 
   return (
-    <div className={classNames(cls['lds-roller'], {}, [className])}>
+    <div className={cn(cls['lds-roller'], className)}>
       <div></div>
       <div></div>
       <div></div>

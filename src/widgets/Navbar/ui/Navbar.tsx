@@ -1,6 +1,5 @@
 import React, { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { Button } from 'shared/ui/Button';
 import { LoginModal } from 'features/AuthByUsername';
 import { useAppDispatch } from 'shared/hooks/useAppDispatch/useAppDispatch';
@@ -30,7 +29,7 @@ const Navbar = memo(() => {
   }, [dispatch]);
 
   if (authData) {
-    return <div className={classNames(cls.Navbar, {})}>
+    return <div className={cls.Navbar}>
       <Button onClick={handleLogout} className={cls.login} theme="clearInverted">
         {t('Выйти')}
       </Button>
@@ -39,7 +38,7 @@ const Navbar = memo(() => {
 
   return (
     <>
-      <div className={classNames(cls.Navbar, {})}>
+      <div className={cls.Navbar}>
         <Button onClick={handleLoginModalOpen} className={cls.login} theme="clearInverted">
           {t('Войти')}
         </Button>

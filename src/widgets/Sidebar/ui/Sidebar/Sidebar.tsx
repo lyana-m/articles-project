@@ -1,5 +1,5 @@
 import React, { memo, useState } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import cn from 'classnames';
 import { ThemeButton } from 'widgets/ThemeButton';
 import { LangButton } from 'widgets/LangButton';
 // import { BugButton } from 'widgets/PageError';
@@ -19,7 +19,7 @@ const Sidebar = memo(() => {
   };
 
   return (
-    <div className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed })} data-testid="sidebar">
+    <div className={cn(cls.Sidebar, { [cls.collapsed]: collapsed })} data-testid="sidebar">
       <Button className={cls.collapseBtn} theme="backgroundInverted" square size="l" onClick={toggle}>
         {collapsed ? '>' : '<'}
       </Button>

@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import cn from 'classnames';
 import cls from './Code.module.scss';
 import { Button } from 'shared/ui/Button';
 import CopyIcon from '../../../assets/icons/copy.svg';
@@ -17,7 +17,7 @@ const Code = (props: CodeProps) => {
   }, [text]);
 
   return (
-    <pre className={classNames(cls.code, {}, [className])}>
+    <pre className={cn(cls.code, className)}>
       <Button className={cls.copyBtn} onClick={onCopy}>
         <CopyIcon />
       </Button>

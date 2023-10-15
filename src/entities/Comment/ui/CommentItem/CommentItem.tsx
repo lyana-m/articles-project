@@ -1,5 +1,5 @@
 import React from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import cn from 'classnames';
 import cls from './CommentItem.module.scss';
 import { Comment } from '../../model/types/comment';
 import { Avatar } from 'shared/ui/Avatar';
@@ -19,7 +19,7 @@ const CommentItem = (props: CommentItemProps) => {
 
   if (isLoading) {
     return (
-      <div className={classNames(cls.commentItem, {}, [className])}>
+      <div className={cn(cls.commentItem, className)}>
         <div className={cls.header}>
           <Skeleton width={40} height={40} borderRadius="50%" />
           <Skeleton className={cls.username} width={300} height={24} />
@@ -34,7 +34,7 @@ const CommentItem = (props: CommentItemProps) => {
   }
 
   return (
-    <AppLink to={`${RoutePath.profile}/${comment.user.id}`} className={classNames(cls.commentItem, {}, [className])}>
+    <AppLink to={`${RoutePath.profile}/${comment.user.id}`} className={cn(cls.commentItem, className)}>
       <div className={cls.header}>
         <Avatar size={40} src={comment.user.avatar} />
         <Text className={cls.username} title={comment.user.username} />

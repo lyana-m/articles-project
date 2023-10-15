@@ -1,5 +1,4 @@
 import { useCallback } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui/Button';
 import { Input } from 'shared/ui/Input';
@@ -52,7 +51,7 @@ const LoginForm = ({ onSuccess }: { onSuccess: () => void }) => {
   }, [onSuccess, dispatch, username, password]);
 
   return (
-    <div className={classNames(cls.LoginForm)}>
+    <div className={cls.LoginForm}>
       <Text className={cls.title} title={t('Форма авторизации')} />
       <Input className={cls.loginInput} label={t('Логин')} value={username} onChange={handleLoginChange} />
       <Input className={cls.loginInput} label={t('Пароль')} value={password} onChange={handlePasswordChange} />

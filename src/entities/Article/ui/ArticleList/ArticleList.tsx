@@ -1,5 +1,5 @@
 import React from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import cn from 'classnames';
 import cls from './ArticleList.module.scss';
 import { ArticleItem, ArticleListView } from '../../model/types/article';
 import ArticleListItem from '../ArticleListItem/ArticleListItem';
@@ -20,7 +20,7 @@ const ArticleList = (props: ArticleListProps) => {
   const { articles, view = 'tile', isLoading, className } = props;
 
   return (
-    <div className={classNames(cls.articleList, {}, [cls[view], className])}>
+    <div className={cn(cls.articleList, cls[view], className)}>
       {articles?.length
         ? articles.map((article) => <ArticleListItem key={article.id} view={view} article={article} />)
         : null}

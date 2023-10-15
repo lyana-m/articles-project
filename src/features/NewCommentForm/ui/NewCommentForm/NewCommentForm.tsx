@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import cn from 'classnames';
 import cls from './NewCommentForm.module.scss';
 import { Input } from 'shared/ui/Input';
 import { Button } from 'shared/ui/Button';
@@ -40,7 +40,7 @@ const NewCommentForm = (props: NewCommentFormProps) => {
   useAsyncReducers(reducers);
 
   return (
-    <div className={classNames(cls.newCommentForm, {}, [className])}>
+    <div className={cn(cls.newCommentForm, className)}>
       <Input value={text} onChange={handleTextChange} className={cls.input} label="Введите комментарий" />
       <Button className={cls.sendButton} theme="outline" onClick={handleNewCommentSend}>
         {t('Отправить')}

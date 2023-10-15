@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useMemo } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import cn from 'classnames';
 import cls from './Select.module.scss';
 
 interface SelectOptions {
@@ -36,7 +36,7 @@ const Select = (props: SelectProps) => {
   };
 
   return (
-    <div className={classNames(cls['select-wrapper'], { [cls.readonly]: readonly }, [className])}>
+    <div className={cn(cls['select-wrapper'], { [cls.readonly]: readonly }, className)}>
       {label ? <div className={cls.label}>{label}</div> : null}
       <select value={value} onChange={handleChange} className={cls.select} disabled={readonly}>
         {optionList}

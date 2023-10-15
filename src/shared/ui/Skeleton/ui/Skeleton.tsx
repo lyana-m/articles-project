@@ -1,5 +1,5 @@
 import React from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import cn from 'classnames';
 import cls from './Skeleton.module.scss';
 
 interface SkeletonProps {
@@ -12,7 +12,7 @@ interface SkeletonProps {
 const Skeleton = (props: SkeletonProps) => {
   const { width, height, borderRadius, className } = props;
 
-  return <div className={classNames(cls.skeleton, {}, [className])} style={{
+  return <div className={cn(cls.skeleton, className)} style={{
     width,
     height,
     borderRadius,

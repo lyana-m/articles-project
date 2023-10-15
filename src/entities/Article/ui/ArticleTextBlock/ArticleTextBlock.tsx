@@ -1,5 +1,5 @@
 import React from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import cn from 'classnames';
 import cls from './ArticleTextBlock.module.scss';
 import { ArticleItemTextBlock } from '../../model/types/article';
 import { Text } from 'shared/ui/Text';
@@ -16,7 +16,7 @@ const ArticleTextBlock = (props: ArticleTextBlockProps) => {
   } = props;
 
   return (
-    <div className={classNames(cls.articleTextBlock, {}, [className])}>
+    <div className={cn(cls.articleTextBlock, className)}>
       {title ? <Text title={title} className={cls.title} /> : null}
       {paragraphs.map((paragraph) => (
         <Text text={paragraph} key={paragraph} className={cls.paragraph} />

@@ -1,6 +1,6 @@
 import type { PropsWithChildren } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
+import cn from 'classnames';
 import { Button } from 'shared/ui/Button';
 import cls from './PageError.module.scss';
 
@@ -17,7 +17,7 @@ const PageError = (props: PropsWithChildren<PageErrorProps>) => {
   };
 
   return (
-    <div className={classNames(cls.PageError, {}, [className])}>
+    <div className={cn(cls.PageError, className)}>
       <div className={cls.message}>{t('Что-то пошло не так')}</div>
       <Button onClick={reload}>{t('Обновить')}</Button>
     </div>

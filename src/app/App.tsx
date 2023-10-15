@@ -1,6 +1,6 @@
 import React, { Suspense, useEffect } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
-import { classNames } from 'shared/lib/classNames/classNames';
+import cn from 'classnames';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 import { PageError } from 'widgets/PageError';
@@ -22,7 +22,7 @@ export const App = () => {
   }, [dispatch]);
 
   return (
-    <div className={classNames('app', {}, [theme])}>
+    <div className={cn('app', theme)}>
       <Suspense fallback="">
         <Navbar />
         {/* @ts-expect-error */}

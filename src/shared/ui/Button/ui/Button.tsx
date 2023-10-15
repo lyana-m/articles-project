@@ -1,5 +1,5 @@
 import React, { ButtonHTMLAttributes, memo, PropsWithChildren } from 'react';
-import { classNames } from '../../../lib/classNames/classNames';
+import cn from 'classnames';
 import cls from './Button.module.scss';
 
 export type ButtonTheme = 'clear' | 'clearInverted' | 'outline' | 'outline_red' | 'background' | 'backgroundInverted';
@@ -20,7 +20,7 @@ const Button = memo((props: PropsWithChildren<ButtonProps>) => {
   };
 
   return (
-    <button className={classNames(cls.button, mods, [className, cls[theme], cls[size]])} {...otherProps}>
+    <button className={cn(cls.button, mods, className, cls[theme], cls[size])} {...otherProps}>
       {children}
     </button>
   );

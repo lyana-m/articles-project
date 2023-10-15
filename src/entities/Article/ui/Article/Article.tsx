@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { classNames } from 'shared/lib/classNames/classNames';
+import cn from 'classnames';
 import { useAppDispatch } from 'shared/hooks/useAppDispatch/useAppDispatch';
 import { useAppSelector } from 'shared/hooks/useAppSelector/useAppSelector';
 import { AsyncReduser, useAsyncReducers } from 'shared/hooks/useAsyncReducers/useAsyncReducers';
@@ -97,7 +97,7 @@ const Article = (props: ArticleProps) => {
     }
   }, [dispatch, id]);
 
-  return <div className={classNames(cls.article, {}, [className])}>{content}</div>;
+  return <div className={cn(cls.article, className)}>{content}</div>;
 };
 
 export default Article;

@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { classNames } from 'shared/lib/classNames/classNames';
+import cn from 'classnames';
 import cls from './ArticleListItem.module.scss';
 import { ArticleItem, ArticleItemTextBlock, ArticleListView } from '../../model/types/article';
 import Card from 'shared/ui/Card/Card';
@@ -37,7 +37,7 @@ const ArticleListItem = (props: ArticleListItemProps) => {
 
   if (view === 'tile') {
     return (
-      <Card className={classNames(cls.tile, {}, [className])} onClick={navigateToArticle}>
+      <Card className={cn(cls.tile, className)} onClick={navigateToArticle}>
         <div className={cls.imageWrapper}>
           <img className={cls.img} src={article?.img} alt={article?.title} />
           {createdAt}
@@ -52,7 +52,7 @@ const ArticleListItem = (props: ArticleListItemProps) => {
   }
 
   return (
-    <Card className={classNames(cls.list, {}, [className])}>
+    <Card className={cn(cls.list, className)}>
       <div className={cls.header}>
         <Avatar src={article?.user.avatar} size={30} />
         <Text title={article?.user.username} className={cls.username} />

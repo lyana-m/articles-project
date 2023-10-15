@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
+import cn from 'classnames';
 import { Button } from 'shared/ui/Button';
 
 interface LangButtonProps {
@@ -17,7 +17,7 @@ const LangButton = ({ className }: LangButtonProps) => {
   };
 
   return (
-    <Button theme="clear" className={classNames('', {}, [className])} onClick={toggleLanguage}>
+    <Button theme="clear" className={cn('', className)} onClick={toggleLanguage}>
       {t('Язык')}
     </Button>
   );
