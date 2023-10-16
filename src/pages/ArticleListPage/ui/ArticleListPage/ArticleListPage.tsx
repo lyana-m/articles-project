@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ArticleList } from 'entities/Article';
 import cls from './ArticleListPage.module.scss';
 import { AsyncReduser, useAsyncReducers } from 'shared/hooks/useAsyncReducers/useAsyncReducers';
@@ -15,6 +16,7 @@ const reducers: AsyncReduser[] = [{ reducerKey: 'articleList', reducer: articleL
 
 const ArticleListPage = () => {
   const dispatch = useAppDispatch();
+  const [searchParams] = useSearchParams();
   const articles = useAppSelector(getArticles.selectAll);
   const isLoading = useAppSelector(getArticleListLoading);
   const view = useAppSelector(getArticleListView);
@@ -28,8 +30,8 @@ const ArticleListPage = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    dispatch(initArticles());
-  }, [dispatch]);
+    dispatch(initArticles(searchParams));
+  }, [dispatch, searchParams]);
 
   return (
     <Page className={cls.articleListPage} onScrollEnd={loadMoreData}>

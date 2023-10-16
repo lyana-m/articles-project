@@ -8,6 +8,7 @@ import {
   getArticleListSearch,
   getArticleListSort,
 } from '../../selectors/articleListSelectors';
+import { addSearchParams } from 'shared/lib/url/addSearchParams/addSearchParams';
 
 interface FetchArticlesArgs {
   replace?: boolean;
@@ -25,6 +26,7 @@ export const fetchArticles = createAsyncThunk<ArticleItem[], FetchArticlesArgs, 
     const search = getArticleListSearch(getState() as StoreSchema);
 
     try {
+      addSearchParams({ sort, order, search });
       const response = await thunkAPI.extra.api.get<ArticleItem[]>('/articles', {
         params: {
           _expand: 'user',
