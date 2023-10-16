@@ -1,9 +1,13 @@
 import { StoreSchema } from 'app/providers/StoreProvider';
+import { initialState } from '../slice/articleListSlice';
 
-export const getArticleListView = (state: StoreSchema) => state.articleList?.view || 'list';
-export const getArticleListLoading = (state: StoreSchema) => state.articleList?.isLoading;
-export const getArticleListError = (state: StoreSchema) => state.articleList?.error;
-export const getArticleListPage = (state: StoreSchema) => state.articleList?.page || 1;
-export const getArticleListLimit = (state: StoreSchema) => state.articleList?.limit || 8;
+export const getArticleListView = (state: StoreSchema) => state.articleList?.view || initialState.view;
+export const getArticleListLoading = (state: StoreSchema) => state.articleList?.isLoading || initialState.isLoading;
+export const getArticleListError = (state: StoreSchema) => state.articleList?.error || initialState.error;
+export const getArticleListPage = (state: StoreSchema) => state.articleList?.page || initialState.page;
+export const getArticleListLimit = (state: StoreSchema) => state.articleList?.limit || initialState.limit;
 export const getArticleListHasMore = (state: StoreSchema) => state.articleList?.hasMore;
-export const getArticleListInited = (state: StoreSchema) => state.articleList?._inited;
+export const getArticleListInited = (state: StoreSchema) => state.articleList?._inited || initialState._inited;
+export const getArticleListSort = (state: StoreSchema) => state.articleList?.sort || initialState.sort;
+export const getArticleListOrder = (state: StoreSchema) => state.articleList?.order || initialState.order;
+export const getArticleListSearch = (state: StoreSchema) => state.articleList?.search || initialState.search;

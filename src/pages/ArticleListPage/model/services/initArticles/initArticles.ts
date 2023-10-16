@@ -13,7 +13,7 @@ export const initArticles = createAsyncThunk<void, void, ThunkConfig<string>>(
 
     if (__PROJECT__ !== 'storybook' && !inited) {
       dispatch(articleListActions.init());
-      dispatch(fetchArticles({ page: 1 }));
+      dispatch(fetchArticles({}));
     }
   }
 );

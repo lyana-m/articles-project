@@ -1,0 +1,13 @@
+.articleListSorting {
+  display: flex;
+}
+
+.select {
+  select {
+    width: 260px;
+  }
+
+  &:first-child {
+    margin-right: 16px;
+  }
+}

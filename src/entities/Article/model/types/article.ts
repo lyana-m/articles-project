@@ -40,3 +40,5 @@ export interface ArticleItem {
 }
 
 export type ArticleListView = 'tile' | 'list';
+
+export type ArticleListSortOrder = 'views' | 'createdAt' | 'title';

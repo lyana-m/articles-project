@@ -1,23 +1,38 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { StoreSchema, ThunkConfig } from 'app/providers/StoreProvider/config/StoreSchema';
 import { ArticleItem } from 'entities/Article';
-import { getArticleListLimit } from '../../selectors/articleListSelectors';
+import {
+  getArticleListLimit,
+  getArticleListOrder,
+  getArticleListPage,
+  getArticleListSearch,
+  getArticleListSort,
+} from '../../selectors/articleListSelectors';
 
 interface FetchArticlesArgs {
-  page: number;
+  replace?: boolean;
 }
 
 export const fetchArticles = createAsyncThunk<ArticleItem[], FetchArticlesArgs, ThunkConfig<string>>(
   'articles/fetchArticles',
-  async (agrs, thunkAPI) => {
-    const { page } = agrs;
-    const limit = getArticleListLimit(thunkAPI.getState() as StoreSchema);
+  async (_, thunkAPI) => {
+    const { getState } = thunkAPI;
+
+    const page = getArticleListPage(getState() as StoreSchema);
+    const limit = getArticleListLimit(getState() as StoreSchema);
+    const sort = getArticleListSort(getState() as StoreSchema);
+    const order = getArticleListOrder(getState() as StoreSchema);
+    const search = getArticleListSearch(getState() as StoreSchema);
+
     try {
       const response = await thunkAPI.extra.api.get<ArticleItem[]>('/articles', {
         params: {
           _expand: 'user',
           _page: page,
           _limit: limit,
+          _sort: sort,
+          _order: order,
+          q: search || undefined,
         },
       });
 

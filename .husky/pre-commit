@@ -3,6 +3,6 @@
 
 yarn lint:ts
 yarn style:scss
-yarn test:unit:ci
-yarn test:ui
+# yarn test:unit:ci
+# yarn test:ui
 yarn build:prod

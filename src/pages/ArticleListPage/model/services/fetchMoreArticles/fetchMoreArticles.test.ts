@@ -14,6 +14,9 @@ describe('fetchMoreArticles', () => {
     page: 2,
     _inited: true,
     limit: 8,
+    order: 'createdAt' as const,
+    sort: 'asc' as const,
+    search: '',
   };
 
   it('should load data and update page', async () => {
@@ -21,7 +24,7 @@ describe('fetchMoreArticles', () => {
     await thunk.callThunk();
 
     expect(thunk.dispatch).toHaveBeenCalledTimes(4);
-    expect(fetchArticles).toHaveBeenCalledWith({ page: 3 });
+    expect(fetchArticles).toHaveBeenCalledWith({ });
   });
 
   it('should not load data while is loading', async () => {

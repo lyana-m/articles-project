@@ -1,1 +1,1 @@
-export { default as Select } from './ui/Select';
+export { default as Select, SelectOption } from './ui/Select';
