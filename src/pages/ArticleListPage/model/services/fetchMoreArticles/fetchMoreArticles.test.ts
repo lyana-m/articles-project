@@ -17,6 +17,7 @@ describe('fetchMoreArticles', () => {
     order: 'createdAt' as const,
     sort: 'asc' as const,
     search: '',
+    type: 'ALL' as const,
   };
 
   it('should load data and update page', async () => {

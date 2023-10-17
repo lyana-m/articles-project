@@ -17,6 +17,7 @@ export const initArticles = createAsyncThunk<void, URLSearchParams, ThunkConfig<
       const sort = searchParams.get('sort');
       const order = searchParams.get('order');
       const search = searchParams.get('search');
+      const type = searchParams.get('type');
 
       if (sort) {
         dispatch(articleListActions.setSort(sort as SortDirection));
@@ -28,6 +29,10 @@ export const initArticles = createAsyncThunk<void, URLSearchParams, ThunkConfig<
 
       if (search) {
         dispatch(articleListActions.setSearch(search));
+      }
+
+      if (type) {
+        dispatch(articleListActions.setSearch(type));
       }
 
       dispatch(articleListActions.init());

@@ -1,7 +1,6 @@
 import React, { useCallback, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { ArticleList } from 'entities/Article';
-import cls from './ArticleListPage.module.scss';
 import { AsyncReduser, useAsyncReducers } from 'shared/hooks/useAsyncReducers/useAsyncReducers';
 import { articleListReducer, getArticles } from '../../model/slice/articleListSlice';
 import { useAppDispatch } from 'shared/hooks/useAppDispatch/useAppDispatch';
@@ -34,7 +33,7 @@ const ArticleListPage = () => {
   }, [dispatch, searchParams]);
 
   return (
-    <Page className={cls.articleListPage} onScrollEnd={loadMoreData}>
+    <Page onScrollEnd={loadMoreData}>
       <ArticleListFilters />
       <ArticleList view={view} articles={articles} isLoading={isLoading} />
     </Page>

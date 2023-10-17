@@ -7,6 +7,7 @@ import {
   getArticleListPage,
   getArticleListSearch,
   getArticleListSort,
+  getArticleListType,
 } from '../../selectors/articleListSelectors';
 import { addSearchParams } from 'shared/lib/url/addSearchParams/addSearchParams';
 
@@ -24,9 +25,10 @@ export const fetchArticles = createAsyncThunk<ArticleItem[], FetchArticlesArgs, 
     const sort = getArticleListSort(getState() as StoreSchema);
     const order = getArticleListOrder(getState() as StoreSchema);
     const search = getArticleListSearch(getState() as StoreSchema);
+    const type = getArticleListType(getState() as StoreSchema);
 
     try {
-      addSearchParams({ sort, order, search });
+      addSearchParams({ sort, order, search, type });
       const response = await thunkAPI.extra.api.get<ArticleItem[]>('/articles', {
         params: {
           _expand: 'user',
@@ -35,6 +37,7 @@ export const fetchArticles = createAsyncThunk<ArticleItem[], FetchArticlesArgs, 
           _sort: sort,
           _order: order,
           q: search || undefined,
+          type: type === 'ALL' ? undefined : type,
         },
       });
 

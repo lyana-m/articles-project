@@ -7,9 +7,10 @@ import {
   getArticleListOrder,
   getArticleListSearch,
   getArticleListSort,
+  getArticleListType,
   getArticleListView,
 } from '../../model/selectors/articleListSelectors';
-import { ArticleListSortOrder, ArticleListView } from 'entities/Article/model/types/article';
+import { ArticleItemType, ArticleListSortOrder, ArticleListView } from 'entities/Article/model/types/article';
 import { articleListActions } from '../../model/slice/articleListSlice';
 import { useAppDispatch } from 'shared/hooks/useAppDispatch/useAppDispatch';
 import { Input } from 'shared/ui/Input';
@@ -17,6 +18,7 @@ import ArticleListSorting from '../ArticleListSorting/ArticleListSorting';
 import { SortDirection } from 'shared/types';
 import { fetchArticles } from '../../model/services/fetchArticles/fetchArticles';
 import { useDebounce } from 'shared/hooks/useDebounce/useDebounce';
+import ArticleTypeTabs from '../ArticleTypeTabs/ArticleTypeTabs';
 
 interface ArticleListFiltersProps {
   className?: string;
@@ -31,6 +33,7 @@ const ArticleListFilters = (props: ArticleListFiltersProps) => {
   const sort = useAppSelector(getArticleListSort);
   const order = useAppSelector(getArticleListOrder);
   const search = useAppSelector(getArticleListSearch);
+  const type = useAppSelector(getArticleListType);
 
   const fetchData = useCallback(() => {
     dispatch(fetchArticles({ replace: true }));
@@ -72,6 +75,15 @@ const ArticleListFilters = (props: ArticleListFiltersProps) => {
     [dispatch, debouncedFetchData]
   );
 
+  const handleTypeChange = useCallback(
+    (type: ArticleItemType) => {
+      dispatch(articleListActions.setType(type));
+      dispatch(articleListActions.setPage(1));
+      fetchData();
+    },
+    [dispatch, fetchData]
+  );
+
   return (
     <div className={cn(cls.articleListFilters, className)}>
       <div className={cls.sortWrapper}>
@@ -84,6 +96,7 @@ const ArticleListFilters = (props: ArticleListFiltersProps) => {
         <ArcticleViewSwitcher currentView={view} onViewChange={handleViewChange} />
       </div>
       <Input placeholder="Поиск..." value={search} onChange={handleSeach} />
+      <ArticleTypeTabs className={cls.tabs} activeTab={type} onTypeChange={handleTypeChange} />
     </div>
   );
 };
