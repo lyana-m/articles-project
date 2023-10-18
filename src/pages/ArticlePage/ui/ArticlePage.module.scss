@@ -6,3 +6,12 @@
 .newComment {
   margin-bottom: 32px;
 }
+
+.recommendations {
+  flex-wrap: nowrap;
+  justify-content: start;
+  overflow-y: hidden;
+  overflow-x: auto;
+  max-width: 100%;
+  padding-bottom: 6px;
+}

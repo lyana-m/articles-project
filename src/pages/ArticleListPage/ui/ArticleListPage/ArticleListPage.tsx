@@ -35,7 +35,7 @@ const ArticleListPage = () => {
   return (
     <Page onScrollEnd={loadMoreData}>
       <ArticleListFilters />
-      <ArticleList view={view} articles={articles} isLoading={isLoading} />
+      <ArticleList view={view} articles={articles} isLoading={isLoading} key="articles" />
     </Page>
   );
 };

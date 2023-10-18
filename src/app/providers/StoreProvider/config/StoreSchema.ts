@@ -5,7 +5,7 @@ import { ProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
 import { ArticleSchema } from 'entities/Article';
 import { LoginSchema } from 'features/AuthByUsername';
-import { ArticleCommentsSchema } from 'pages/ArticlePage';
+import { ArticleCommentsSchema, ArticleRecommendationsSchema } from 'pages/ArticlePage';
 import { NewCommentFormSchema } from 'features/NewCommentForm';
 import { ArticleListSchema } from 'pages/ArticleListPage';
 import { UISchema } from 'features/UI';
@@ -22,6 +22,7 @@ export interface StoreSchema {
   articleComments?: ArticleCommentsSchema;
   newCommentForm?: NewCommentFormSchema;
   articleList?: ArticleListSchema;
+  articleRecommendations?: ArticleRecommendationsSchema;
 }
 
 export type StoreSchemaKeys = keyof StoreSchema;
