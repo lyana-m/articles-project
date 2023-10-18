@@ -55,7 +55,7 @@ const ArticlePage = () => {
     <Page className={cls.articlePage}>
       <Article id={id} />
       <Text className={cls.commentTitle} title="Рекомендуем" size="size-l" />
-      <ArticleList className={cls.recommendations} articles={recommendations} isLoading={isRecommendationsLoading} key="recommendations" />
+      <ArticleList className={cls.recommendations} articles={recommendations} isLoading={isRecommendationsLoading} key="recommendations" target="_blank" />
       <Text className={cls.commentTitle} title="Комментарии" size="size-l" />
       <NewCommentForm className={cls.newComment} onSendNewComment={handleNewArticleCommentSend} />
       <CommentList comments={comments} isLoading={isLoading} />

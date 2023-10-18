@@ -1,5 +1,4 @@
-import React, { useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { HTMLAttributeAnchorTarget } from 'react';
 import cn from 'classnames';
 import cls from './ArticleListItem.module.scss';
 import { ArticleItem, ArticleItemTextBlock, ArticleListView } from '../../model/types/article';
@@ -10,15 +9,17 @@ import { Avatar } from 'shared/ui/Avatar';
 import { Button } from 'shared/ui/Button';
 import ArticleTextBlock from '../ArticleTextBlock/ArticleTextBlock';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import AppLink from 'shared/ui/AppLink/AppLink';
 
 interface ArticleListItemProps {
   className?: string;
   article?: ArticleItem;
   view: ArticleListView;
+  target?: HTMLAttributeAnchorTarget;
 }
 
 const ArticleListItem = (props: ArticleListItemProps) => {
-  const { article, view, className } = props;
+  const { article, view, className, target = '_self' } = props;
 
   const createdAt = <Text className={cls.date} text={article?.createdAt} />;
   const type = <Text className={cls.type} text={article?.type.join(', ')} size="size-s" />;
@@ -30,24 +31,23 @@ const ArticleListItem = (props: ArticleListItemProps) => {
   );
   const textBlock = article?.blocks.find((block) => block.type === 'TEXT') as ArticleItemTextBlock;
 
-  const navigate = useNavigate();
-  const navigateToArticle = useCallback(() => {
-    navigate(`${RoutePath.asticles}/${article?.id || ''}`);
-  }, [navigate, article?.id]);
+  const route = `${RoutePath.asticles}/${article?.id || ''}`;
 
   if (view === 'tile') {
     return (
-      <Card className={cn(cls.tile, className)} onClick={navigateToArticle}>
-        <div className={cls.imageWrapper}>
-          <img className={cls.img} src={article?.img} alt={article?.title} />
-          {createdAt}
-        </div>
-        <div className={cls.infoWrapper}>
-          {type}
-          {views}
-        </div>
-        <Text className={cls.title} text={article?.title} />
-      </Card>
+      <AppLink to={route} target={target}>
+        <Card className={cn(cls.tile, className)}>
+          <div className={cls.imageWrapper}>
+            <img className={cls.img} src={article?.img} alt={article?.title} />
+            {createdAt}
+          </div>
+          <div className={cls.infoWrapper}>
+            {type}
+            {views}
+          </div>
+          <Text className={cls.title} text={article?.title} />
+        </Card>
+      </AppLink>
     );
   }
 
@@ -63,9 +63,9 @@ const ArticleListItem = (props: ArticleListItemProps) => {
       <img src={article?.img} alt={article?.title} className={cls.img} />
       {textBlock ? <ArticleTextBlock block={textBlock} className={cls.text} /> : null}
       <div className={cls.footer}>
-        <Button theme="outline" onClick={navigateToArticle}>
-          Читать далее...
-        </Button>
+        <AppLink to={route} target={target}>
+          <Button theme="outline">Читать далее...</Button>
+        </AppLink>
         {views}
       </div>
     </Card>
