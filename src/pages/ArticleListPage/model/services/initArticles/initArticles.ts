@@ -4,7 +4,7 @@ import { getArticleListInited } from '../../selectors/articleListSelectors';
 import { fetchArticles } from '../fetchArticles/fetchArticles';
 import { articleListActions } from '../../slice/articleListSlice';
 import { SortDirection } from 'shared/types';
-import { ArticleListSortOrder } from 'entities/Article';
+import { ArticleItemType, ArticleListSortOrder } from 'entities/Article';
 
 export const initArticles = createAsyncThunk<void, URLSearchParams, ThunkConfig<string>>(
   'articles/initArticles',
@@ -32,7 +32,7 @@ export const initArticles = createAsyncThunk<void, URLSearchParams, ThunkConfig<
       }
 
       if (type) {
-        dispatch(articleListActions.setSearch(type));
+        dispatch(articleListActions.setType(type as ArticleItemType));
       }
 
       dispatch(articleListActions.init());
