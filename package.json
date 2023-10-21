@@ -7,7 +7,7 @@
     "start": "yarn webpack serve --env port=3000",
     "start:json-server": "node ./json-server/index.js",
     "start:dev": "concurrently \"yarn start\" \"yarn start:json-server\"",
-    "build:prod": "yarn webpack --env mode=production",
+    "build:prod": "yarn webpack --env mode=production baseUrl=https://ulbi-project-server-kpu58ij3e-lyannas-projects.vercel.app/",
     "build:dev": "yarn webpack --env mode=development",
     "lint:ts": "yarn eslint \"**/*.{ts,tsx}\"",
     "lint:ts:fix": "yarn eslint \"**/*.{ts,tsx}\" --fix",
