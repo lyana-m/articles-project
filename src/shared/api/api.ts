@@ -8,7 +8,7 @@ export const api = axios.create({
   },
 });
 
-axios.interceptors.request.use(
+api.interceptors.request.use(
   (config) => {
     config.headers.Authorization = `Bearer ${localStorage.getItem(USER_LOCALSTORAGE_AUTHDATA) || ''}`;
     return config;
