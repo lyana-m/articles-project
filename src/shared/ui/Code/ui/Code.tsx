@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import cn from 'classnames';
 import cls from './Code.module.scss';
-import { Button } from 'shared/ui/Button';
+import { Button } from '../../Button';
 import CopyIcon from '../../../assets/icons/copy.svg';
 
 interface CodeProps {

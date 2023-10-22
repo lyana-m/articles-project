@@ -9,10 +9,10 @@ import { useAppSelector } from 'shared/hooks/useAppSelector/useAppSelector';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import { loginByUsername } from '../../model/services/loginByUsername';
 import cls from './LoginForm.module.scss';
-import { getLoginUsername } from 'features/AuthByUsername/model/selectors/getLoginUsername/getLoginUsername';
-import { getLoginPassword } from 'features/AuthByUsername/model/selectors/getLoginPassword/getLoginPassword';
-import { getLoginLoading } from 'features/AuthByUsername/model/selectors/getLoginLoading/getLoginLoading';
-import { getLoginError } from 'features/AuthByUsername/model/selectors/getLoginError/getLoginError';
+import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
+import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
+import { getLoginLoading } from '../../model/selectors/getLoginLoading/getLoginLoading';
+import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
 
 const reducers: AsyncReduser[] = [{ reducerKey: 'login', reducer: loginReducer }];
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import cls from './ArticleCodeBlock.module.scss';
-import { ArticleItemCodeBlock } from 'entities/Article/model/types/article';
+import { ArticleItemCodeBlock } from '../../model/types/article';
 import { Code } from 'shared/ui/Code';
 
 interface ArticleCodeBlockProps {

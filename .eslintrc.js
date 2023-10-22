@@ -20,7 +20,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
-  plugins: ['react', 'i18next', 'react-hooks'],
+  plugins: ['react', 'i18next', 'react-hooks', 'eslint-plugin-test-path-checker'],
   settings: {
     react: {
       version: 'detect'
@@ -55,7 +55,12 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',
     'multiline-ternary': 'off',
-    'n/no-callback-literal': 'off'
+    'n/no-callback-literal': 'off',
+    // 'eslint-plugin-react/boolean-prop-naming': 'error'
+    // 'eslint-plugin-path-checker/chech-paths-in-module': 'error'
+    // 'test-path-checker/avoid-name': 'error'
+    'test-path-checker/relative-path': 'error'
+    // 'ulbi-tv-plugin/path-checker': 'error'
   },
   globals: {
     __IS_DEV__: true,
