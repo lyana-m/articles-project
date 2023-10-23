@@ -7,6 +7,7 @@ import { Text } from 'shared/ui/Text';
 import cls from './ProfilePageHeader.module.scss';
 import { getProfileData, getProfileReadonly, profileActions, updateProfileData } from 'entities/Profile';
 import { getUserAuthData } from 'entities/User';
+import { HStack } from 'shared/ui/Stack';
 
 const ProfilePageHeader = () => {
   const { t } = useTranslation('profile');
@@ -32,25 +33,27 @@ const ProfilePageHeader = () => {
   }, [dispatch]);
 
   return (
-    <div className={cls.header}>
+    <HStack justifyContent="space-between" className={cls.header}>
       <Text title={t('Профиль')} />
-      {canEdit && <div>
-        {readonly ? (
-          <Button theme="outline" onClick={handleEdit}>
-            {t('Редактировать')}
-          </Button>
-        ) : (
-          <>
-            <Button theme="outline" onClick={handleSave}>
-              {t('Сохранить')}
+      {canEdit && (
+        <div>
+          {readonly ? (
+            <Button theme="outline" onClick={handleEdit}>
+              {t('Редактировать')}
             </Button>
-            <Button theme="outline_red" onClick={handleEditCancel}>
-              {t('Отменить')}
-            </Button>
-          </>
-        )}
-      </div>}
-    </div>
+          ) : (
+            <HStack gap="12">
+              <Button theme="outline" onClick={handleSave}>
+                {t('Сохранить')}
+              </Button>
+              <Button theme="outline_red" onClick={handleEditCancel}>
+                {t('Отменить')}
+              </Button>
+            </HStack>
+          )}
+        </div>
+      )}
+    </HStack>
   );
 };
 

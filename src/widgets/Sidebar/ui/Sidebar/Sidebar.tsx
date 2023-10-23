@@ -8,6 +8,7 @@ import cls from './Sidebar.module.scss';
 import SidebarItem from './SidebarItem/SidebarItem';
 import { useAppSelector } from 'shared/hooks/useAppSelector/useAppSelector';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
+import { VStack } from 'shared/ui/Stack';
 
 const Sidebar = memo(() => {
   const [collapsed, setCollapsed] = useState(false);
@@ -24,11 +25,11 @@ const Sidebar = memo(() => {
         {collapsed ? '>' : '<'}
       </Button>
       {/* <BugButton /> */}
-      <div className={cls.links}>
+      <VStack alignItems="flex-start" gap="12" className={cls.links}>
         {sidebarItems.map((item) => (
           <SidebarItem key={item.text} item={item} collapsed={collapsed} />
         ))}
-      </div>
+      </VStack>
       <div className={cls.switchers}>
         <ThemeButton />
         <LangButton className={cls.lang} />
