@@ -1,9 +1,10 @@
 import React from 'react';
 import cn from 'classnames';
 import cls from './ArticleListSorting.module.scss';
-import { Select, SelectOption } from 'shared/ui/Select';
+import { SelectOption } from 'shared/ui/Select';
 import { SortDirection } from 'shared/types';
 import { ArticleListSortOrder } from 'entities/Article';
+import { ListBox } from 'shared/ui/ListBox';
 
 interface ArticleListSortingProps {
   sort: SortDirection;
@@ -29,14 +30,14 @@ const ArticleListSorting = (props: ArticleListSortingProps) => {
 
   return (
     <div className={cn(cls.articleListSorting, className)}>
-      <Select
+      <ListBox
         className={cls.select}
         options={orderOptions}
         label="Сортировать по:"
         value={order}
         onChange={handleOrderChange}
       />
-      <Select
+      <ListBox
         className={cls.select}
         options={sortOptions}
         label="Направление сортировки:"

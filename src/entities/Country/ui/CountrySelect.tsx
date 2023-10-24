@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
-import { Select } from 'shared/ui/Select';
 import { Country, countryOptions } from '../model/types/country';
+import { ListBox } from 'shared/ui/ListBox';
 
 interface CountrySelectProps {
   readonly?: boolean;
@@ -22,13 +22,14 @@ const CountrySelect = (props: CountrySelectProps) => {
   );
 
   return (
-    <Select
+    <ListBox
       onChange={handleChange}
       value={value}
       label="Страна"
       options={countryOptions}
       readonly={readonly}
       className={className}
+      position="top"
     />
   );
 };

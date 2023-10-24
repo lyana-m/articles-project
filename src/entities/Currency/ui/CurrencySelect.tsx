@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
-import { Select } from 'shared/ui/Select';
 import { Currency, currencyOptions } from '../model/types/currency';
+import { ListBox } from 'shared/ui/ListBox';
 
 interface CurrencySelectProps {
   readonly?: boolean;
@@ -22,13 +22,14 @@ const CurrencySelect = (props: CurrencySelectProps) => {
   );
 
   return (
-    <Select
+    <ListBox
       onChange={handleChange}
       value={value}
       label="Валюта"
       options={currencyOptions}
       readonly={readonly}
       className={className}
+      position="top"
     />
   );
 };
