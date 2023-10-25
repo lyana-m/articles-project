@@ -1,35 +1,10 @@
-.label {
-  font-size: 12px;
-  line-height: 18px;
-  padding-left: 6px;
-  color: var(--primary-color);
-
-  &.readonly {
-    opacity: 0.5;
-  }
-}
-
-.container {
+.menu {
   position: relative;
+  display: flex;
+  width: fit-content;
 }
 
-.button {
-  cursor: pointer;
-  padding: 6px 8px;
-  color: var(--primary-color);
-  border: 1px solid var(--primary-color);
-  border-radius: 8px;
-  background: none;
-  text-align: left;
-
-  &.readonly {
-    opacity: 0.5;
-    cursor: default;
-    pointer-events: none;
-  }
-}
-
-.list {
+.dropdown {
   position: absolute;
   border: 1px solid var(--primary-color);
   border-radius: 8px;
@@ -61,13 +36,18 @@
   }
 }
 
+.trigger {
+  background: transparent;
+  border: 0;
+  outline: none;
+}
+
 .item {
   padding: 6px 8px;
   background: var(--listbox-bg);
   transition: all .3;
   cursor: pointer;
 
-  &.selected,
   &.active {
     background: var(--inverted-bg-color);
   }

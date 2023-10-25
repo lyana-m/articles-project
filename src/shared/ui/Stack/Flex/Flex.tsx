@@ -5,7 +5,7 @@ import cls from './Flex.module.scss';
 type FlexDirection = 'row' | 'column';
 type JustifyContent = 'flex-start' | 'flex-end' | 'center' | 'space-between';
 type AlignItems = 'flex-start' | 'flex-end' | 'center';
-type Gap = '8' | '12' | '16' | '24' | '32';
+type Gap = '2' | '4' | '8' | '12' | '16' | '24' | '32';
 
 export interface FlexProps {
   className?: string;

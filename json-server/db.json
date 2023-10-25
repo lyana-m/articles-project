@@ -375,7 +375,8 @@
       "views": 322,
       "createdAt": "01.01.2020",
       "type": [
-        "SCIENCE", "IT"
+        "SCIENCE",
+        "IT"
       ],
       "blocks": [
         {
@@ -756,7 +757,7 @@
       "lastname": "asf",
       "age": 465,
       "currency": "RUB",
-      "country": "Belarus",
+      "country": "Armenia",
       "city": "Moscow",
       "username": "admin",
       "avatar": "https://datarundown.com/wp-content/uploads/2022/03/Datarundown-Admin-Avatar-Circle-1.png"

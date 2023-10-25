@@ -29,7 +29,7 @@ const CurrencySelect = (props: CurrencySelectProps) => {
       options={currencyOptions}
       readonly={readonly}
       className={className}
-      position="top"
+      position="top-left"
     />
   );
 };

@@ -29,7 +29,7 @@ const CountrySelect = (props: CountrySelectProps) => {
       options={countryOptions}
       readonly={readonly}
       className={className}
-      position="top"
+      position="top-left"
     />
   );
 };

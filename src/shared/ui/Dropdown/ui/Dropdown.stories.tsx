@@ -1,24 +1,20 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import ListBox from './ListBox';
+import Dropdown from './Dropdown';
+import { Button } from '../../Button';
 
-const meta: Meta<typeof ListBox> = {
-  title: 'shared/ListBox',
-  component: ListBox,
+const meta: Meta<typeof Dropdown> = {
+  title: 'shared/Dropdown',
+  component: Dropdown,
   decorators: [(Story) => <div style={{ padding: '60px' }}>{<Story />}</div>],
   args: {
-    options: [
-      { value: 'v1', label: 'value1' },
-      { value: 'v2', label: 'value2' },
-      { value: 'v3', label: 'value3' },
-    ],
-    defaultValue: 'Select...',
-    onChange: (v) => alert(v),
-  }
+    items: [{ name: 'v1' }, { name: 'v2' }, { name: 'v3' }],
+    trigger: <Button>CLICK</Button>,
+  },
 };
 
 export default meta;
-type Story = StoryObj<typeof ListBox>;
+type Story = StoryObj<typeof Dropdown>;
 
 export const BottomLeft: Story = {
   args: {

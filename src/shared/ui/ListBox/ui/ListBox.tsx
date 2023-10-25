@@ -2,8 +2,8 @@ import { Fragment } from 'react';
 import { Listbox as BaseListBox } from '@headlessui/react';
 import cn from 'classnames';
 import cls from './ListBox.module.scss';
-
-type ListBoxPosition = 'bottom' | 'top';
+import { DropdownPosition } from '../../../types';
+import { VStack } from '../../Stack';
 
 interface ListBoxOption {
   value: string;
@@ -17,19 +17,19 @@ interface ListBoxProps<T extends string> {
   displayedValue?: string;
   defaultValue?: string;
   readonly?: boolean;
-  position?: ListBoxPosition;
+  position?: DropdownPosition;
   label?: string;
   className?: string;
   onChange: (value: T) => void;
 }
 
 const Listbox = <T extends string>(props: ListBoxProps<T>) => {
-  const { options, value, defaultValue, readonly, label, position = 'bottom', className, onChange } = props;
+  const { options, value, defaultValue, readonly, label, position = 'bottom-left', className, onChange } = props;
 
-  const displayedValue = options.find(o => o.value === value)?.label;
+  const displayedValue = options.find((o) => o.value === value)?.label;
 
   return (
-    <div className={className}>
+    <VStack alignItems="flex-start" gap="2" className={className}>
       {label ? <div className={cn(cls.label, { [cls.readonly]: readonly })}>{label}</div> : null}
       <div className={cls.container}>
         <BaseListBox value={value} disabled={readonly} onChange={onChange}>
@@ -55,7 +55,7 @@ const Listbox = <T extends string>(props: ListBoxProps<T>) => {
           </BaseListBox.Options>
         </BaseListBox>
       </div>
-    </div>
+    </VStack>
   );
 };
 
