@@ -1,6 +1,5 @@
 import { Country } from '../../../Country';
 import { Currency } from '../../../Currency';
-import { ValidationErrors } from './validationErrors';
 
 export interface Profile {
   id?: string;
@@ -12,13 +11,4 @@ export interface Profile {
   city?: string;
   username?: string;
   avatar?: string;
-}
-
-export interface ProfileSchema {
-  data?: Profile;
-  formData?: Profile;
-  isLoading: boolean;
-  error: string;
-  readonly: boolean;
-  validationErrors?: ValidationErrors[];
 }

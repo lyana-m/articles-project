@@ -1,6 +1,6 @@
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import { Country } from '../../../../Country';
-import { Currency } from '../../../../Currency';
+import { Country } from 'entities/Country';
+import { Currency } from 'entities/Currency';
 import { updateProfileData } from './updateProfileData';
 import { ValidationErrors } from '../../types/validationErrors';
 

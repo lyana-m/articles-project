@@ -4,12 +4,15 @@ import { useAppSelector } from 'shared/hooks/useAppSelector/useAppSelector';
 import { useAppDispatch } from 'shared/hooks/useAppDispatch/useAppDispatch';
 import { Button } from 'shared/ui/Button';
 import { Text } from 'shared/ui/Text';
-import cls from './ProfilePageHeader.module.scss';
-import { getProfileData, getProfileReadonly, profileActions, updateProfileData } from 'entities/Profile';
+import cls from './EditableProfileCardHeader.module.scss';
 import { getUserAuthData } from 'entities/User';
 import { HStack } from 'shared/ui/Stack';
+import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
+import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
+import { profileActions } from '../../model/slice/profileSlice';
+import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
 
-const ProfilePageHeader = () => {
+const EditableProfileCardHeader = () => {
   const { t } = useTranslation('profile');
 
   const readonly = useAppSelector(getProfileReadonly);
@@ -57,4 +60,4 @@ const ProfilePageHeader = () => {
   );
 };
 
-export default ProfilePageHeader;
+export default EditableProfileCardHeader;
