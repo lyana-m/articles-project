@@ -4,7 +4,7 @@ import { RouterDecorator } from 'shared/config/storybook/RouterDecorator';
 import CommentItem from './CommentItem';
 
 const meta: Meta<typeof CommentItem> = {
-  title: 'entities/CommentItem',
+  title: 'entities/Comment/CommentItem',
   component: CommentItem,
   decorators: [RouterDecorator],
 };

@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import ArticleListSorting from './ArticleListSorting';
 
 const meta: Meta<typeof ArticleListSorting> = {
-  title: 'pages/ArticleListSorting',
+  title: 'pages/ArticleListPage/ArticleListSorting',
   component: ArticleListSorting,
 };
 

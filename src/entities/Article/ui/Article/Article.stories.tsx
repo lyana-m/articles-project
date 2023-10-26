@@ -5,7 +5,7 @@ import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
 import { RouterDecorator } from 'shared/config/storybook/RouterDecorator';
 
 const meta: Meta<typeof Article> = {
-  title: 'entities/Article',
+  title: 'entities/Article/Article',
   component: Article,
   decorators: [RouterDecorator],
 };

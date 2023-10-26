@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import ArticleImageBlock from './ArticleImageBlock';
 
 const meta: Meta<typeof ArticleImageBlock> = {
-  title: 'entities/ArticleImageBlock',
+  title: 'entities/Article/ArticleImageBlock',
   component: ArticleImageBlock,
 };
 

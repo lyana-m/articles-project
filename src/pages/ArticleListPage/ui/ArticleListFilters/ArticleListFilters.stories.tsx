@@ -4,7 +4,7 @@ import ArticleListFilters from './ArticleListFilters';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
 
 const meta: Meta<typeof ArticleListFilters> = {
-  title: 'pages/ArticleListFilters',
+  title: 'pages/ArticleListPage/ArticleListFilters',
   component: ArticleListFilters,
   decorators: [StoreDecorator({})],
 };

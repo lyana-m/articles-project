@@ -81,7 +81,7 @@ const article = {
 } as ArticleItem;
 
 const meta: Meta<typeof ArticleListPage> = {
-  title: 'pages/ArticleListPage',
+  title: 'pages/ArticleListPage/ArticleListPage',
   component: ArticleListPage,
   decorators: [RouterDecorator],
 };

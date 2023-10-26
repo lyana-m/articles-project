@@ -5,7 +5,7 @@ import { RouterDecorator } from 'shared/config/storybook/RouterDecorator';
 import { ArticleItem } from '../../model/types/article';
 
 const meta: Meta<typeof ArticleListItem> = {
-  title: 'entities/ArticleListItem',
+  title: 'entities/Article/ArticleListItem',
   component: ArticleListItem,
   decorators: [RouterDecorator],
 };
