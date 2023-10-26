@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Text } from 'shared/ui/Text';
-import { Article, ArticleList } from 'entities/Article';
+import { Article } from 'entities/Article';
 import cls from './ArticlePage.module.scss';
 import { CommentList } from 'entities/Comment';
 import { useAsyncReducers, AsyncReduser } from 'shared/hooks/useAsyncReducers/useAsyncReducers';
@@ -13,9 +13,9 @@ import { getArticleCommentsLoading } from '../model/selectors/comments';
 import { NewCommentForm } from 'features/NewCommentForm';
 import { sendArticleNewComment } from '../services/sendNewArticleComment';
 import { Page } from 'widgets/Page';
-import { articleRecommendationsReducer, getArticleRecommendations } from '../model/slice/articleRecommendationsSlice';
-import { getArticleRecommendationsLoading } from '../model/selectors/recommendations';
+import { articleRecommendationsReducer } from '../model/slice/articleRecommendationsSlice';
 import { fetchArticleRecommendations } from '../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
+import { ArticleRecommendationList } from 'features/ArticleRecommendationList';
 
 const reducers: AsyncReduser[] = [
   { reducerKey: 'articleComments', reducer: articleCommentsReducer },
@@ -27,9 +27,7 @@ const ArticlePage = () => {
 
   const dispatch = useAppDispatch();
   const comments = useAppSelector(getArticleComments.selectAll);
-  const recommendations = useAppSelector(getArticleRecommendations.selectAll);
   const isLoading = useAppSelector(getArticleCommentsLoading);
-  const isRecommendationsLoading = useAppSelector(getArticleRecommendationsLoading);
 
   useAsyncReducers(reducers);
 
@@ -54,8 +52,7 @@ const ArticlePage = () => {
   return (
     <Page className={cls.articlePage}>
       <Article id={id} />
-      <Text className={cls.commentTitle} title="Рекомендуем" size="size-l" />
-      <ArticleList className={cls.recommendations} articles={recommendations} isLoading={isRecommendationsLoading} key="recommendations" target="_blank" />
+      <ArticleRecommendationList className={cls.recommendations} />
       <Text className={cls.commentTitle} title="Комментарии" size="size-l" />
       <NewCommentForm className={cls.newComment} onSendNewComment={handleNewArticleCommentSend} />
       <CommentList comments={comments} isLoading={isLoading} />

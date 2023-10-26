@@ -9,11 +9,13 @@ import { ArticleCommentsSchema, ArticleRecommendationsSchema } from 'pages/Artic
 import { NewCommentFormSchema } from 'features/NewCommentForm';
 import { ArticleListSchema } from 'pages/ArticleListPage';
 import { UISchema } from 'features/UI';
+import { rtkApi } from 'shared/api/rtkApi';
 
 export interface StoreSchema {
   counter: CounterSchema;
   user: UserSchema;
   ui: UISchema;
+  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 
   // async reducers
   login?: LoginSchema;

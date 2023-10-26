@@ -5,9 +5,16 @@ import { userReducer } from 'entities/User';
 import { createReducerManager } from './reducerManager';
 import { api } from 'shared/api/api';
 import { uiSliceReducer } from 'features/UI';
+import { rtkApi } from 'shared/api/rtkApi';
 
 export const createReduxStore = (initialState: StoreSchema, asyncReducers?: ReducersMapObject<StoreSchema>) => {
-  const staticReducers = { ...asyncReducers, counter: counterReducer, user: userReducer, ui: uiSliceReducer };
+  const staticReducers = {
+    ...asyncReducers,
+    counter: counterReducer,
+    user: userReducer,
+    ui: uiSliceReducer,
+    [rtkApi.reducerPath]: rtkApi.reducer,
+  };
 
   const reducerManager = createReducerManager(staticReducers);
 
@@ -20,7 +27,7 @@ export const createReduxStore = (initialState: StoreSchema, asyncReducers?: Redu
         thunk: {
           extraArgument: { api },
         },
-      }),
+      }).concat(rtkApi.middleware),
   });
 
   // @ts-expect-error
