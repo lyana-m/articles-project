@@ -6,12 +6,12 @@ import { ProtectedRoute } from './ProtectedRoute';
 
 function AppRouter() {
   const renderWithWrapper = useCallback((route: AppRouteProps) => {
-    const { path, element, authOnly } = route;
+    const { path, element, authOnly, roles } = route;
     const elementToRender = (
       <Route
         key={path}
         path={path}
-        element={authOnly ? <ProtectedRoute>{element as JSX.Element}</ProtectedRoute> : element}
+        element={authOnly ? <ProtectedRoute roles={roles}>{element as JSX.Element}</ProtectedRoute> : element}
       />
     );
 

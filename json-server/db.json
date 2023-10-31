@@ -732,6 +732,12 @@
       "articleId": "1",
       "text": "Икгсу",
       "id": "-tPd3d-"
+    },
+    {
+      "userId": "1",
+      "articleId": "2",
+      "text": "cool",
+      "id": "3P1mo7z"
     }
   ],
   "users": [
@@ -739,15 +745,22 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN",
+      "roles": ["ADMIN", "MANAGER"],
       "avatar": "https://datarundown.com/wp-content/uploads/2022/03/Datarundown-Admin-Avatar-Circle-1.png"
     },
     {
       "id": "2",
       "username": "kukusik",
       "password": "123",
-      "role": "USER",
+      "roles": ["USER"],
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRj6HJ7KTESPE1nPWHKkEM0GBWH3yx1izKzyA&usqp=CAU"
+    },
+    {
+      "id": "3",
+      "username": "katya",
+      "password": "123",
+      "roles": ["MANAGER"],
+      "avatar": "https://w7.pngwing.com/pngs/4/736/png-transparent-female-avatar-girl-face-woman-user-flat-classy-users-icon-thumbnail.png"
     }
   ],
   "profile": [

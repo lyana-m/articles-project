@@ -20,6 +20,7 @@ export const Default: Story = {
       user: {
         id: '2',
         username: 'admin',
+        roles: ['ADMIN'],
       },
     },
   },
@@ -28,5 +29,5 @@ export const Default: Story = {
 export const Loading: Story = {
   args: {
     isLoading: true,
-  }
+  },
 };

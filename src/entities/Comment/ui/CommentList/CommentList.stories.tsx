@@ -22,6 +22,7 @@ export const Default: Story = {
         user: {
           id: '2',
           username: 'admin',
+          roles: ['ADMIN'],
         },
       },
       {
@@ -31,6 +32,7 @@ export const Default: Story = {
           id: '4',
           username: 'kukusik',
           avatar,
+          roles: ['USER']
         },
       },
     ]

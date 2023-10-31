@@ -6,7 +6,7 @@ import { LoginModal } from 'features/AuthByUsername';
 import { useAppDispatch } from 'shared/hooks/useAppDispatch/useAppDispatch';
 import { useAppSelector } from 'shared/hooks/useAppSelector/useAppSelector';
 import cls from './Navbar.module.scss';
-import { getUserAuthData, userActions } from 'entities/User';
+import { getUserAuthData, isAdmin, isManager, userActions } from 'entities/User';
 import { Avatar } from 'shared/ui/Avatar';
 import { useNavigate } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
@@ -19,6 +19,10 @@ const Navbar = memo(() => {
   const navigate = useNavigate();
 
   const authData = useAppSelector(getUserAuthData);
+  const isUserAdmin = useAppSelector(isAdmin);
+  const isUserManager = useAppSelector(isManager);
+
+  const isAccessAllowed = isUserAdmin || isUserManager;
 
   const dispatch = useAppDispatch();
 
@@ -40,6 +44,10 @@ const Navbar = memo(() => {
     }
   }, [navigate, authData?.id]);
 
+  const navigateToAdmin = useCallback(() => {
+    navigate(RoutePath.admin);
+  }, [navigate]);
+
   if (authData) {
     return (
       <div className={cls.Navbar}>
@@ -47,6 +55,7 @@ const Navbar = memo(() => {
           trigger={<Avatar size={30} src={authData.avatar} />}
           items={[
             { name: t('Профиль'), onClick: navigateToProfile },
+            ...(isAccessAllowed ? [{ name: t('Админка'), onClick: navigateToAdmin }] : []),
             { name: t('Выйти'), onClick: handleLogout },
           ]}
           position="bottom-right"
