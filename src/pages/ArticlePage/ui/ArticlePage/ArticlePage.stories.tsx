@@ -1,3 +1,4 @@
+import { withRouter, reactRouterParameters } from 'storybook-addon-react-router-v6';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import ArticlePage from './ArticlePage';
@@ -86,5 +87,16 @@ export const Default: Story = {
         },
       },
     }),
+    withRouter
   ],
+  parameters: {
+    reactRouter: reactRouterParameters({
+      location: {
+        pathParams: { id: '1' },
+      },
+      routing: {
+        path: '/articles/:id',
+      },
+    }),
+  },
 };

@@ -105,14 +105,13 @@ export const List: Story = {
 
 export const LoadingTile: Story = {
   args: {
-    articles,
+    view: 'tile',
     isLoading: true,
   },
 };
 
 export const LoadingList: Story = {
   args: {
-    articles,
     view: 'list',
     isLoading: true,
   },

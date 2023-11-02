@@ -8,16 +8,6 @@ interface ArticleListItemSkeletonProps {
 }
 
 const ArticleListItemSkeleton = ({ view }: ArticleListItemSkeletonProps) => {
-  // const createdAt = <Text className={cls.date} text={article?.createdAt} />;
-  // const type = <Text className={cls.type} text={article?.type.join(', ')} size="size-s" />;
-  // const views = (
-  //   <>
-  //     <Text className={cls.views} text={String(article?.views)} />
-  //     <EyeIcon />
-  //   </>
-  // );
-  // const textBlock = article?.blocks.find((block) => block.type === 'TEXT') as ArticleItemTextBlock;
-
   if (view === 'tile') {
     return (
       <Card className={cls.tile}>

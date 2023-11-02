@@ -13,6 +13,7 @@ import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLogi
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
 import { getLoginLoading } from '../../model/selectors/getLoginLoading/getLoginLoading';
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
+import { Loader } from 'shared/ui/Loader';
 
 const reducers: AsyncReduser[] = [{ reducerKey: 'login', reducer: loginReducer }];
 
@@ -49,6 +50,14 @@ const LoginForm = ({ onSuccess }: { onSuccess: () => void }) => {
       onSuccess();
     }
   }, [onSuccess, dispatch, username, password]);
+
+  if (isLoading) {
+    return (
+      <div className={cls.loader}>
+        <Loader />
+      </div>
+    );
+  }
 
   return (
     <div className={cls.LoginForm}>
