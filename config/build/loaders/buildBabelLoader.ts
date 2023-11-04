@@ -1,4 +1,5 @@
 import { BuildOptions } from '../types/config';
+import removeAttributesPlugin from '../../babel/removeAttributesPlugin';
 
 interface BuildBabelLoaderOptions extends BuildOptions {
   isTSX?: boolean;
@@ -17,6 +18,7 @@ export const buildBabelLoader = ({ isDev, isTSX }: BuildBabelLoaderOptions) => {
             isDev && require.resolve('react-refresh/babel'),
             ['@babel/plugin-transform-typescript', { isTSX }],
             '@babel/plugin-transform-runtime',
+            isTSX && [removeAttributesPlugin, { props: ['data-testid'] }],
           ].filter(Boolean),
         },
       },
