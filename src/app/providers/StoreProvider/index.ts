@@ -1,3 +1,3 @@
-export { default as StoreProvider, AppDispatch } from './ui/StoreProvider';
+export { default as StoreProvider, type AppDispatch } from './ui/StoreProvider';
 export { createReduxStore } from './config/store';
-export { ReduxStoreWithManager, StoreSchema } from './config/StoreSchema';
+export type { ReduxStoreWithManager, StoreSchema } from './config/StoreSchema';
