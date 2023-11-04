@@ -5,9 +5,10 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import CopyPlugin from 'copy-webpack-plugin';
 import { type BuildOptions } from './types/config';
+import CircularDependencyPlugin from 'circular-dependency-plugin';
 
 export const buildPlagins = ({ paths, isDev, api, project }: BuildOptions): WebpackPluginInstance[] => {
-  const plugins = [
+  const plugins: WebpackPluginInstance[] = [
     new HtmlWebpackPlugin({
       template: paths.html,
     }),
@@ -22,15 +23,14 @@ export const buildPlagins = ({ paths, isDev, api, project }: BuildOptions): Webp
       __PROJECT__: JSON.stringify(project),
     }),
     new CopyPlugin({
-      patterns: [
-        { from: paths.locales, to: paths.buildLocales },
-      ],
+      patterns: [{ from: paths.locales, to: paths.buildLocales }],
     }),
   ];
 
   if (isDev) {
     plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }));
     plugins.push(new ReactRefreshWebpackPlugin({ overlay: false }));
+    plugins.push(new CircularDependencyPlugin({ exclude: /node_modules/, failOnError: true }) as unknown as WebpackPluginInstance);
   }
 
   return plugins;

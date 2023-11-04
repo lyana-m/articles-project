@@ -5,6 +5,7 @@ import { ArticleListSchema } from '../types/acticleListSchema';
 import { fetchArticles } from '../services/fetchArticles/fetchArticles';
 import { LOCALSTORAGE_ARTICLE_LIST_VIEW } from 'shared/constants/localStorage';
 import { SortDirection } from 'shared/types';
+import { initialState } from '../constants/initialState';
 
 export const articleListAdapter = createEntityAdapter<ArticleItem>({
   selectId: (article) => article.id,
@@ -13,22 +14,6 @@ export const articleListAdapter = createEntityAdapter<ArticleItem>({
 export const getArticles = articleListAdapter.getSelectors<StoreSchema>(
   (state) => state.articleList || articleListAdapter.getInitialState()
 );
-
-export const initialState: ArticleListSchema = {
-  isLoading: false,
-  error: undefined,
-  view: 'list',
-  page: 1,
-  hasMore: true,
-  limit: 8,
-  ids: [],
-  entities: {},
-  _inited: false,
-  sort: 'asc',
-  order: 'title',
-  search: '',
-  type: 'ALL',
-};
 
 const articleListSlice = createSlice({
   name: 'articles',

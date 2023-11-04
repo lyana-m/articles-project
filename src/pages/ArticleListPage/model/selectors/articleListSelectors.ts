@@ -1,5 +1,5 @@
 import { StoreSchema } from 'app/providers/StoreProvider';
-import { initialState } from '../slice/articleListSlice';
+import { initialState } from '../constants/initialState';
 
 export const getArticleListView = (state: StoreSchema) => state.articleList?.view || initialState.view;
 export const getArticleListLoading = (state: StoreSchema) => state.articleList?.isLoading || initialState.isLoading;
