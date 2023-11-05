@@ -4,7 +4,7 @@ import cls from './ArticleListSorting.module.scss';
 import { SelectOption } from 'shared/ui/Select';
 import { SortDirection } from 'shared/types';
 import { ArticleListSortOrder } from 'entities/Article';
-import { ListBox } from 'shared/ui/ListBox';
+import { ListBox } from 'shared/ui/Popups';
 
 interface ArticleListSortingProps {
   sort: SortDirection;

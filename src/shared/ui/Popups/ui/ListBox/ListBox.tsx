@@ -2,8 +2,9 @@ import { Fragment } from 'react';
 import { Listbox as BaseListBox } from '@headlessui/react';
 import cn from 'classnames';
 import cls from './ListBox.module.scss';
-import { DropdownPosition } from '../../../types';
-import { VStack } from '../../Stack';
+import popupCls from '../styles/popups.module.scss';
+import { DropdownPosition } from '../../../../types';
+import { VStack } from '../../../Stack';
 
 interface ListBoxOption {
   value: string;
@@ -31,20 +32,20 @@ const Listbox = <T extends string>(props: ListBoxProps<T>) => {
   return (
     <VStack alignItems="flex-start" gap="2" className={className}>
       {label ? <div className={cn(cls.label, { [cls.readonly]: readonly })}>{label}</div> : null}
-      <div className={cls.container}>
+      <div className={popupCls.container}>
         <BaseListBox value={value} disabled={readonly} onChange={onChange}>
           <BaseListBox.Button className={cn(cls.button, { [cls.readonly]: readonly })}>
             {displayedValue ?? defaultValue}
           </BaseListBox.Button>
-          <BaseListBox.Options className={cn(cls.list, cls[position])}>
+          <BaseListBox.Options className={cn(popupCls.dropdown, popupCls[position])}>
             {options.map((option) => (
               <BaseListBox.Option key={option.value} value={option.value} disabled={option.disabled} as={Fragment}>
                 {({ active, selected }: { active: boolean; selected: boolean }) => (
                   <li
-                    className={cn(cls.item, {
-                      [cls.active]: active,
-                      [cls.selected]: selected,
-                      [cls.disabled]: option.disabled,
+                    className={cn(popupCls.item, {
+                      [popupCls.active]: active,
+                      [popupCls.selected]: selected,
+                      [popupCls.disabled]: option.disabled,
                     })}
                   >
                     {option.label}

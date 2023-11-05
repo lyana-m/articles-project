@@ -786,5 +786,40 @@
       "username": "kukusik",
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRj6HJ7KTESPE1nPWHKkEM0GBWH3yx1izKzyA&usqp=CAU"
     }
+  ],
+  "notifications": [
+    {
+      "id": "1",
+      "title": "Уведомление 1",
+      "text": "Произошло какое-то событие 1",
+      "userId": "1",
+      "href": "https//:localhost:3000/admin"
+    },
+    {
+      "id": "2",
+      "title": "Уведомление 2",
+      "text": "Произошло какое-то событие 2",
+      "userId": "1",
+      "href": "https//:localhost:3000/articles"
+    },
+    {
+      "id": "3",
+      "title": "Уведомление 3",
+      "text": "Произошло какое-то событие 3",
+      "userId": "2"
+    },
+    {
+      "id": "4",
+      "title": "Уведомление 4",
+      "text": "Произошло какое-то событие 4",
+      "userId": "2"
+    },
+    {
+      "id": "5",
+      "title": "Уведомление 5",
+      "text": "Произошло какое-то событие 5",
+      "userId": "3",
+      "href": "https//:localhost:3000/"
+    }
   ]
 }

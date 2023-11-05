@@ -1,7 +1,7 @@
 import React, { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui/Button';
-import { Dropdown } from 'shared/ui/Dropdown';
+import { Dropdown, Popover } from 'shared/ui/Popups';
 import { LoginModal } from 'features/AuthByUsername';
 import { useAppDispatch } from 'shared/hooks/useAppDispatch/useAppDispatch';
 import { useAppSelector } from 'shared/hooks/useAppSelector/useAppSelector';
@@ -10,6 +10,8 @@ import { getUserAuthData, isAdmin, isManager, userActions } from 'entities/User'
 import { Avatar } from 'shared/ui/Avatar';
 import { useNavigate } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { HStack } from 'shared/ui/Stack';
+import BellIcon from 'shared/assets/icons/bell.svg';
 
 const Navbar = memo(() => {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
@@ -51,16 +53,28 @@ const Navbar = memo(() => {
   if (authData) {
     return (
       <div className={cls.Navbar}>
-        <Dropdown
-          trigger={<Avatar size={30} src={authData.avatar} />}
-          items={[
-            { name: t('Профиль'), onClick: navigateToProfile },
-            ...(isAccessAllowed ? [{ name: t('Админка'), onClick: navigateToAdmin }] : []),
-            { name: t('Выйти'), onClick: handleLogout },
-          ]}
-          position="bottom-right"
-          className={cls.login}
-        />
+        <HStack gap="12" className={cls.actions} fullWidth={false}>
+          <Popover
+            trigger={
+              <Button>
+                <BellIcon />
+              </Button>
+            }
+            position="bottom-right"
+          >
+            CONTENT
+          </Popover>
+
+          <Dropdown
+            trigger={<Avatar size={30} src={authData.avatar} />}
+            items={[
+              { name: t('Профиль'), onClick: navigateToProfile },
+              ...(isAccessAllowed ? [{ name: t('Админка'), onClick: navigateToAdmin }] : []),
+              { name: t('Выйти'), onClick: handleLogout },
+            ]}
+            position="bottom-right"
+          />
+        </HStack>
       </div>
     );
   }
@@ -68,7 +82,7 @@ const Navbar = memo(() => {
   return (
     <>
       <div className={cls.Navbar}>
-        <Button onClick={handleLoginModalOpen} className={cls.login} theme="clearInverted">
+        <Button onClick={handleLoginModalOpen} className={cls.actions} theme="clearInverted">
           {t('Войти')}
         </Button>
       </div>

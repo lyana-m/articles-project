@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import { Currency, currencyOptions } from '../model/types/currency';
-import { ListBox } from 'shared/ui/ListBox';
+import { ListBox } from 'shared/ui/Popups';
 
 interface CurrencySelectProps {
   readonly?: boolean;

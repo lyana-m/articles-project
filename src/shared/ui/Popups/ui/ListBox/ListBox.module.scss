@@ -1,0 +1,26 @@
+.label {
+  font-size: 12px;
+  line-height: 18px;
+  padding-left: 6px;
+  color: var(--primary-color);
+
+  &.readonly {
+    opacity: 0.5;
+  }
+}
+
+.button {
+  cursor: pointer;
+  padding: 6px 8px;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+  background: none;
+  text-align: left;
+
+  &.readonly {
+    opacity: 0.5;
+    cursor: default;
+    pointer-events: none;
+  }
+}
