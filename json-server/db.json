@@ -793,14 +793,14 @@
       "title": "Уведомление 1",
       "text": "Произошло какое-то событие 1",
       "userId": "1",
-      "href": "https//:localhost:3000/admin"
+      "href": "/admin"
     },
     {
       "id": "2",
       "title": "Уведомление 2",
       "text": "Произошло какое-то событие 2",
       "userId": "1",
-      "href": "https//:localhost:3000/articles"
+      "href": "/articles"
     },
     {
       "id": "3",
@@ -819,7 +819,7 @@
       "title": "Уведомление 5",
       "text": "Произошло какое-то событие 5",
       "userId": "3",
-      "href": "https//:localhost:3000/"
+      "href": "/"
     }
   ]
 }

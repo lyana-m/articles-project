@@ -19,7 +19,7 @@ const Popover = (props: PopoverProps) => {
     <BasePopover className={cn(className, popupCls.container)}>
       <BasePopover.Button className={popupCls.trigger}>{trigger}</BasePopover.Button>
 
-      <BasePopover.Panel className={cn(cls.dropdown, popupCls.dropdown, popupCls[position])}>
+      <BasePopover.Panel className={cn(cls.dropdown, popupCls.dropdown, popupCls[position])} unmount={false}>
         {children}
       </BasePopover.Panel>
     </BasePopover>
