@@ -2,6 +2,7 @@ import { type PropsWithChildren, useEffect, useRef, useState, useCallback } from
 import cn from 'classnames';
 import Portal from '../../Portal/ui/Portal';
 import cls from './Modal.module.scss';
+import { Overlay } from '../../Overlay';
 
 interface ModalProps {
   isOpen: boolean;
@@ -67,10 +68,9 @@ const Modal = (props: PropsWithChildren<ModalProps>) => {
   return (
     <Portal>
       <div className={cn(cls.modal, mods, className)}>
-        <div className={cls.overlay} onClick={handleClose}>
-          <div className={cls.content} onClick={(e) => e.stopPropagation()}>
-            {children}
-          </div>
+        <Overlay className={cls.overlay} onClick={handleClose} />
+        <div className={cls.content}>
+          {children}
         </div>
       </div>
     </Portal>

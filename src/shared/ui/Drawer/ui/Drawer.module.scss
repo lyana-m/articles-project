@@ -1,0 +1,35 @@
+.drawer {
+  position: fixed;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.content {
+  position: absolute;
+  height: fit-content;
+  width: 100%;
+  padding: 16px;
+  background: var(--bg-color);
+  bottom: 0;
+  transition: transform 0.3s;
+  transform: translateY(100%);
+  border-radius: 12px 12px 0 0;
+  overflow-y: auto;
+}
+
+.opened {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: var(--modal-z-index);
+
+  .content {
+    transform: translateY(0);
+  }
+}
+
+.closing {
+  .content {
+    transform: translateY(100%);
+  }
+}
