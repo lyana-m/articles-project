@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useAppDispatch } from 'shared/hooks/useAppDispatch/useAppDispatch';
-import { useAppSelector } from 'shared/hooks/useAppSelector/useAppSelector';
+import { useAppDispatch } from '@/shared/hooks/useAppDispatch/useAppDispatch';
+import { useAppSelector } from '@/shared/hooks/useAppSelector/useAppSelector';
 import { getProfileFormData } from '../../model/selectors/getProfileFormData/getProfileFormData';
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
 import { getProfileLoading } from '../../model/selectors/getProfileLoading/getProfileLoading';
@@ -9,13 +9,13 @@ import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/get
 import { getProfileValidationErrors } from '../../model/selectors/getProfileValidationErrors/getProfileValidationErrors';
 import { ValidationErrors } from '../../model/types/validationErrors';
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
-import { Currency } from 'entities/Currency';
-import { Country } from 'entities/Country';
+import { Currency } from '@/entities/Currency';
+import { Country } from '@/entities/Country';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
-import { Text } from 'shared/ui/Text';
-import { ProfileCard } from 'entities/Profile';
+import { Text } from '@/shared/ui/Text';
+import { ProfileCard } from '@/entities/Profile';
 import EditableProfileCardHeader from '../EditableProfileCardHeader/EditableProfileCardHeader';
-import { AsyncReduser, useAsyncReducers } from 'shared/hooks/useAsyncReducers/useAsyncReducers';
+import { AsyncReduser, useAsyncReducers } from '@/shared/hooks/useAsyncReducers/useAsyncReducers';
 
 interface EditableProfileCardProps {
   id: string;

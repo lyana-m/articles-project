@@ -3,7 +3,7 @@ import { Popover as BasePopover } from '@headlessui/react';
 import cn from 'classnames';
 import cls from './Popover.module.scss';
 import popupCls from '../styles/popups.module.scss';
-import { DropdownPosition } from 'shared/types';
+import { DropdownPosition } from '@/shared/types';
 
 interface PopoverProps {
   children: ReactNode;

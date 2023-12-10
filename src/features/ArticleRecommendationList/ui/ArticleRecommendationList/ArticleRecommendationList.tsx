@@ -1,6 +1,6 @@
 import React from 'react';
-import { Text } from 'shared/ui/Text';
-import { ArticleList } from 'entities/Article';
+import { Text } from '@/shared/ui/Text';
+import { ArticleList } from '@/entities/Article';
 import cls from './ArticleRecommendationList.module.scss';
 import { useArticleRecommendationListQuery } from '../../api/recommendationsApi';
 

@@ -1,11 +1,11 @@
 import { withRouter, reactRouterParameters } from 'storybook-addon-react-router-v6';
 import type { Meta, StoryObj } from '@storybook/react';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
 
 import ProfilePage from './ProfilePage';
-import { Currency } from 'entities/Currency';
-import { Country } from 'entities/Country';
-import avatar from 'shared/assets/tests/people.png';
+import { Currency } from '@/entities/Currency';
+import { Country } from '@/entities/Country';
+import avatar from '@/shared/assets/tests/people.png';
 
 const meta: Meta<typeof ProfilePage> = {
   title: 'pages/ProfilePage',

@@ -1,11 +1,11 @@
 import { render } from '@testing-library/react';
-import { DeepPartial } from 'app/types/common';
+import { DeepPartial } from '@/app/types/common';
 import type { ReactNode } from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { I18nextProvider } from 'react-i18next';
-import { StoreProvider } from 'app/providers/StoreProvider';
-import { type StoreSchema } from 'app/providers/StoreProvider/config/StoreSchema';
-import i18n from 'shared/config/i18n/i18nForTests';
+import { StoreProvider } from '@/app/providers/StoreProvider';
+import { type StoreSchema } from '@/app/providers/StoreProvider/config/StoreSchema';
+import i18n from '@/shared/config/i18n/i18nForTests';
 
 interface RenderComponentOptions {
   route?: string;

@@ -1,14 +1,14 @@
 import React, { memo, useState } from 'react';
 import cn from 'classnames';
-import { ThemeButton } from 'widgets/ThemeButton';
-import { LangButton } from 'widgets/LangButton';
+import { ThemeButton } from '@/widgets/ThemeButton';
+import { LangButton } from '@/widgets/LangButton';
 // import { BugButton } from 'widgets/PageError';
-import { Button } from 'shared/ui/Button';
+import { Button } from '@/shared/ui/Button';
 import cls from './Sidebar.module.scss';
 import SidebarItem from './SidebarItem/SidebarItem';
-import { useAppSelector } from 'shared/hooks/useAppSelector/useAppSelector';
+import { useAppSelector } from '@/shared/hooks/useAppSelector/useAppSelector';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
-import { VStack } from 'shared/ui/Stack';
+import { VStack } from '@/shared/ui/Stack';
 
 const Sidebar = memo(() => {
   const [collapsed, setCollapsed] = useState(false);

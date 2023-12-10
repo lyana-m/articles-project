@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import { Country, countryOptions } from '../model/types/country';
-import { ListBox } from 'shared/ui/Popups';
+import { ListBox } from '@/shared/ui/Popups';
 
 interface CountrySelectProps {
   readonly?: boolean;

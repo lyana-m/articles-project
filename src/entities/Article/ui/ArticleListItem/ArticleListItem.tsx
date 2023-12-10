@@ -2,14 +2,14 @@ import React, { HTMLAttributeAnchorTarget } from 'react';
 import cn from 'classnames';
 import cls from './ArticleListItem.module.scss';
 import { ArticleItem, ArticleItemTextBlock, ArticleListView } from '../../model/types/article';
-import Card from 'shared/ui/Card/Card';
-import { Text } from 'shared/ui/Text';
-import EyeIcon from 'shared/assets/icons/eye.svg';
-import { Avatar } from 'shared/ui/Avatar';
-import { Button } from 'shared/ui/Button';
+import Card from '@/shared/ui/Card/Card';
+import { Text } from '@/shared/ui/Text';
+import EyeIcon from '@/shared/assets/icons/eye.svg';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Button } from '@/shared/ui/Button';
 import ArticleTextBlock from '../ArticleTextBlock/ArticleTextBlock';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import AppLink from 'shared/ui/AppLink/AppLink';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import AppLink from '@/shared/ui/AppLink/AppLink';
 
 interface ArticleListItemProps {
   className?: string;

@@ -1,13 +1,13 @@
 import React, { useCallback, useEffect } from 'react';
 import cn from 'classnames';
 import cls from './ArticleComments.module.scss';
-import { Text } from 'shared/ui/Text';
-import { NewCommentForm } from 'features/NewCommentForm';
-import { CommentList } from 'entities/Comment';
-import { useAppSelector } from 'shared/hooks/useAppSelector/useAppSelector';
+import { Text } from '@/shared/ui/Text';
+import { NewCommentForm } from '@/features/NewCommentForm';
+import { CommentList } from '@/entities/Comment';
+import { useAppSelector } from '@/shared/hooks/useAppSelector/useAppSelector';
 import { getArticleComments } from '../../model/slice/articleCommentSlice';
 import { getArticleCommentsLoading } from '../../model/selectors/comments';
-import { useAppDispatch } from 'shared/hooks/useAppDispatch/useAppDispatch';
+import { useAppDispatch } from '@/shared/hooks/useAppDispatch/useAppDispatch';
 import { sendArticleNewComment } from '../../services/sendNewArticleComment';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 

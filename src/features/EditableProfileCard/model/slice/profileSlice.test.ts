@@ -1,8 +1,8 @@
-import { DeepPartial } from 'app/types/common';
+import { DeepPartial } from '@/app/types/common';
 import { profileSlice, profileReducer } from './profileSlice';
 import { ProfileSchema } from '../types/profileSchema';
-import { Currency } from 'entities/Currency';
-import { Country } from 'entities/Country';
+import { Currency } from '@/entities/Currency';
+import { Country } from '@/entities/Country';
 import { ValidationErrors } from '../types/validationErrors';
 import { updateProfileData } from '../services/updateProfileData/updateProfileData';
 

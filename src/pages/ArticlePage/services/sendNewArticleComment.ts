@@ -1,8 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ExtraArg, StoreSchema } from 'app/providers/StoreProvider/config/StoreSchema';
-import { Comment } from 'entities/Comment';
-import { getUserAuthData } from 'entities/User';
-import { getArticleData } from 'entities/Article';
+import { ExtraArg, StoreSchema } from '@/app/providers/StoreProvider/config/StoreSchema';
+import { Comment } from '@/entities/Comment';
+import { getUserAuthData } from '@/entities/User';
+import { getArticleData } from '@/entities/Article';
 import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 
 export const sendArticleNewComment = createAsyncThunk<Comment, string, { rejectValue: string; extra: ExtraArg }>(

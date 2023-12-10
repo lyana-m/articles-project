@@ -1,4 +1,4 @@
-import { User } from 'entities/User';
+import { User } from '@/entities/User';
 
 export type ArticleItemType = 'ALL' | 'IT' | 'SCIENCE' | 'ECONOMICS';
 export type ArticleItemBlockType = 'TEXT' | 'CODE' | 'IMAGE';

@@ -1,6 +1,6 @@
 import React from 'react';
-import { ArticleItemType } from 'entities/Article/model/types/article';
-import { Tabs } from 'shared/ui/Tabs';
+import { ArticleItemType } from '@/entities/Article/model/types/article';
+import { Tabs } from '@/shared/ui/Tabs';
 
 const typeTabs: Array<{ value: ArticleItemType; name: string }> = [
   { value: 'ALL', name: 'Все' },

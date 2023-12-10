@@ -1,6 +1,6 @@
-import { StoreSchema } from 'app/providers/StoreProvider';
+import { StoreSchema } from '@/app/providers/StoreProvider';
 import { getProfileValidationErrors } from './getProfileValidationErrors';
-import { DeepPartial } from 'app/types/common';
+import { DeepPartial } from '@/app/types/common';
 import { ValidationErrors } from '../../types/validationErrors';
 
 describe('getProfileValidationErrors', () => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { decrement, increment } from '../model/slice/counterSlice';
-import { Button } from 'shared/ui/Button';
+import { Button } from '@/shared/ui/Button';
 import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
 
 const Counter = () => {

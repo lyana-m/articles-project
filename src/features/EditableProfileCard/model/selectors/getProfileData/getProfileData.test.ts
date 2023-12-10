@@ -1,8 +1,8 @@
-import { StoreSchema } from 'app/providers/StoreProvider';
+import { StoreSchema } from '@/app/providers/StoreProvider';
 import { getProfileData } from './getProfileData';
-import { DeepPartial } from 'app/types/common';
-import { Currency } from 'entities/Currency';
-import { Country } from 'entities/Country';
+import { DeepPartial } from '@/app/types/common';
+import { Currency } from '@/entities/Currency';
+import { Country } from '@/entities/Country';
 
 describe('getProfileData', () => {
   it('should return data', () => {

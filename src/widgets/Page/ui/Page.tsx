@@ -2,12 +2,12 @@ import React, { ReactNode, UIEvent, useLayoutEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import cn from 'classnames';
 import cls from './Page.module.scss';
-import { useInfiniteScroll } from 'shared/hooks/useInfiniteScroll/useInfiniteScroll';
-import { useAppDispatch } from 'shared/hooks/useAppDispatch/useAppDispatch';
-import { uiSliceActions } from 'features/UI';
-import { useAppSelector } from 'shared/hooks/useAppSelector/useAppSelector';
-import { getScrollPositionByPage } from 'features/UI/model/selectors/uiSelectors';
-import { useThottle } from 'shared/hooks/useThottle/useThottle';
+import { useInfiniteScroll } from '@/shared/hooks/useInfiniteScroll/useInfiniteScroll';
+import { useAppDispatch } from '@/shared/hooks/useAppDispatch/useAppDispatch';
+import { uiSliceActions } from '@/features/UI';
+import { useAppSelector } from '@/shared/hooks/useAppSelector/useAppSelector';
+import { getScrollPositionByPage } from '@/features/UI/model/selectors/uiSelectors';
+import { useThottle } from '@/shared/hooks/useThottle/useThottle';
 
 interface PageProps {
   className?: string;

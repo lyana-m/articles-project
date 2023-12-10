@@ -2,7 +2,7 @@ import { withRouter, reactRouterParameters } from 'storybook-addon-react-router-
 import type { Meta, StoryObj } from '@storybook/react';
 
 import ArticlePage from './ArticlePage';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
 
 const meta: Meta<typeof ArticlePage> = {
   title: 'pages/ArticlePage/ArticlePage',

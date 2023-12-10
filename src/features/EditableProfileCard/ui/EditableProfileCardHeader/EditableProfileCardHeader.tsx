@@ -1,12 +1,12 @@
 import React, { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useAppSelector } from 'shared/hooks/useAppSelector/useAppSelector';
-import { useAppDispatch } from 'shared/hooks/useAppDispatch/useAppDispatch';
-import { Button } from 'shared/ui/Button';
-import { Text } from 'shared/ui/Text';
+import { useAppSelector } from '@/shared/hooks/useAppSelector/useAppSelector';
+import { useAppDispatch } from '@/shared/hooks/useAppDispatch/useAppDispatch';
+import { Button } from '@/shared/ui/Button';
+import { Text } from '@/shared/ui/Text';
 import cls from './EditableProfileCardHeader.module.scss';
-import { getUserAuthData } from 'entities/User';
-import { HStack } from 'shared/ui/Stack';
+import { getUserAuthData } from '@/entities/User';
+import { HStack } from '@/shared/ui/Stack';
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
 import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
 import { profileActions } from '../../model/slice/profileSlice';

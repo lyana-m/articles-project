@@ -1,7 +1,7 @@
 import React from 'react';
 import { Comment } from '../../model/types/comment';
 import CommentItem from '../CommentItem/CommentItem';
-import { Text } from 'shared/ui/Text';
+import { Text } from '@/shared/ui/Text';
 
 interface CommentListProps {
   className?: string;

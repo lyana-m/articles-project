@@ -1,7 +1,7 @@
 import { AsyncThunkAction, DeepPartial, Dispatch } from '@reduxjs/toolkit';
 import axios, { AxiosStatic } from 'axios';
-import { StoreSchema } from 'app/providers/StoreProvider';
-import { ExtraArg } from 'app/providers/StoreProvider/config/StoreSchema';
+import { StoreSchema } from '@/app/providers/StoreProvider';
+import { ExtraArg } from '@/app/providers/StoreProvider/config/StoreSchema';
 
 jest.mock('axios');
 const mockedAxios = axios as jest.Mocked<typeof axios>;

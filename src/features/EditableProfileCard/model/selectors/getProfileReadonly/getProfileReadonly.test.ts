@@ -1,6 +1,6 @@
-import { StoreSchema } from 'app/providers/StoreProvider';
+import { StoreSchema } from '@/app/providers/StoreProvider';
 import { getProfileReadonly } from './getProfileReadonly';
-import { DeepPartial } from 'app/types/common';
+import { DeepPartial } from '@/app/types/common';
 
 describe('getProfileReadonly', () => {
   it('should return data', () => {

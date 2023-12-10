@@ -1,12 +1,12 @@
 import React, { useCallback } from 'react';
 import cn from 'classnames';
 import cls from './NewCommentForm.module.scss';
-import { Input } from 'shared/ui/Input';
-import { Button } from 'shared/ui/Button';
+import { Input } from '@/shared/ui/Input';
+import { Button } from '@/shared/ui/Button';
 import { useTranslation } from 'react-i18next';
-import { AsyncReduser, useAsyncReducers } from 'shared/hooks/useAsyncReducers/useAsyncReducers';
-import { useAppSelector } from 'shared/hooks/useAppSelector/useAppSelector';
-import { useAppDispatch } from 'shared/hooks/useAppDispatch/useAppDispatch';
+import { AsyncReduser, useAsyncReducers } from '@/shared/hooks/useAsyncReducers/useAsyncReducers';
+import { useAppSelector } from '@/shared/hooks/useAppSelector/useAppSelector';
+import { useAppDispatch } from '@/shared/hooks/useAppDispatch/useAppDispatch';
 import { newCommentFormActions, newCommentFormReducer } from '../../model/slice/newCommentFormSlice';
 import { getNewCommentFormText } from '../../model/selectors/newCommentFormSelectors';
 

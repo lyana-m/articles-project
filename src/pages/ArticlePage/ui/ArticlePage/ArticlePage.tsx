@@ -1,12 +1,12 @@
 import { useParams } from 'react-router-dom';
-import { Text } from 'shared/ui/Text';
-import { Article } from 'entities/Article';
+import { Text } from '@/shared/ui/Text';
+import { Article } from '@/entities/Article';
 import cls from './ArticlePage.module.scss';
-import { useAsyncReducers, AsyncReduser } from 'shared/hooks/useAsyncReducers/useAsyncReducers';
+import { useAsyncReducers, AsyncReduser } from '@/shared/hooks/useAsyncReducers/useAsyncReducers';
 import { articleCommentsReducer } from '../../model/slice/articleCommentSlice';
-import { Page } from 'widgets/Page';
+import { Page } from '@/widgets/Page';
 import { articleRecommendationsReducer } from '../../model/slice/articleRecommendationsSlice';
-import { ArticleRecommendationList } from 'features/ArticleRecommendationList';
+import { ArticleRecommendationList } from '@/features/ArticleRecommendationList';
 import ArticleComments from '../ArticleComments/ArticleComments';
 
 const reducers: AsyncReduser[] = [

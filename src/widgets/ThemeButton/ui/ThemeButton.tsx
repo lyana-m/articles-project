@@ -1,7 +1,7 @@
 import React from 'react';
-import { useTheme } from 'app/providers/ThemeProvider/lib/useTheme';
-import Icon from 'shared/assets/icons/theme.svg';
-import { Button } from 'shared/ui/Button';
+import { useTheme } from '@/app/providers/ThemeProvider/lib/useTheme';
+import Icon from '@/shared/assets/icons/theme.svg';
+import { Button } from '@/shared/ui/Button';
 import cls from './ThemeButton.module.scss';
 
 const ThemeButton = () => {

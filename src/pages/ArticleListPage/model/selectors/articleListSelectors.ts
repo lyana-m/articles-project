@@ -1,4 +1,4 @@
-import { StoreSchema } from 'app/providers/StoreProvider';
+import { StoreSchema } from '@/app/providers/StoreProvider';
 import { initialState } from '../constants/initialState';
 
 export const getArticleListView = (state: StoreSchema) => state.articleList?.view || initialState.view;

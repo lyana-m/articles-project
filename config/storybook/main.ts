@@ -37,6 +37,13 @@ const config: StorybookConfig = {
     if (config.resolve) {
       config.resolve.extensions?.push('.tsx', '.ts');
       config.resolve.modules = [path.resolve(__dirname, '..', '..', 'src'), 'node_modules', 'public'];
+
+      if (config.resolve.alias) {
+        config.resolve.alias = {
+          ...config.resolve.alias,
+          '@': path.resolve(__dirname, '..', '..', 'src'),
+        };
+      }
     }
 
     config.module?.rules?.push(buildCssLoader(true));

@@ -1,8 +1,8 @@
 import React, { useCallback } from 'react';
 import cn from 'classnames';
 import cls from './ArticleListFilters.module.scss';
-import { ArcticleViewSwitcher } from 'entities/Article';
-import { useAppSelector } from 'shared/hooks/useAppSelector/useAppSelector';
+import { ArcticleViewSwitcher } from '@/entities/Article';
+import { useAppSelector } from '@/shared/hooks/useAppSelector/useAppSelector';
 import {
   getArticleListOrder,
   getArticleListSearch,
@@ -10,14 +10,14 @@ import {
   getArticleListType,
   getArticleListView,
 } from '../../model/selectors/articleListSelectors';
-import { ArticleItemType, ArticleListSortOrder, ArticleListView } from 'entities/Article/model/types/article';
+import { ArticleItemType, ArticleListSortOrder, ArticleListView } from '@/entities/Article/model/types/article';
 import { articleListActions } from '../../model/slice/articleListSlice';
-import { useAppDispatch } from 'shared/hooks/useAppDispatch/useAppDispatch';
-import { Input } from 'shared/ui/Input';
+import { useAppDispatch } from '@/shared/hooks/useAppDispatch/useAppDispatch';
+import { Input } from '@/shared/ui/Input';
 import ArticleListSorting from '../ArticleListSorting/ArticleListSorting';
-import { SortDirection } from 'shared/types';
+import { SortDirection } from '@/shared/types';
 import { fetchArticles } from '../../model/services/fetchArticles/fetchArticles';
-import { useDebounce } from 'shared/hooks/useDebounce/useDebounce';
+import { useDebounce } from '@/shared/hooks/useDebounce/useDebounce';
 import ArticleTypeTabs from '../ArticleTypeTabs/ArticleTypeTabs';
 
 interface ArticleListFiltersProps {

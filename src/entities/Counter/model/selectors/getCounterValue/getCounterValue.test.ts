@@ -1,5 +1,5 @@
-import { DeepPartial } from 'app/types/common';
-import { type StoreSchema } from 'app/providers/StoreProvider/config/StoreSchema';
+import { DeepPartial } from '@/app/types/common';
+import { type StoreSchema } from '@/app/providers/StoreProvider/config/StoreSchema';
 import { getCounterValue } from './getCounterValue';
 
 describe('getCounterValue', () => {

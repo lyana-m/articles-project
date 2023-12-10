@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import ArticleRecommendationList from './ArticleRecommendationList';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
-import { RouterDecorator } from 'shared/config/storybook/RouterDecorator';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
+import { RouterDecorator } from '@/shared/config/storybook/RouterDecorator';
 
 const meta: Meta<typeof ArticleRecommendationList> = {
   title: 'feature/ArticleRecommendationList',

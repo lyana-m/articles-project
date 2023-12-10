@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import AppLink from 'shared/ui/AppLink/AppLink';
+import AppLink from '@/shared/ui/AppLink/AppLink';
 import cn from 'classnames';
-import { useAppSelector } from 'shared/hooks/useAppSelector/useAppSelector';
-import { getUserAuthData } from 'entities/User';
+import { useAppSelector } from '@/shared/hooks/useAppSelector/useAppSelector';
+import { getUserAuthData } from '@/entities/User';
 import cls from './SidebarItem.module.scss';
 import { SidebarItemType } from '../../../model/types/sidebar';
 

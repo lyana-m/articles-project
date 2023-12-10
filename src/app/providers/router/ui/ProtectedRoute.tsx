@@ -1,8 +1,8 @@
-import { UserRole, getUserAuthData, getUserRoles } from 'entities/User';
+import { UserRole, getUserAuthData, getUserRoles } from '@/entities/User';
 import { useMemo } from 'react';
 import { Navigate } from 'react-router-dom';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { useAppSelector } from 'shared/hooks/useAppSelector/useAppSelector';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { useAppSelector } from '@/shared/hooks/useAppSelector/useAppSelector';
 
 interface ProtectedRouteProps {
   children: JSX.Element;

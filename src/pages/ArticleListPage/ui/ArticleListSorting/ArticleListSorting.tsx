@@ -1,10 +1,10 @@
 import React from 'react';
 import cn from 'classnames';
 import cls from './ArticleListSorting.module.scss';
-import { SelectOption } from 'shared/ui/Select';
-import { SortDirection } from 'shared/types';
-import { ArticleListSortOrder } from 'entities/Article';
-import { ListBox } from 'shared/ui/Popups';
+import { SelectOption } from '@/shared/ui/Select';
+import { SortDirection } from '@/shared/types';
+import { ArticleListSortOrder } from '@/entities/Article';
+import { ListBox } from '@/shared/ui/Popups';
 
 interface ArticleListSortingProps {
   sort: SortDirection;

@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import ArticleListPage from './ArticleListPage';
-import { RouterDecorator } from 'shared/config/storybook/RouterDecorator';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
-import { ArticleItem } from 'entities/Article/model/types/article';
+import { RouterDecorator } from '@/shared/config/storybook/RouterDecorator';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
+import { ArticleItem } from '@/entities/Article/model/types/article';
 
 const article = {
   id: '1',

@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { StoreSchema, ThunkConfig } from 'app/providers/StoreProvider/config/StoreSchema';
-import { ArticleItem } from 'entities/Article';
+import { StoreSchema, ThunkConfig } from '@/app/providers/StoreProvider/config/StoreSchema';
+import { ArticleItem } from '@/entities/Article';
 import {
   getArticleListLimit,
   getArticleListOrder,
@@ -9,7 +9,7 @@ import {
   getArticleListSort,
   getArticleListType,
 } from '../../selectors/articleListSelectors';
-import { addSearchParams } from 'shared/lib/url/addSearchParams/addSearchParams';
+import { addSearchParams } from '@/shared/lib/url/addSearchParams/addSearchParams';
 
 interface FetchArticlesArgs {
   replace?: boolean;

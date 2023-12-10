@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { RouterDecorator } from 'shared/config/storybook/RouterDecorator';
+import { RouterDecorator } from '@/shared/config/storybook/RouterDecorator';
 
 import CommentItem from './CommentItem';
 

@@ -2,10 +2,10 @@ import React from 'react';
 import cn from 'classnames';
 import cls from './NotificationList.module.scss';
 import { useNotificationListQuery } from '../../model/api/notificationApi';
-import { Skeleton } from 'shared/ui/Skeleton';
+import { Skeleton } from '@/shared/ui/Skeleton';
 import NotificationItem from '../NotificationItem/NotificationItem';
-import { VStack } from 'shared/ui/Stack';
-import { Text } from 'shared/ui/Text';
+import { VStack } from '@/shared/ui/Stack';
+import { Text } from '@/shared/ui/Text';
 
 interface NotificationListProps {
   className?: string;

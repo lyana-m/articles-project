@@ -2,11 +2,11 @@ import React from 'react';
 import cn from 'classnames';
 import cls from './CommentItem.module.scss';
 import { Comment } from '../../model/types/comment';
-import { Avatar } from 'shared/ui/Avatar';
-import { Text } from 'shared/ui/Text';
-import { Skeleton } from 'shared/ui/Skeleton';
-import AppLink from 'shared/ui/AppLink/AppLink';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Text } from '@/shared/ui/Text';
+import { Skeleton } from '@/shared/ui/Skeleton';
+import AppLink from '@/shared/ui/AppLink/AppLink';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 
 interface CommentItemProps {
   className?: string;

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { RouterDecorator } from 'shared/config/storybook/RouterDecorator';
-import avatar from 'shared/assets/tests/people.png';
+import { RouterDecorator } from '@/shared/config/storybook/RouterDecorator';
+import avatar from '@/shared/assets/tests/people.png';
 
 import CommentList from './CommentList';
 

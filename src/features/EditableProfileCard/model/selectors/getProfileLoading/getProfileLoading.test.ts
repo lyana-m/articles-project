@@ -1,6 +1,6 @@
-import { StoreSchema } from 'app/providers/StoreProvider';
+import { StoreSchema } from '@/app/providers/StoreProvider';
 import { getProfileLoading } from './getProfileLoading';
-import { DeepPartial } from 'app/types/common';
+import { DeepPartial } from '@/app/types/common';
 
 describe('getProfileLoading', () => {
   it('should return data', () => {

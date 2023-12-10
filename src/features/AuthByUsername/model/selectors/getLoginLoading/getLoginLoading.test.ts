@@ -1,6 +1,6 @@
-import { StoreSchema } from 'app/providers/StoreProvider';
+import { StoreSchema } from '@/app/providers/StoreProvider';
 import { getLoginLoading } from './getLoginLoading';
-import { DeepPartial } from 'app/types/common';
+import { DeepPartial } from '@/app/types/common';
 
 describe('getLoginLoading', () => {
   it('should return true', () => {

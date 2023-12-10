@@ -2,10 +2,10 @@ import React from 'react';
 import cn from 'classnames';
 import cls from './NotificationItem.module.scss';
 import { Notification } from '../../model/types/notification';
-import Card from 'shared/ui/Card/Card';
-import { Text } from 'shared/ui/Text';
-import { useAppSelector } from 'shared/hooks/useAppSelector/useAppSelector';
-import { getUserAuthData } from 'entities/User';
+import Card from '@/shared/ui/Card/Card';
+import { Text } from '@/shared/ui/Text';
+import { useAppSelector } from '@/shared/hooks/useAppSelector/useAppSelector';
+import { getUserAuthData } from '@/entities/User';
 
 interface NotificationItemProps {
   notification?: Notification;

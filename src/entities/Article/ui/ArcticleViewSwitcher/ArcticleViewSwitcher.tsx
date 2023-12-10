@@ -1,9 +1,9 @@
 import React from 'react';
 import cn from 'classnames';
 import cls from './ArcticleViewSwitcher.module.scss';
-import ListViewIcon from 'shared/assets/icons/list-view.svg';
-import TileViewIcon from 'shared/assets/icons/tile-view.svg';
-import { Button } from 'shared/ui/Button';
+import ListViewIcon from '@/shared/assets/icons/list-view.svg';
+import TileViewIcon from '@/shared/assets/icons/tile-view.svg';
+import { Button } from '@/shared/ui/Button';
 import { ArticleListView } from '../../model/types/article';
 
 interface ArcticleViewSwitcherProps {

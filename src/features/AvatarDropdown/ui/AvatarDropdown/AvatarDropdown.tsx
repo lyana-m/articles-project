@@ -1,12 +1,12 @@
 import React, { useCallback } from 'react';
-import { Dropdown } from 'shared/ui/Popups';
-import { Avatar } from 'shared/ui/Avatar';
-import { useAppDispatch } from 'shared/hooks/useAppDispatch/useAppDispatch';
-import { useAppSelector } from 'shared/hooks/useAppSelector/useAppSelector';
-import { getUserAuthData, isAdmin, isManager, userActions } from 'entities/User';
+import { Dropdown } from '@/shared/ui/Popups';
+import { Avatar } from '@/shared/ui/Avatar';
+import { useAppDispatch } from '@/shared/hooks/useAppDispatch/useAppDispatch';
+import { useAppSelector } from '@/shared/hooks/useAppSelector/useAppSelector';
+import { getUserAuthData, isAdmin, isManager, userActions } from '@/entities/User';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 
 interface AvatarDropdownProps {
   className?: string;

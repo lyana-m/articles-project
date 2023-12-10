@@ -3,7 +3,7 @@ import cn from 'classnames';
 import cls from './Drawer.module.scss';
 import { Overlay } from '../../Overlay';
 import { Portal } from '../../Portal';
-import { AnimationContextValues, AnimationProvider, useAsyncAnimation } from 'shared/lib/AnimationProvider';
+import { AnimationContextValues, AnimationProvider, useAsyncAnimation } from '@/shared/lib/AnimationProvider';
 
 interface DrawerProps {
   children: ReactNode;

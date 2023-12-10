@@ -1,11 +1,11 @@
 import { configureStore, ReducersMapObject, CombinedState, Reducer } from '@reduxjs/toolkit';
 import { StoreSchema } from './StoreSchema';
-import { counterReducer } from 'entities/Counter';
-import { userReducer } from 'entities/User';
+import { counterReducer } from '../../../../entities/Counter';
+import { userReducer } from '@/entities/User';
 import { createReducerManager } from './reducerManager';
-import { api } from 'shared/api/api';
-import { uiSliceReducer } from 'features/UI';
-import { rtkApi } from 'shared/api/rtkApi';
+import { api } from '@/shared/api/api';
+import { uiSliceReducer } from '@/features/UI';
+import { rtkApi } from '@/shared/api/rtkApi';
 
 export const createReduxStore = (initialState: StoreSchema, asyncReducers?: ReducersMapObject<StoreSchema>) => {
   const staticReducers = {

@@ -1,6 +1,6 @@
-import { StoreSchema } from 'app/providers/StoreProvider';
+import { StoreSchema } from '@/app/providers/StoreProvider';
 import { getProfileError } from './getProfileError';
-import { DeepPartial } from 'app/types/common';
+import { DeepPartial } from '@/app/types/common';
 
 describe('getProfileError', () => {
   it('should return data', () => {

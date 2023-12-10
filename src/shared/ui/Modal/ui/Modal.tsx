@@ -3,7 +3,7 @@ import cn from 'classnames';
 import Portal from '../../Portal/ui/Portal';
 import cls from './Modal.module.scss';
 import { Overlay } from '../../Overlay';
-import { useModal } from 'shared/hooks/useModal/useModal';
+import { useModal } from '@/shared/hooks/useModal/useModal';
 
 interface ModalProps {
   isOpen: boolean;

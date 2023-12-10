@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import ArticleList from './ArticleList';
-import { RouterDecorator } from 'shared/config/storybook/RouterDecorator';
+import { RouterDecorator } from '@/shared/config/storybook/RouterDecorator';
 import { ArticleItem } from '../../model/types/article';
 
 const meta: Meta<typeof ArticleList> = {

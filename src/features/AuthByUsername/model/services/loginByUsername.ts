@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ExtraArg } from 'app/providers/StoreProvider/config/StoreSchema';
-import { type User, userActions } from 'entities/User';
-import { USER_LOCALSTORAGE_AUTHDATA } from 'shared/constants/localStorage';
+import { ExtraArg } from '@/app/providers/StoreProvider/config/StoreSchema';
+import { type User, userActions } from '@/entities/User';
+import { USER_LOCALSTORAGE_AUTHDATA } from '@/shared/constants/localStorage';
 
 interface LoginData {
   password: string;
