@@ -17,7 +17,7 @@ const Popover = (props: PopoverProps) => {
 
   return (
     <BasePopover className={cn(className, popupCls.container)}>
-      <BasePopover.Button className={popupCls.trigger}>{trigger}</BasePopover.Button>
+      <BasePopover.Button as='div' className={popupCls.trigger}>{trigger}</BasePopover.Button>
 
       <BasePopover.Panel className={cn(cls.dropdown, popupCls.dropdown, popupCls[position])} unmount={false}>
         {children}
