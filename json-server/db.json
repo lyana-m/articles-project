@@ -821,5 +821,21 @@
       "userId": "3",
       "href": "/"
     }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Good article",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 2,
+      "feedback": "Boring",
+      "userId": "1",
+      "articleId": "2"
+    }
   ]
 }

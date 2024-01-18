@@ -8,6 +8,7 @@ import { Page } from '@/widgets/Page';
 import { articleRecommendationsReducer } from '../../model/slice/articleRecommendationsSlice';
 import { ArticleRecommendationList } from '@/features/ArticleRecommendationList';
 import ArticleComments from '../ArticleComments/ArticleComments';
+import { ArticleRating } from '@/features/ArticleRating';
 
 const reducers: AsyncReduser[] = [
   { reducerKey: 'articleComments', reducer: articleCommentsReducer },
@@ -26,6 +27,7 @@ const ArticlePage = () => {
   return (
     <Page className={cls.articlePage}>
       <Article id={id} />
+      <ArticleRating articleId={id} className={cls.raiting} />
       <ArticleRecommendationList className={cls.recommendations} />
       <ArticleComments id={id} />
     </Page>

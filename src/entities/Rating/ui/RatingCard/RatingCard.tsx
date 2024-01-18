@@ -14,15 +14,16 @@ interface RatingCardProps {
   hasFeedback?: boolean;
   feedbackTitle?: string;
   className?: string;
+  rate?: number;
   onSubmit?: (starCount: number, feedback?: string) => void;
   onCancel?: (starCount: number) => void;
 }
 
 const RatingCard = (props: RatingCardProps) => {
-  const { title, hasFeedback = false, feedbackTitle, className, onSubmit, onCancel } = props;
+  const { title, hasFeedback = false, feedbackTitle, rate = 0, className, onSubmit, onCancel } = props;
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [starCount, setStarCount] = useState(0);
+  const [starCount, setStarCount] = useState(rate);
   const [feedback, setFeedback] = useState('');
 
   const { t } = useTranslation();
@@ -54,7 +55,7 @@ const RatingCard = (props: RatingCardProps) => {
     <Card className={className}>
       <VStack gap="12">
         <Text title={title} />
-        <StarRating onSelect={handleRate} />
+        <StarRating defaultRaiting={starCount} onSelect={handleRate} />
       </VStack>
       <Modal isOpen={isModalOpen}>
         <VStack gap="32">
